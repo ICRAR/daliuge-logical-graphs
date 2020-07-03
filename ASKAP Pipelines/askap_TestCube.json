@@ -1,20 +1,314 @@
-{ "class": "go.GraphLinksModel",
-  "linkFromPortIdProperty": "fromPort",
-  "linkToPortIdProperty": "toPort",
-  "nodeDataArray": [ 
-{"category":"DynlibApp", "text":"CalcNE", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/Users/ord006/Soft/jacal/apps/askap/libaskapsoft_dlg.so", "Arg01":"name=LoadVis", "Arg02":"parset_filename=/tmp/single.in", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-5, "loc":"-474.49830102232966 -989.6960220336907"},
-{"category":"file", "text":"Config File", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"single.in", "dirname":"", "key":-7, "loc":"-141.3281249999999 -1222.9999999999995"},
-{"category":"memory", "text":"Normal Equation", "data_volume":5, "group_end":0, "key":-6, "loc":"-318.328125 -992.9999999999989"},
-{"category":"DynlibApp", "text":"SolveNE", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/Users/ord006/Soft/jacal/apps/askap/libaskapsoft_dlg.so", "Arg01":"name=SolveNE", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-4, "loc":"-140.32812500000017 -992.9999999999986"},
-{"category":"memory", "text":"Solved Model", "data_volume":5, "group_end":0, "key":-8, "loc":"6.373175624999902 -993.3628156249995"},
-{"category":"DynlibApp", "text":"CubeBuilder", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/Users/ord006/Soft/jacal/apps/askap/libaskapsoft_dlg.so", "Arg01":"name=SpectralCube", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-9, "loc":"196.67187499999983 -992.9999999999986"}
- ],
-  "linkDataArray": [ 
-{"from":-5, "to":-6, "fromPort":"R", "toPort":"L", "points":[-440.33260583189997,-989.6960220336907,-430.33260583189997,-989.6960220336907,-421.23253941192166,-989.6960220336907,-421.23253941192166,-992.9999999999989,-412.13247299194336,-992.9999999999989,-402.13247299194336,-992.9999999999989]},
-{"from":-4, "to":-8, "fromPort":"R", "toPort":"L", "points":[-102.08941650390642,-992.9999999999986,-92.08941650390642,-992.9999999999986,-82.63566541473402,-992.9999999999986,-82.63566541473402,-993.3628156249995,-73.18191432556162,-993.3628156249995,-63.18191432556162,-993.3628156249995]},
-{"from":-6, "to":-4, "fromPort":"R", "toPort":"L", "points":[-234.52377700805664,-992.9999999999989,-224.52377700805664,-992.9999999999989,-206.54530525207528,-992.9999999999989,-206.54530525207528,-992.9999999999986,-188.56683349609392,-992.9999999999986,-178.56683349609392,-992.9999999999986]},
-{"from":-8, "to":-9, "fromPort":"R", "toPort":"L", "points":[77.2979803124999,-993.3628156249995,87.2979803124999,-993.3628156249995,110.44183683593731,-993.3628156249995,110.44183683593731,-992.9999999999991,133.58569335937472,-992.9999999999991,143.58569335937472,-992.9999999999991]},
-{"from":-7, "to":-5, "fromPort":"L", "toPort":"L", "points":[-188.57324218750023,-1222.9999999999998,-198.57324218750023,-1222.9999999999998,-519.2592873504547,-1222.9999999999998,-519.2592873504547,-1106.3480110168452,-519.2592873504547,-989.6960220336907,-509.25928735045466,-989.6960220336907]},
-{"from":-7, "to":-4, "fromPort":"B", "toPort":"T", "points":[-141.32812500000023,-1195.6302897135413,-141.32812500000023,-1185.6302897135413,-141.32812500000023,-1113.7793782552076,-140.32812500000017,-1113.7793782552076,-140.32812500000017,-1041.9284667968736,-140.32812500000017,-1031.9284667968736]},
-{"from":-7, "to":-9, "fromPort":"R", "toPort":"T", "points":[-94.08300781249989,-1222.9999999999995,-84.08300781249989,-1222.9999999999995,196.67187499999972,-1222.9999999999995,196.67187499999972,-1139.5430908203118,196.67187499999972,-1056.086181640624,196.67187499999972,-1046.086181640624]}
- ]}
+{
+    "modelData": {
+        "fileType": "graph",
+        "repoService": "Unknown",
+        "repo": "",
+        "filePath": "../../daliuge-logical-graphs/ASKAP Pipelines/askap_TestCube.json",
+        "sha": "",
+        "git_url": ""
+    },
+    "nodeDataArray": [
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -5,
+            "text": "CalcNE",
+            "description": "",
+            "x": 300,
+            "y": 333,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "cf54a7f9-5b58-4d3d-a303-91ad2113537a",
+                    "IdText": "L-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "a3f42afc-f092-4585-acd7-b6120a38f6be",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -7,
+            "text": "Config File",
+            "description": "",
+            "x": 633,
+            "y": 100,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "20af8441-5ba7-476e-9274-a1e48bbefcf5",
+                    "IdText": "L-L"
+                },
+                {
+                    "Id": "10ba35dc-5ec1-4bd5-973f-a3112a87034a",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "3c375b9f-6773-4882-9df3-44324d3b4091",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -6,
+            "text": "Normal Equation",
+            "description": "",
+            "x": 456,
+            "y": 330,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "460f7f9a-ab1d-4310-9735-4c6b80086d13",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "fe33cf1e-bd3b-4e05-936d-2516f184d654",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -4,
+            "text": "SolveNE",
+            "description": "",
+            "x": 634,
+            "y": 330,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "0ee9ce7b-a7c5-4e48-9399-6b70a0b6f25b",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "f0c7aef8-9699-4e6b-ad44-4a86748711c2",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "8c3cecdf-9153-494a-b50e-b5b698a7670a",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -8,
+            "text": "Solved Model",
+            "description": "",
+            "x": 780,
+            "y": 329,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "1d7df6bd-d9f9-4500-b0c0-6861fd1ec684",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "2ef86966-3ffb-4823-b2c8-ceb90e73f654",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -9,
+            "text": "CubeBuilder",
+            "description": "",
+            "x": 970,
+            "y": 330,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "27e1fbd1-8334-4d44-86d6-d711f907d4de",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "7e32fdf7-1e49-4164-8f6d-baea46c22cdc",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -5,
+            "fromPort": "a3f42afc-f092-4585-acd7-b6120a38f6be",
+            "to": -6,
+            "toPort": "460f7f9a-ab1d-4310-9735-4c6b80086d13"
+        },
+        {
+            "from": -4,
+            "fromPort": "8c3cecdf-9153-494a-b50e-b5b698a7670a",
+            "to": -8,
+            "toPort": "1d7df6bd-d9f9-4500-b0c0-6861fd1ec684"
+        },
+        {
+            "from": -6,
+            "fromPort": "fe33cf1e-bd3b-4e05-936d-2516f184d654",
+            "to": -4,
+            "toPort": "0ee9ce7b-a7c5-4e48-9399-6b70a0b6f25b"
+        },
+        {
+            "from": -8,
+            "fromPort": "2ef86966-3ffb-4823-b2c8-ceb90e73f654",
+            "to": -9,
+            "toPort": "27e1fbd1-8334-4d44-86d6-d711f907d4de"
+        },
+        {
+            "from": -7,
+            "fromPort": "20af8441-5ba7-476e-9274-a1e48bbefcf5",
+            "to": -5,
+            "toPort": "cf54a7f9-5b58-4d3d-a303-91ad2113537a"
+        },
+        {
+            "from": -7,
+            "fromPort": "10ba35dc-5ec1-4bd5-973f-a3112a87034a",
+            "to": -4,
+            "toPort": "f0c7aef8-9699-4e6b-ad44-4a86748711c2"
+        },
+        {
+            "from": -7,
+            "fromPort": "3c375b9f-6773-4882-9df3-44324d3b4091",
+            "to": -9,
+            "toPort": "7e32fdf7-1e49-4164-8f6d-baea46c22cdc"
+        }
+    ]
+}

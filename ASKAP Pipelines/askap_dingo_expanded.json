@@ -1,43 +1,887 @@
-{ "class": "go.GraphLinksModel",
-  "linkFromPortIdProperty": "fromPort",
-  "linkToPortIdProperty": "toPort",
-  "nodeDataArray": [ 
-{"category":"memory", "text":"target_ms", "data_volume":5, "group_end":0, "key":-4, "loc":"248.67187499999986 -523.0000000000001"},
-{"category":"memory", "text":"calibr_ms", "data_volume":5, "group_end":0, "key":-5, "loc":"26.671874999999986 -522.9999999999999"},
-{"category":"Component", "text":"MS-SPLIT", "execution_time":5, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-6, "loc":"26.671875 -436"},
-{"category":"SplitData", "text":"Scatter by Beam_c", "isGroup":true, "num_of_copies":4, "scatter_axis":"time", "key":-7, "loc":"152.29553508758545 -33.031137847900425"},
-{"category":"memory", "text":"continuum_ms", "data_volume":5, "group_end":0, "key":-8, "loc":"27.671875 -303.9999999999999", "group":-7},
-{"category":"Component", "text":"CImager", "execution_time":5, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-9, "loc":"27.671875 -250.9999999999999", "group":-7},
-{"category":"memory", "text":"image_b_restored", "data_volume":5, "group_end":0, "key":-10, "loc":"27.671875000000014 -188.99999999999994", "group":-7},
-{"category":"Component", "text":"Selavy", "execution_time":5, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-11, "loc":"27.671874999999996 -125.00000000000003", "group":-7},
-{"category":"memory", "text":"GSM", "key":-13, "loc":"27.671875000000004 -62.99999999999997", "group":-7},
-{"category":"Component", "text":"Cmodel", "execution_time":5, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-14, "loc":"26.671874999999993 7.000000000000002", "group":-7},
-{"category":"memory", "text":"LSM", "key":-15, "loc":"26.671875 79", "group":-7},
-{"category":"Component", "text":"Ccalibrator", "execution_time":5, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-16, "loc":"28.671874999999986 149.00000000000003", "group":-7},
-{"category":"memory", "text":"Gain sol\n result", "data_volume":5, "group_end":0, "key":-17, "loc":"28.671875 230", "group":-7},
-{"category":"memory", "text":"spectline_ms", "data_volume":5, "group_end":0, "key":-3, "loc":"290.671875 -294.9999999999999", "group":-7},
-{"category":"Component", "text":"Ccontsubtract", "execution_time":5, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-18, "loc":"290.67187500000006 -182.00000000000003", "group":-7},
-{"category":"Component", "text":"Simager", "execution_time":5, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-2, "loc":"290.67187500000006 8.999999999999993", "group":-7},
-{"category":"memory", "text":"subtracted_ms", "data_volume":5, "group_end":0, "key":-19, "loc":"290.6718750000002 -87", "group":-7},
-{"category":"memory", "text":"ImageCube", "data_volume":5, "group_end":0, "key":-20, "loc":"290.671875 97", "group":-7}
- ],
-  "linkDataArray": [ 
-{"from":-5, "to":-6, "fromPort":"B", "toPort":"T", "points":[26.671875,-506.56227569580085,26.671875,-496.56227569580085,26.671875,-479.5,26.671875,-479.5,26.671875,-462.4377243041992,26.671875,-452.4377243041992]},
-{"from":-6, "to":-8, "fromPort":"B", "toPort":"T", "points":[26.671875,-419.5622756958008,26.671875,-409.5622756958008,27.671875,-409.5622756958008,27.671875,-409.5622756958008,27.671875,-330.4377243041992,27.671875,-320.4377243041992]},
-{"from":-8, "to":-9, "fromPort":"B", "toPort":"T", "points":[27.671875,-287.5622756958008,27.671875,-277.5622756958008,27.671875,-277.5,27.671875,-277.5,27.671875,-277.4377243041992,27.671875,-267.4377243041992]},
-{"from":-9, "to":-10, "fromPort":"B", "toPort":"T", "points":[27.671875,-234.56227569580076,27.671875,-224.56227569580076,27.671875,-220,27.671875,-220,27.671875,-215.4377243041992,27.671875,-205.4377243041992]},
-{"from":-10, "to":-11, "fromPort":"B", "toPort":"T", "points":[27.671875,-172.56227569580076,27.671875,-162.56227569580076,27.671875,-157,27.671875,-157,27.671875,-151.4377243041992,27.671875,-141.4377243041992]},
-{"from":-11, "to":-13, "fromPort":"B", "toPort":"T", "points":[27.671875,-108.56227569580076,27.671875,-98.56227569580076,27.671875,-94,27.671875,-94,27.671875,-89.43772430419922,27.671875,-79.43772430419922]},
-{"from":-13, "to":-14, "fromPort":"B", "toPort":"T", "points":[27.671875,-46.562275695800786,27.671875,-36.562275695800786,27.671875,-28,26.671875,-28,26.671875,-19.437724304199218,26.671875,-9.437724304199218]},
-{"from":-14, "to":-15, "fromPort":"B", "toPort":"T", "points":[26.671875,23.437724304199218,26.671875,33.43772430419922,26.671875,43,26.671875,43,26.671875,52.56227569580078,26.671875,62.56227569580078]},
-{"from":-15, "to":-16, "fromPort":"B", "toPort":"T", "points":[26.671875,95.43772430419921,26.671875,105.43772430419921,26.671875,114,28.671875,114,28.671875,122.56227569580079,28.671875,132.5622756958008]},
-{"from":-8, "to":-16, "fromPort":"R", "toPort":"R", "points":[103.33378028869629,-304,113.33378028869629,-304,116,-304,116,-304,124,-304,124,149,82.61207580566406,149,72.61207580566406,149]},
-{"from":-16, "to":-17, "fromPort":"B", "toPort":"T", "points":[28.671875,165.43772430419924,28.671875,175.43772430419924,28.671875,185.5311378479004,28.671875,185.5311378479004,28.671875,195.62455139160156,28.671875,205.62455139160156]},
-{"from":-4, "to":-6, "fromPort":"B", "toPort":"R", "points":[248.671875,-506.56227569580085,248.671875,-496.56227569580085,248.671875,-436,163.82415771484375,-436,78.9764404296875,-436,68.9764404296875,-436]},
-{"from":-3, "to":-18, "fromPort":"B", "toPort":"T", "points":[290.6718749999999,-278.56227569580074,290.6718749999999,-268.56227569580074,290.6718749999999,-238.49999999999997,290.671875,-238.49999999999997,290.671875,-208.4377243041992,290.671875,-198.4377243041992]},
-{"from":-6, "to":-3, "fromPort":"B", "toPort":"T", "points":[26.671875,-419.5622756958008,26.671875,-409.5622756958008,26.671875,-409.5622756958008,290.6718749999999,-409.5622756958008,290.6718749999999,-321.43772430419915,290.6718749999999,-311.43772430419915]},
-{"from":-15, "to":-18, "fromPort":"R", "toPort":"L", "points":[60.70392499651227,79,70.70392499651227,79,148.82696097237724,79,148.82696097237724,-182,226.9499969482422,-182,236.9499969482422,-182]},
-{"from":-18, "to":-19, "fromPort":"B", "toPort":"T", "points":[290.671875,-165.56227569580076,290.671875,-155.56227569580076,290.671875,-134.5,290.671875,-134.5,290.671875,-113.43772430419922,290.671875,-103.43772430419922]},
-{"from":-19, "to":-2, "fromPort":"B", "toPort":"T", "points":[290.671875,-70.56227569580079,290.671875,-60.56227569580079,290.671875,-39.00000000000001,290.671875,-39.00000000000001,290.671875,-17.43772430419922,290.671875,-7.437724304199222]},
-{"from":-2, "to":-20, "fromPort":"B", "toPort":"T", "points":[290.671875,25.437724304199214,290.671875,35.437724304199214,290.671875,53,290.671875,53,290.671875,70.56227569580078,290.671875,80.56227569580078]}
- ]}
+{
+    "modelData": {
+        "fileType": "graph",
+        "repoService": "Unknown",
+        "repo": "",
+        "filePath": "../../daliuge-logical-graphs/ASKAP Pipelines/askap_dingo_expanded.json",
+        "sha": "",
+        "git_url": ""
+    },
+    "nodeDataArray": [
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -4,
+            "text": "target_ms",
+            "description": "",
+            "x": 548,
+            "y": 100,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "33d40826-aaed-4a3a-b0f4-d0055f26d742",
+                    "IdText": "B-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -5,
+            "text": "calibr_ms",
+            "description": "",
+            "x": 326,
+            "y": 101,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "c9b7b7bd-42a6-433e-bf6f-2205bd399c6d",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -6,
+            "text": "MS-SPLIT",
+            "description": "",
+            "x": 326,
+            "y": 187,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "47c896f1-43de-4004-b8d9-8c981f7d7035",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "996437d1-9924-47cf-8e53-7a08ffcd6cd5",
+                    "IdText": "B-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "864d4204-a985-4e3c-bb7d-3dc0001333fc",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "56c97d3f-ac5e-4d31-8796-321adc93f63c",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Scatter",
+            "categoryType": "Group",
+            "isGroup": true,
+            "color": "#DDAD00",
+            "drawOrderHint": 0,
+            "key": -7,
+            "text": "Scatter by Beam_c",
+            "description": "",
+            "x": 452,
+            "y": 590,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -8,
+            "text": "continuum_ms",
+            "description": "",
+            "x": 327,
+            "y": 320,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "446744ca-291a-4726-8230-ec7f7e104823",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "8131235b-fbac-42a5-a573-8fba2c2c47d8",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "cdea69a1-b6e8-4557-9473-f53b7b504a00",
+                    "IdText": "R-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -9,
+            "text": "CImager",
+            "description": "",
+            "x": 327,
+            "y": 373,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "0660a0f7-41ec-4c42-8ab6-030cb22f864c",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "87d5017f-9d3d-4a9d-8987-0403a581ad15",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -10,
+            "text": "image_b_restored",
+            "description": "",
+            "x": 327,
+            "y": 435,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "7f3e5729-c9ef-4948-a3b5-295c4d6045a8",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "5bcebfd9-d988-4413-b8be-9b2b3f38115d",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -11,
+            "text": "Selavy",
+            "description": "",
+            "x": 327,
+            "y": 498,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "6ae84835-1ea4-4bf9-b8e5-012920436f98",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "464eef4e-044b-4ab4-b1f1-c955d96288a2",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -13,
+            "text": "GSM",
+            "description": "",
+            "x": 327,
+            "y": 561,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "f3b527b3-d045-44a4-8b76-566b68ec9b8b",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "a6c3809e-2828-4c62-8fd8-32e2b1d3d4ee",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -14,
+            "text": "Cmodel",
+            "description": "",
+            "x": 326,
+            "y": 630,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "b6d2db2e-5118-4ca1-8a5c-1d7ceefb89f2",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "138f25b4-a382-4249-aa86-c39924f16ada",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -15,
+            "text": "LSM",
+            "description": "",
+            "x": 326,
+            "y": 702,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "6cba76c7-13c1-42ea-b834-9d46f11916ce",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "162470e4-ca70-4993-9353-bdce700c3c32",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "979ff9c0-571c-491c-b9fa-d249c7f61d5b",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -16,
+            "text": "Ccalibrator",
+            "description": "",
+            "x": 328,
+            "y": 772,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "3af05396-e62e-40e5-8b69-ac7e2ff252ff",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "a31e8fb2-4daf-439e-b9d6-01f47843f497",
+                    "IdText": "R-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "efc86b9a-ed3f-4969-b471-aae882310929",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -17,
+            "text": "Gain sol\n result",
+            "description": "",
+            "x": 328,
+            "y": 853,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "23a50066-a993-4a00-b4cf-53cc522e7a14",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -3,
+            "text": "spectline_ms",
+            "description": "",
+            "x": 590,
+            "y": 329,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "4dd5b6e0-d7e1-49a0-93f2-ea31cbbdefa4",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "de55dd13-1034-4078-ac1b-a503e9298d43",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -18,
+            "text": "Ccontsubtract",
+            "description": "",
+            "x": 590,
+            "y": 441,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "de6b08ad-bafd-401c-8600-b651ed6ca2ec",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "26e2357f-49bd-4e57-97f2-d01d7a3968a4",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "a0b26838-ef10-47ab-9f17-0dda1d114b31",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -2,
+            "text": "Simager",
+            "description": "",
+            "x": 590,
+            "y": 631,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "8a56e490-5c5c-4e46-9919-10a1c89135bf",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "190a6067-b9fc-4c90-8b8b-9cf7ad028909",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -19,
+            "text": "subtracted_ms",
+            "description": "",
+            "x": 590,
+            "y": 536,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "709630f0-02eb-4789-9307-a3eaddfe028f",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "a97d7b7f-826d-4ee9-ab09-8a89d5053eaa",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -20,
+            "text": "ImageCube",
+            "description": "",
+            "x": 590,
+            "y": 720,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -7,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "cfba9f9a-47b4-4453-90bd-c2cb439f6d43",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -5,
+            "fromPort": "c9b7b7bd-42a6-433e-bf6f-2205bd399c6d",
+            "to": -6,
+            "toPort": "47c896f1-43de-4004-b8d9-8c981f7d7035"
+        },
+        {
+            "from": -6,
+            "fromPort": "864d4204-a985-4e3c-bb7d-3dc0001333fc",
+            "to": -8,
+            "toPort": "446744ca-291a-4726-8230-ec7f7e104823"
+        },
+        {
+            "from": -8,
+            "fromPort": "8131235b-fbac-42a5-a573-8fba2c2c47d8",
+            "to": -9,
+            "toPort": "0660a0f7-41ec-4c42-8ab6-030cb22f864c"
+        },
+        {
+            "from": -9,
+            "fromPort": "87d5017f-9d3d-4a9d-8987-0403a581ad15",
+            "to": -10,
+            "toPort": "7f3e5729-c9ef-4948-a3b5-295c4d6045a8"
+        },
+        {
+            "from": -10,
+            "fromPort": "5bcebfd9-d988-4413-b8be-9b2b3f38115d",
+            "to": -11,
+            "toPort": "6ae84835-1ea4-4bf9-b8e5-012920436f98"
+        },
+        {
+            "from": -11,
+            "fromPort": "464eef4e-044b-4ab4-b1f1-c955d96288a2",
+            "to": -13,
+            "toPort": "f3b527b3-d045-44a4-8b76-566b68ec9b8b"
+        },
+        {
+            "from": -13,
+            "fromPort": "a6c3809e-2828-4c62-8fd8-32e2b1d3d4ee",
+            "to": -14,
+            "toPort": "b6d2db2e-5118-4ca1-8a5c-1d7ceefb89f2"
+        },
+        {
+            "from": -14,
+            "fromPort": "138f25b4-a382-4249-aa86-c39924f16ada",
+            "to": -15,
+            "toPort": "6cba76c7-13c1-42ea-b834-9d46f11916ce"
+        },
+        {
+            "from": -15,
+            "fromPort": "162470e4-ca70-4993-9353-bdce700c3c32",
+            "to": -16,
+            "toPort": "3af05396-e62e-40e5-8b69-ac7e2ff252ff"
+        },
+        {
+            "from": -8,
+            "fromPort": "cdea69a1-b6e8-4557-9473-f53b7b504a00",
+            "to": -16,
+            "toPort": "a31e8fb2-4daf-439e-b9d6-01f47843f497"
+        },
+        {
+            "from": -16,
+            "fromPort": "efc86b9a-ed3f-4969-b471-aae882310929",
+            "to": -17,
+            "toPort": "23a50066-a993-4a00-b4cf-53cc522e7a14"
+        },
+        {
+            "from": -4,
+            "fromPort": "33d40826-aaed-4a3a-b0f4-d0055f26d742",
+            "to": -6,
+            "toPort": "996437d1-9924-47cf-8e53-7a08ffcd6cd5"
+        },
+        {
+            "from": -3,
+            "fromPort": "de55dd13-1034-4078-ac1b-a503e9298d43",
+            "to": -18,
+            "toPort": "de6b08ad-bafd-401c-8600-b651ed6ca2ec"
+        },
+        {
+            "from": -6,
+            "fromPort": "56c97d3f-ac5e-4d31-8796-321adc93f63c",
+            "to": -3,
+            "toPort": "4dd5b6e0-d7e1-49a0-93f2-ea31cbbdefa4"
+        },
+        {
+            "from": -15,
+            "fromPort": "979ff9c0-571c-491c-b9fa-d249c7f61d5b",
+            "to": -18,
+            "toPort": "26e2357f-49bd-4e57-97f2-d01d7a3968a4"
+        },
+        {
+            "from": -18,
+            "fromPort": "a0b26838-ef10-47ab-9f17-0dda1d114b31",
+            "to": -19,
+            "toPort": "709630f0-02eb-4789-9307-a3eaddfe028f"
+        },
+        {
+            "from": -19,
+            "fromPort": "a97d7b7f-826d-4ee9-ab09-8a89d5053eaa",
+            "to": -2,
+            "toPort": "8a56e490-5c5c-4e46-9919-10a1c89135bf"
+        },
+        {
+            "from": -2,
+            "fromPort": "190a6067-b9fc-4c90-8b8b-9cf7ad028909",
+            "to": -20,
+            "toPort": "cfba9f9a-47b4-4453-90bd-c2cb439f6d43"
+        }
+    ]
+}

@@ -1,68 +1,1505 @@
-{ "class": "go.GraphLinksModel",
-  "linkFromPortIdProperty": "fromPort",
-  "linkToPortIdProperty": "toPort",
-  "nodeDataArray": [ 
-{"category":"Start", "text":"Start", "key":-1, "loc":"-1650.3281249999989 -1537.9999999999998"},
-{"category":"memory", "text":"MSFile", "data_volume":5, "group_end":0, "key":-6, "loc":"-1470.6225331263784 -1556.2874739290046", "group":-11},
-{"category":"DynlibApp", "text":"AuxReader", "execution_time":1000, "num_cpus":5, "group_start":0, "libpath":"/astrodata/sagecal/build/bin/libsagecal_slave.so", "Arg01":"func=aux_reader", "Arg02":"cmdfile=/astrodata/sagecal/data/params.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-4, "loc":"-1470.6225331263809 -1459.2874739290062", "group":-11},
-{"category":"SplitData", "text":"Split MSList by line", "isGroup":true, "num_of_copies":3, "scatter_axis":"time", "key":-11, "loc":"-1357.4149674260466 -1205.143736964502"},
-{"category":"DynlibApp", "text":"SlaveADMM ", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/astrodata/sagecal/build/bin/libsagecal_slave.so", "Arg01":"func=admm_slave", "Arg02":"cmdfile=/astrodata/sagecal/data/params.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-8, "loc":"-1274.6225331263804 -1366.2874739290055", "group":-11},
-{"category":"End", "text":"End", "key":-2, "loc":"-838.3281249999985 -877.0000000000017"},
-{"category":"Component", "appclass":"dlg.deploy.cnlab.loadMSlist.LoadMSlistApp", "text":"Load MSList", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"Arg01=/astrodata/sagecal/data/MSlist.txt.32", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-3, "loc":"-1649.9999999999998 -1468.0000000000005"},
-{"category":"memory", "text":"iodata", "data_volume":5, "group_end":0, "key":-13, "loc":"-1274.2944081263772 -1499.2874739290048", "group":-11},
-{"category":"memory", "text":"IOData & arho", "data_volume":5, "group_end":0, "key":-14, "loc":"-1463.2944081263788 -1366.2874739290078", "group":-11},
-{"category":"DynlibApp", "text":"MasterADMM ", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/astrodata/sagecal/build/bin/libsagecal_master.so", "Arg01":"func=admm_master", "Arg02":"cmdfile=/astrodata/sagecal/data/params_master.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-16, "loc":"-1008.0000000000016 -1499.0476190476215"},
-{"category":"memory", "text":"Regularisation Factor Array", "data_volume":5, "group_end":0, "key":-18, "loc":"-1008.0000000000014 -1365.9999999999977"},
-{"category":"Loop", "text":"Timeslot", "isGroup":true, "num_of_iter":4, "key":-19, "loc":"-1017.8157053465975 -1061.85172068519"},
-{"category":"memory", "text":"Solution", "data_volume":5, "group_end":1, "key":-20, "loc":"-949.1545213983868 -877.3752284506882", "group":-19},
-{"category":"DynlibApp", "text":"FratioMaster", "execution_time":5, "num_cpus":1, "group_start":1, "libpath":"/astrodata/sagecal/build/bin/libsagecal_master.so", "Arg01":"func=fratio_master", "Arg02":"cmdfile=/astrodata/sagecal/data/params_master.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-21, "loc":"-973.6307118745741 -1227.4228474983095", "group":-19},
-{"category":"Loop", "text":"Timeslot", "isGroup":true, "num_of_iter":4, "key":-22, "loc":"-1350.6040337743495 -1059.5825717162109", "group":-11},
-{"category":"DynlibApp", "text":"FratioSlave", "execution_time":5, "num_cpus":1, "group_start":1, "libpath":"/astrodata/sagecal/build/bin/libsagecal_slave.so", "Arg01":"func=fratio_slave", "Arg02":"cmdfile=/astrodata/sagecal/data/params.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-23, "loc":"-1463.9557191393533 -1227.5860678098636", "group":-22},
-{"category":"memory", "text":"iodata", "data_volume":5, "group_end":0, "key":-26, "loc":"-1237.9557191393517 -1227.5860678098657", "group":-22},
-{"category":"Loop", "text":"Admm", "isGroup":true, "num_of_iter":1, "key":-27, "loc":"-1425.2830290718775 -1000.3182748491106", "group":-22},
-{"category":"DynlibApp", "text":"sagefit", "execution_time":5, "num_cpus":1, "group_start":1, "libpath":"/astrodata/sagecal/build/bin/libsagecal_slave.so", "Arg01":"func=sagefit_slave", "Arg02":"cmdfile=/astrodata/sagecal/data/params.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-28, "loc":"-1477.1420919094103 -1073.9486636508582", "group":-27},
-{"category":"memory", "text":"Y_n_J", "data_volume":5, "group_end":0, "key":-29, "loc":"-1381.6481903348586 -1073.9486636508589", "group":-27},
-{"category":"memory", "text":"ST", "data_volume":5, "group_end":0, "key":-30, "loc":"-1087.4999999999998 -1163.7333333333318", "group":-19},
-{"category":"Loop", "text":"Admm", "isGroup":true, "num_of_iter":1, "key":-31, "loc":"-1029.9386765186237 -1033.2093643188487", "group":-19},
-{"category":"DynlibApp", "text":"Update Z", "execution_time":5, "num_cpus":1, "group_start":1, "libpath":"/astrodata/sagecal/build/bin/libsagecal_master.so", "Arg01":"func=update_z_master", "Arg02":"cmdfile=/astrodata/sagecal/data/params_master.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-32, "loc":"-1087.761423749154 -1057.5000000000018", "group":-31},
-{"category":"memory", "text":"B_n_Z", "data_volume":5, "group_end":1, "key":-33, "loc":"-970.7614237491531 -985.5000000000001", "group":-31},
-{"category":"DynlibApp", "text":"Update Y", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/astrodata/sagecal/build/bin/libsagecal_slave.so", "Arg01":"func=update_y_slave", "Arg02":"cmdfile=/astrodata/sagecal/data/params.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-34, "loc":"-1381.5664070302432 -985.6911187445701", "group":-27},
-{"category":"DynlibApp", "text":"Write Z", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/astrodata/sagecal/build/bin/libsagecal_master.so", "Arg01":"func=write_z_master", "Arg02":"cmdfile=/astrodata/sagecal/data/params_master.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-35, "loc":"-1087.0000000000005 -877.0000000000002", "group":-19},
-{"category":"DynlibApp", "text":"WriteRes", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/astrodata/sagecal/build/bin/libsagecal_slave.so", "Arg01":"func=write_residual_slave", "Arg02":"cmdfile=/astrodata/sagecal/data/params.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-36, "loc":"-1250.4131340712959 -931.0000000000001", "group":-22},
-{"category":"memory", "text":"ResiduleFile", "data_volume":5, "group_end":1, "key":-37, "loc":"-1250.4131340712956 -859.9999999999995", "group":-22},
-{"category":"memory", "text":"Y n Residule", "data_volume":5, "group_end":1, "key":-38, "loc":"-1411.4131340712963 -910.9999999999998", "group":-27},
-{"category":"DynlibApp", "text":"Cal_Coh", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/astrodata/sagecal/build/bin/libsagecal_slave.so", "Arg01":"func=coh_slave", "Arg02":"cmdfile=/astrodata/sagecal/data/params.txt", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-43, "loc":"-1237.4131340712947 -1152.9999999999995", "group":-22},
-{"category":"memory", "text":"iodata", "data_volume":5, "group_end":0, "key":-44, "loc":"-1370.9557191393528 -1163.586067809866", "group":-22}
- ],
-  "linkDataArray": [ 
-{"from":-6, "to":-4, "fromPort":"B", "toPort":"T", "points":[-1470.6225331263784,-1539.8497496248053,-1470.6225331263784,-1529.8497496248053,-1470.6225331263784,-1523.1690069795427,-1470.6225331263806,-1523.1690069795427,-1470.6225331263806,-1516.4882643342798,-1470.6225331263806,-1506.4882643342798]},
-{"from":-4, "to":-13, "fromPort":"R", "toPort":"L", "points":[-1423.4217427211072,-1459.2874739290064,-1413.4217427211072,-1459.2874739290064,-1367.59903840592,-1459.2874739290064,-1367.59903840592,-1499.2874739290048,-1321.7763340907327,-1499.2874739290048,-1311.7763340907327,-1499.2874739290048]},
-{"from":-1, "to":-3, "fromPort":"B", "toPort":"T", "points":[-1650.3281249999993,-1517.9999999999998,-1650.3281249999993,-1507.9999999999998,-1650.3281249999993,-1501.1499999999999,-1649.9999999999993,-1501.1499999999999,-1649.9999999999993,-1494.3,-1649.9999999999993,-1484.3]},
-{"from":-3, "to":-6, "fromPort":"R", "toPort":"L", "points":[-1601.4999999999998,-1468.0000000000005,-1591.4999999999998,-1468.0000000000005,-1588,-1468.0000000000005,-1588,-1556.2874739290048,-1520.497533126378,-1556.2874739290048,-1510.497533126378,-1556.2874739290048]},
-{"from":-13, "to":-8, "fromPort":"B", "toPort":"T", "points":[-1274.2944081263772,-1482.9874739290044,-1274.2944081263772,-1472.9874739290044,-1274.2944081263772,-1449.887473929005,-1274.6225331263797,-1449.887473929005,-1274.6225331263797,-1426.7874739290053,-1274.6225331263797,-1416.7874739290053]},
-{"from":-18, "to":-8, "fromPort":"L", "toPort":"R", "points":[-1112.6884422302255,-1365.999999999998,-1122.6884422302255,-1365.999999999998,-1168.428394935383,-1365.999999999998,-1168.428394935383,-1366.2874739290055,-1214.1683476405406,-1366.2874739290055,-1224.1683476405406,-1366.2874739290055]},
-{"from":-20, "to":-2, "fromPort":"R", "toPort":"L", "points":[-902.0134958551736,-877.3752284506886,-892.0134958551736,-877.3752284506886,-883.2392881994863,-877.3752284506886,-883.2392881994863,-877.0000000000017,-874.4650805437991,-877.0000000000017,-864.4650805437991,-877.0000000000017]},
-{"from":-21, "to":-30, "fromPort":"B", "toPort":"R", "points":[-973.630711874574,-1174.9321629890321,-973.630711874574,-1164.9321629890321,-973.630711874574,-1163.733333333332,-1014.4612929032295,-1163.733333333332,-1055.291873931885,-1163.733333333332,-1065.291873931885,-1163.733333333332]},
-{"from":-14, "to":-23, "fromPort":"B", "toPort":"T", "points":[-1463.2944081263788,-1349.8497496248085,-1463.2944081263788,-1339.8497496248085,-1463.955719139353,-1339.8497496248085,-1463.955719139353,-1339.8497496248085,-1463.955719139353,-1285.6028829954105,-1463.955719139353,-1275.6028829954105]},
-{"from":-23, "to":-26, "fromPort":"R", "toPort":"L", "points":[-1415.9389039538062,-1227.5860678098636,-1405.9389039538062,-1227.5860678098636,-1345.6882745287567,-1227.5860678098636,-1345.6882745287567,-1227.5860678098657,-1285.4376451037072,-1227.5860678098657,-1275.4376451037072,-1227.5860678098657]},
-{"from":-28, "to":-29, "fromPort":"R", "toPort":"L", "points":[-1445.1420919094105,-1073.9486636508584,-1435.1420919094105,-1073.9486636508584,-1432.0826411221346,-1073.9486636508584,-1432.0826411221346,-1073.948663650858,-1429.023190334859,-1073.948663650858,-1419.023190334859,-1073.948663650858]},
-{"from":-33, "to":-34, "fromPort":"L", "toPort":"R", "points":[-1009.263399762337,-985.5000000000005,-1019.263399762337,-985.5000000000005,-1019.263399762337,-985.6911187445694,-1019.263399762337,-985.6911187445694,-1331.2983329945991,-985.6911187445694,-1341.2983329945991,-985.6911187445694]},
-{"from":-33, "to":-35, "fromPort":"B", "toPort":"T", "points":[-970.7614237491534,-969.0622756958013,-970.7614237491534,-959.0622756958013,-970.7614237491534,-939.6343940734866,-1087.0000000000005,-939.6343940734866,-1087.0000000000005,-920.2065124511721,-1087.0000000000005,-910.2065124511721]},
-{"from":-35, "to":-20, "fromPort":"R", "toPort":"L", "points":[-1053.7934875488286,-877.0000000000002,-1043.7934875488286,-877.0000000000002,-1025.044517245214,-877.0000000000002,-1025.044517245214,-877.3752284506886,-1006.2955469415994,-877.3752284506886,-996.2955469415994,-877.3752284506886]},
-{"from":-36, "to":-37, "fromPort":"B", "toPort":"T", "points":[-1250.413134071296,-890.8607788085936,-1250.413134071296,-880.8607788085936,-1250.4131340712959,-880.8607788085936,-1250.4131340712959,-886.4377243041988,-1250.4131340712956,-886.4377243041988,-1250.4131340712956,-876.4377243041988]},
-{"from":-38, "to":-36, "fromPort":"R", "toPort":"L", "points":[-1345.9247593612122,-910.9999999999999,-1335.9247593612122,-910.9999999999999,-1324,-910.9999999999999,-1324,-931.0000000000001,-1300.5523552627021,-931.0000000000001,-1290.5523552627021,-931.0000000000001]},
-{"from":-37, "to":-35, "fromPort":"R", "toPort":"L", "points":[-1186.1631340712954,-859.9999999999999,-1176.1631340712954,-859.9999999999999,-1172,-859.9999999999999,-1172,-859.9999999999999,-1164,-859.9999999999999,-1164,-877.0000000000001,-1130.3675765991218,-877.0000000000001,-1120.3675765991218,-877.0000000000001]},
-{"from":-26, "to":-43, "fromPort":"B", "toPort":"T", "points":[-1237.955719139351,-1211.2860678098657,-1237.955719139351,-1201.2860678098657,-1237.6844266053229,-1201.2860678098657,-1237.6844266053229,-1201.4999999999995,-1237.4131340712947,-1201.4999999999995,-1237.4131340712947,-1191.4999999999995]},
-{"from":-44, "to":-28, "fromPort":"L", "toPort":"T", "points":[-1408.4376451037083,-1163.586067809866,-1418.4376451037083,-1163.586067809866,-1420,-1163.586067809866,-1420,-1163.586067809866,-1477.14209190941,-1163.586067809866,-1477.14209190941,-1116.0742816318152,-1477.14209190941,-1106.0742816318152]},
-{"from":-13, "to":-16, "fromPort":"R", "toPort":"L", "points":[-1236.8124821620218,-1499.2874739290048,-1226.8124821620218,-1499.2874739290048,-1226.8124821620218,-1499.0476190476218,-1226.8124821620218,-1499.0476190476218,-1072.9280548095717,-1499.0476190476218,-1062.9280548095717,-1499.0476190476218]},
-{"from":-26, "to":-21, "fromPort":"R", "toPort":"L", "points":[-1200.4737931749962,-1227.5860678098657,-1190.4737931749962,-1227.5860678098657,-1190.4737931749962,-1227.4228474983095,-1190.4737931749962,-1227.4228474983095,-1036.1213963838513,-1227.4228474983095,-1026.1213963838513,-1227.4228474983095]},
-{"from":-18, "to":-21, "fromPort":"B", "toPort":"T", "points":[-1008.0000000000009,-1341.6245513915997,-1008.0000000000009,-1331.6245513915997,-1008.0000000000009,-1331.6245513915997,-973.630711874574,-1331.6245513915997,-973.630711874574,-1289.9135320075868,-973.630711874574,-1279.9135320075868]},
-{"from":-29, "to":-32, "fromPort":"R", "toPort":"L", "points":[-1344.1528461728717,-1073.9486636508582,-1334.1528461728717,-1073.9486636508582,-1324,-1073.9486636508582,-1324,-1073.9486636508582,-1164,-1073.9486636508582,-1164,-1057.5000000000018,-1137.6179072086265,-1057.5000000000018,-1127.6179072086265,-1057.5000000000018]},
-{"from":-30, "to":-32, "fromPort":"B", "toPort":"T", "points":[-1087.5000000000002,-1147.2956090291327,-1087.5000000000002,-1137.2956090291327,-1087.5000000000002,-1122.3260462443036,-1087.761423749154,-1122.3260462443036,-1087.761423749154,-1107.3564834594745,-1087.761423749154,-1097.3564834594745]},
-{"from":-8, "to":-14, "fromPort":"L", "toPort":"R", "points":[-1325.1225331263797,-1366.2874739290053,-1335.1225331263797,-1366.2874739290053,-1358.3334706263795,-1366.2874739290053,-1358.3334706263795,-1366.2874739290078,-1381.5444081263793,-1366.2874739290078,-1391.5444081263793,-1366.2874739290078]},
-{"from":-43, "to":-44, "fromPort":"L", "toPort":"R", "points":[-1275.9131340712947,-1152.9999999999995,-1285.9131340712947,-1152.9999999999995,-1304.746926605324,-1152.9999999999995,-1304.746926605324,-1163.586067809866,-1323.5807191393533,-1163.586067809866,-1333.5807191393533,-1163.586067809866]},
-{"from":-32, "to":-33, "fromPort":"R", "toPort":"T", "points":[-1047.9049402896812,-1057.5000000000018,-1037.9049402896812,-1057.5000000000018,-970.7614237491534,-1057.5000000000018,-970.7614237491534,-1034.7188621521009,-970.7614237491534,-1011.9377243041997,-970.7614237491534,-1001.9377243041997]},
-{"from":-16, "to":-18, "fromPort":"B", "toPort":"T", "points":[-1008.0000000000014,-1444.1195642380515,-1008.0000000000014,-1434.1195642380515,-1008.0000000000014,-1417.247506423224,-1008.0000000000009,-1417.247506423224,-1008.0000000000009,-1400.3754486083965,-1008.0000000000009,-1390.3754486083965]},
-{"from":-29, "to":-34, "fromPort":"B", "toPort":"T", "points":[-1381.648190334859,-1057.648663650858,-1381.648190334859,-1047.648663650858,-1381.648190334859,-1041.9198911977137,-1381.5664070302437,-1041.9198911977137,-1381.5664070302437,-1036.1911187445696,-1381.5664070302437,-1026.1911187445696]},
-{"from":-34, "to":-38, "fromPort":"L", "toPort":"L", "points":[-1421.8344810658882,-985.6911187445694,-1431.8344810658882,-985.6911187445694,-1486.9015087813782,-985.6911187445694,-1486.9015087813782,-948.3455593722847,-1486.9015087813782,-910.9999999999999,-1476.9015087813782,-910.9999999999999]}
- ]}
+{
+    "modelData": {
+        "fileType": "graph",
+        "repoService": "Unknown",
+        "repo": "",
+        "filePath": "../../daliuge-logical-graphs/SageCal/dist_sagecal_dynlib.json",
+        "sha": "",
+        "git_url": ""
+    },
+    "nodeDataArray": [
+        {
+            "category": "Start",
+            "categoryType": "Control",
+            "color": "#229954",
+            "drawOrderHint": 0,
+            "key": -1,
+            "text": "Start",
+            "description": "",
+            "x": 300,
+            "y": 119,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "fdf5e7d6-1b0f-400e-81a3-b573d8914d60",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -6,
+            "text": "MSFile",
+            "description": "",
+            "x": 480,
+            "y": 100,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "f62194d9-d4cf-4a9b-bc05-22d638e182e8",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ac9cdb5b-14c3-44d7-8370-0be4d36d67cf",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -4,
+            "text": "AuxReader",
+            "description": "",
+            "x": 480,
+            "y": 197,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "9cd67727-39f4-4381-b98f-ec107dbe890d",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ef033c43-7cf2-4c88-903f-920d691e84f1",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Scatter",
+            "categoryType": "Group",
+            "isGroup": true,
+            "color": "#DDAD00",
+            "drawOrderHint": 0,
+            "key": -11,
+            "text": "Split MSList by line",
+            "description": "",
+            "x": 593,
+            "y": 451,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -8,
+            "text": "SlaveADMM ",
+            "description": "",
+            "x": 676,
+            "y": 290,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "e790a426-1378-4366-9482-a94c3a1ee84c",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "2604874d-4a42-411b-8f12-2cba3bf73459",
+                    "IdText": "L-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ad6b2eaf-df73-4285-9d55-400a54d390a3",
+                    "IdText": "L-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "End",
+            "categoryType": "Control",
+            "color": "#CB4335",
+            "drawOrderHint": 0,
+            "key": -2,
+            "text": "End",
+            "description": "",
+            "x": 1112,
+            "y": 779,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "67d0667b-1b53-49ff-b30a-99642360b8f1",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -3,
+            "text": "Load MSList",
+            "description": "",
+            "x": 301,
+            "y": 188,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "77f856be-fa70-4a31-8070-f3b4f1304c90",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ccc177c0-ade5-4f3e-bfcb-0a0468e2e49e",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -13,
+            "text": "iodata",
+            "description": "",
+            "x": 676,
+            "y": 157,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "400cf45d-0046-4d43-acfb-642c5bb732bf",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "c61c16e5-9442-4c28-bc17-24f21de42886",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "996b701a-ada6-4398-bf9f-5dfe3f8f952f",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -14,
+            "text": "IOData & arho",
+            "description": "",
+            "x": 487,
+            "y": 290,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "fa27bc01-fa9a-43d3-9791-fa0f3448efeb",
+                    "IdText": "L-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "3814ac43-044f-46c3-a195-90666a005227",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -16,
+            "text": "MasterADMM ",
+            "description": "",
+            "x": 942,
+            "y": 157,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "078cbeab-a021-4875-960a-75d3f6fc2eb5",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d49f522f-5d9b-4259-b1a4-83cf15372109",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -18,
+            "text": "Regularisation Factor Array",
+            "description": "",
+            "x": 942,
+            "y": 291,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d240c4fd-1742-48ca-815b-c8f8a343f2e5",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "30d83d82-6df6-4439-877c-a066cfb5d85b",
+                    "IdText": "L-R"
+                },
+                {
+                    "Id": "e218b9d3-2f88-4e82-b28c-92d376f06b21",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isGroup": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -19,
+            "text": "Timeslot",
+            "description": "",
+            "x": 933,
+            "y": 595,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -20,
+            "text": "Solution",
+            "description": "",
+            "x": 1001,
+            "y": 779,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "7827fdba-cb5b-4e71-b456-2c193b46660e",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "fc686f51-7eb0-4478-880d-065e9209ff7a",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -21,
+            "text": "FratioMaster",
+            "description": "",
+            "x": 977,
+            "y": 429,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "61a616fa-537b-466e-9342-4b3742bcc2d8",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "6953f998-0d95-422b-b142-12de27cac9d7",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "38fc289b-b502-4d52-b9bf-40dc3446b7b1",
+                    "IdText": "B-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isGroup": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -22,
+            "text": "Timeslot",
+            "description": "",
+            "x": 600,
+            "y": 597,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -23,
+            "text": "FratioSlave",
+            "description": "",
+            "x": 487,
+            "y": 429,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "823c1710-3e40-4856-b1c0-5127d7929529",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "07e36627-5cb9-429b-b93b-42d3e20e6d54",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -26,
+            "text": "iodata",
+            "description": "",
+            "x": 713,
+            "y": 429,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "02c5e6f1-c697-4b35-bcd2-8141b52224da",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "b9988b2c-d2f0-4f3d-8a60-f0b442da1e32",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "c9d63140-f164-4593-97d8-e49517090723",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isGroup": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -27,
+            "text": "Admm",
+            "description": "",
+            "x": 525,
+            "y": 656,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -28,
+            "text": "sagefit",
+            "description": "",
+            "x": 473,
+            "y": 583,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -27,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d87e905d-088e-449b-8627-eecb9072c5a8",
+                    "IdText": "L-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "e8de963e-ad17-4046-a4c4-0b3b24b4e809",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -29,
+            "text": "Y_n_J",
+            "description": "",
+            "x": 569,
+            "y": 583,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -27,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "aa0d22ab-56f0-4a30-b6e3-e0828b285f71",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "60e58f39-e55b-473f-ae8a-0e7d77399d82",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "26b00c90-4b2f-41a4-8dde-858e66679e9b",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -30,
+            "text": "ST",
+            "description": "",
+            "x": 863,
+            "y": 493,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "8a761b7d-2b0d-4c04-b0c7-6f4a711074b8",
+                    "IdText": "B-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "1fa6814c-4d42-40e7-b555-f74853294007",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isGroup": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -31,
+            "text": "Admm",
+            "description": "",
+            "x": 921,
+            "y": 623,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -32,
+            "text": "Update Z",
+            "description": "",
+            "x": 863,
+            "y": 599,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -31,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "46e19ef3-b901-46a6-abef-c6aa40315c44",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "4f40fe1d-3b2d-4087-8da4-0cf2ad253970",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "2a316685-2b9e-42b7-8f51-0746f3964287",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -33,
+            "text": "B_n_Z",
+            "description": "",
+            "x": 980,
+            "y": 671,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -31,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "275732de-3878-4be0-939a-512cc1bf0fc5",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "3938edf1-703f-42bb-9a9d-b6b3399cf7ff",
+                    "IdText": "L-R"
+                },
+                {
+                    "Id": "5f003cc0-a929-482c-959f-9d066dd7ed30",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -34,
+            "text": "Update Y",
+            "description": "",
+            "x": 569,
+            "y": 671,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -27,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "4ef77a43-f55b-4421-97dd-5c82415b37cb",
+                    "IdText": "L-R"
+                },
+                {
+                    "Id": "e500dabc-cda4-4b96-843d-a7d39cb27f2a",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "00e55724-f8f0-4394-abf7-b3d4ca1985e5",
+                    "IdText": "L-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -35,
+            "text": "Write Z",
+            "description": "",
+            "x": 863,
+            "y": 779,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "04ecbb8f-c7a5-4dac-9fd0-a3b31f57040e",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "5b20a3a7-810c-4d79-a4e3-61a9285cc25c",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "76411328-0d97-4812-aaba-1ed2d29d57a5",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -36,
+            "text": "WriteRes",
+            "description": "",
+            "x": 700,
+            "y": 725,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d0babec2-a29f-473c-aa75-3098e8727663",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "67a7b5f6-f422-4e8c-aa1d-85ea7ba77792",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -37,
+            "text": "ResiduleFile",
+            "description": "",
+            "x": 700,
+            "y": 797,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "68643330-90ef-4184-81ec-57ae982cfc03",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "16c67059-1344-4cf5-b314-ed27636722ff",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -38,
+            "text": "Y n Residule",
+            "description": "",
+            "x": 539,
+            "y": 746,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -27,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "244d38ec-2968-45fa-a292-98538310d8ce",
+                    "IdText": "L-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "7bc11737-42d6-4986-a5c0-ce052bad965e",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -43,
+            "text": "Cal_Coh",
+            "description": "",
+            "x": 713,
+            "y": 504,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "82245678-b615-4c7c-9487-bd92f68b1726",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "2b2d3096-b0ab-463c-afe6-81ef6bddf246",
+                    "IdText": "L-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -44,
+            "text": "iodata",
+            "description": "",
+            "x": 580,
+            "y": 493,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "c6a5cc47-915a-4254-9cbb-23440c37a16e",
+                    "IdText": "L-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "961ae239-fb74-471a-8ce3-24c3be6910dc",
+                    "IdText": "L-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -6,
+            "fromPort": "ac9cdb5b-14c3-44d7-8370-0be4d36d67cf",
+            "to": -4,
+            "toPort": "9cd67727-39f4-4381-b98f-ec107dbe890d"
+        },
+        {
+            "from": -4,
+            "fromPort": "ef033c43-7cf2-4c88-903f-920d691e84f1",
+            "to": -13,
+            "toPort": "400cf45d-0046-4d43-acfb-642c5bb732bf"
+        },
+        {
+            "from": -1,
+            "fromPort": "fdf5e7d6-1b0f-400e-81a3-b573d8914d60",
+            "to": -3,
+            "toPort": "77f856be-fa70-4a31-8070-f3b4f1304c90"
+        },
+        {
+            "from": -3,
+            "fromPort": "ccc177c0-ade5-4f3e-bfcb-0a0468e2e49e",
+            "to": -6,
+            "toPort": "f62194d9-d4cf-4a9b-bc05-22d638e182e8"
+        },
+        {
+            "from": -13,
+            "fromPort": "c61c16e5-9442-4c28-bc17-24f21de42886",
+            "to": -8,
+            "toPort": "e790a426-1378-4366-9482-a94c3a1ee84c"
+        },
+        {
+            "from": -18,
+            "fromPort": "30d83d82-6df6-4439-877c-a066cfb5d85b",
+            "to": -8,
+            "toPort": "2604874d-4a42-411b-8f12-2cba3bf73459"
+        },
+        {
+            "from": -20,
+            "fromPort": "fc686f51-7eb0-4478-880d-065e9209ff7a",
+            "to": -2,
+            "toPort": "67d0667b-1b53-49ff-b30a-99642360b8f1"
+        },
+        {
+            "from": -21,
+            "fromPort": "38fc289b-b502-4d52-b9bf-40dc3446b7b1",
+            "to": -30,
+            "toPort": "8a761b7d-2b0d-4c04-b0c7-6f4a711074b8"
+        },
+        {
+            "from": -14,
+            "fromPort": "3814ac43-044f-46c3-a195-90666a005227",
+            "to": -23,
+            "toPort": "823c1710-3e40-4856-b1c0-5127d7929529"
+        },
+        {
+            "from": -23,
+            "fromPort": "07e36627-5cb9-429b-b93b-42d3e20e6d54",
+            "to": -26,
+            "toPort": "02c5e6f1-c697-4b35-bcd2-8141b52224da"
+        },
+        {
+            "from": -28,
+            "fromPort": "e8de963e-ad17-4046-a4c4-0b3b24b4e809",
+            "to": -29,
+            "toPort": "aa0d22ab-56f0-4a30-b6e3-e0828b285f71"
+        },
+        {
+            "from": -33,
+            "fromPort": "3938edf1-703f-42bb-9a9d-b6b3399cf7ff",
+            "to": -34,
+            "toPort": "4ef77a43-f55b-4421-97dd-5c82415b37cb"
+        },
+        {
+            "from": -33,
+            "fromPort": "5f003cc0-a929-482c-959f-9d066dd7ed30",
+            "to": -35,
+            "toPort": "04ecbb8f-c7a5-4dac-9fd0-a3b31f57040e"
+        },
+        {
+            "from": -35,
+            "fromPort": "76411328-0d97-4812-aaba-1ed2d29d57a5",
+            "to": -20,
+            "toPort": "7827fdba-cb5b-4e71-b456-2c193b46660e"
+        },
+        {
+            "from": -36,
+            "fromPort": "67a7b5f6-f422-4e8c-aa1d-85ea7ba77792",
+            "to": -37,
+            "toPort": "68643330-90ef-4184-81ec-57ae982cfc03"
+        },
+        {
+            "from": -38,
+            "fromPort": "7bc11737-42d6-4986-a5c0-ce052bad965e",
+            "to": -36,
+            "toPort": "d0babec2-a29f-473c-aa75-3098e8727663"
+        },
+        {
+            "from": -37,
+            "fromPort": "16c67059-1344-4cf5-b314-ed27636722ff",
+            "to": -35,
+            "toPort": "5b20a3a7-810c-4d79-a4e3-61a9285cc25c"
+        },
+        {
+            "from": -26,
+            "fromPort": "b9988b2c-d2f0-4f3d-8a60-f0b442da1e32",
+            "to": -43,
+            "toPort": "82245678-b615-4c7c-9487-bd92f68b1726"
+        },
+        {
+            "from": -44,
+            "fromPort": "961ae239-fb74-471a-8ce3-24c3be6910dc",
+            "to": -28,
+            "toPort": "d87e905d-088e-449b-8627-eecb9072c5a8"
+        },
+        {
+            "from": -13,
+            "fromPort": "996b701a-ada6-4398-bf9f-5dfe3f8f952f",
+            "to": -16,
+            "toPort": "078cbeab-a021-4875-960a-75d3f6fc2eb5"
+        },
+        {
+            "from": -26,
+            "fromPort": "c9d63140-f164-4593-97d8-e49517090723",
+            "to": -21,
+            "toPort": "61a616fa-537b-466e-9342-4b3742bcc2d8"
+        },
+        {
+            "from": -18,
+            "fromPort": "e218b9d3-2f88-4e82-b28c-92d376f06b21",
+            "to": -21,
+            "toPort": "6953f998-0d95-422b-b142-12de27cac9d7"
+        },
+        {
+            "from": -29,
+            "fromPort": "60e58f39-e55b-473f-ae8a-0e7d77399d82",
+            "to": -32,
+            "toPort": "46e19ef3-b901-46a6-abef-c6aa40315c44"
+        },
+        {
+            "from": -30,
+            "fromPort": "1fa6814c-4d42-40e7-b555-f74853294007",
+            "to": -32,
+            "toPort": "4f40fe1d-3b2d-4087-8da4-0cf2ad253970"
+        },
+        {
+            "from": -8,
+            "fromPort": "ad6b2eaf-df73-4285-9d55-400a54d390a3",
+            "to": -14,
+            "toPort": "fa27bc01-fa9a-43d3-9791-fa0f3448efeb"
+        },
+        {
+            "from": -43,
+            "fromPort": "2b2d3096-b0ab-463c-afe6-81ef6bddf246",
+            "to": -44,
+            "toPort": "c6a5cc47-915a-4254-9cbb-23440c37a16e"
+        },
+        {
+            "from": -32,
+            "fromPort": "2a316685-2b9e-42b7-8f51-0746f3964287",
+            "to": -33,
+            "toPort": "275732de-3878-4be0-939a-512cc1bf0fc5"
+        },
+        {
+            "from": -16,
+            "fromPort": "d49f522f-5d9b-4259-b1a4-83cf15372109",
+            "to": -18,
+            "toPort": "d240c4fd-1742-48ca-815b-c8f8a343f2e5"
+        },
+        {
+            "from": -29,
+            "fromPort": "26b00c90-4b2f-41a4-8dde-858e66679e9b",
+            "to": -34,
+            "toPort": "e500dabc-cda4-4b96-843d-a7d39cb27f2a"
+        },
+        {
+            "from": -34,
+            "fromPort": "00e55724-f8f0-4394-abf7-b3d4ca1985e5",
+            "to": -38,
+            "toPort": "244d38ec-2968-45fa-a292-98538310d8ce"
+        }
+    ]
+}

@@ -1,16 +1,237 @@
-{ "class": "go.GraphLinksModel",
-  "linkFromPortIdProperty": "fromPort",
-  "linkToPortIdProperty": "toPort",
-  "nodeDataArray": [ 
-{"category":"DynlibApp", "text":"CalcNE", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/Users/ord006/Soft/jacal/apps/askap/libaskapsoft_dlg.so", "Arg01":"name=CalcNE", "Arg02":"parset_filename=/tmp/single.in", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-5, "loc":"-555.4983010223293 -979.6960220336903"},
-{"category":"file", "text":"Config File", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"/tmp/single.in", "dirname":"", "key":-7, "loc":"-259.328125 -1206.9999999999995"},
-{"category":"memory", "text":"Normal Equation", "data_volume":5, "group_end":0, "key":-6, "loc":"-449.32812500000034 -706.9999999999987"},
-{"category":"DynlibApp", "text":"CalcNE", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/Users/ord006/Soft/jacal/apps/askap/libaskapsoft_dlg.so", "Arg01":"name=CalcNE", "Arg02":"parset_filename=/tmp/single.in", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-11, "loc":"-312.49830102232954 -1053.6960220336905"},
-{"category":"memory", "text":"Normal Equation", "data_volume":5, "group_end":0, "key":-12, "loc":"-204.32812499999977 -817.9999999999995"}
- ],
-  "linkDataArray": [ 
-{"from":-5, "to":-6, "fromPort":"R", "toPort":"L", "points":[-520.7373146942045,-979.6960220336905,-510.73731469420454,-979.6960220336905,-508,-979.6960220336905,-508,-932,-548,-932,-548,-706.9999999999991,-544.8327026367189,-706.9999999999991,-534.8327026367189,-706.9999999999991]},
-{"from":-7, "to":-5, "fromPort":"L", "toPort":"L", "points":[-306.5732421874999,-1206.9999999999995,-316.5732421874999,-1206.9999999999995,-600.2592873504545,-1206.9999999999995,-600.2592873504545,-1093.348011016845,-600.2592873504545,-979.6960220336905,-590.2592873504545,-979.6960220336905]},
-{"from":-7, "to":-11, "fromPort":"L", "toPort":"T", "points":[-306.5732421874999,-1206.9999999999995,-316.5732421874999,-1206.9999999999995,-316.5732421874999,-1135.0436490376783,-312.4983010223295,-1135.0436490376783,-312.4983010223295,-1098.4570083618155,-312.4983010223295,-1088.4570083618155]},
-{"from":-11, "to":-12, "fromPort":"R", "toPort":"L", "points":[-277.7373146942045,-1053.6960220336905,-267.7373146942045,-1053.6960220336905,-267.7373146942045,-926.7784309387197,-299.83270263671875,-926.7784309387197,-299.83270263671875,-817.9999999999989,-289.83270263671875,-817.9999999999989]}
- ]}
+{
+    "modelData": {
+        "fileType": "graph",
+        "repoService": "Unknown",
+        "repo": "",
+        "filePath": "../../daliuge-logical-graphs/ASKAP Pipelines/askap_TestTwoChannel.json",
+        "sha": "",
+        "git_url": ""
+    },
+    "nodeDataArray": [
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -5,
+            "text": "CalcNE",
+            "description": "",
+            "x": 300,
+            "y": 327,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "4b754da7-30c5-4854-ba01-77f79ae20fed",
+                    "IdText": "L-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d7caf20a-6f08-49cd-8b49-4cb2cf8752a1",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -7,
+            "text": "Config File",
+            "description": "",
+            "x": 596,
+            "y": 100,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "c3ab5ddb-a4fd-48fe-ad6e-43fa9551fee3",
+                    "IdText": "L-L"
+                },
+                {
+                    "Id": "b6be9402-1c10-46ff-8257-1a24601f6953",
+                    "IdText": "L-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -6,
+            "text": "Normal Equation",
+            "description": "",
+            "x": 406,
+            "y": 600,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "ae026581-f86b-4b70-981a-fdc445f66a90",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -11,
+            "text": "CalcNE",
+            "description": "",
+            "x": 543,
+            "y": 253,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "f0257a3e-6722-46d1-9460-dd0749899bef",
+                    "IdText": "L-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "5a2837b2-730c-486c-bb1a-6df2c5107a75",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -12,
+            "text": "Normal Equation",
+            "description": "",
+            "x": 651,
+            "y": 489,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "b591a7e5-2023-4f94-8a2b-f095c8322142",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -5,
+            "fromPort": "d7caf20a-6f08-49cd-8b49-4cb2cf8752a1",
+            "to": -6,
+            "toPort": "ae026581-f86b-4b70-981a-fdc445f66a90"
+        },
+        {
+            "from": -7,
+            "fromPort": "c3ab5ddb-a4fd-48fe-ad6e-43fa9551fee3",
+            "to": -5,
+            "toPort": "4b754da7-30c5-4854-ba01-77f79ae20fed"
+        },
+        {
+            "from": -7,
+            "fromPort": "b6be9402-1c10-46ff-8257-1a24601f6953",
+            "to": -11,
+            "toPort": "f0257a3e-6722-46d1-9460-dd0749899bef"
+        },
+        {
+            "from": -11,
+            "fromPort": "5a2837b2-730c-486c-bb1a-6df2c5107a75",
+            "to": -12,
+            "toPort": "b591a7e5-2023-4f94-8a2b-f095c8322142"
+        }
+    ]
+}

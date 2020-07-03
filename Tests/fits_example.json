@@ -1,34 +1,702 @@
-{ "class": "go.GraphLinksModel",
-  "nodeDataArray": [ 
-{"category":"BashShellApp", "text":"Load File", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"python -m fits_example.read_original", "Arg02":"%i[-16]", "Arg03":"145", "Arg04":"155", "Arg05":"%o[-15]", "Arg06":"%o[-6]", "Arg07":"%o[-5]", "Arg08":"", "Arg09":"", "Arg10":"", "key":-4, "loc":"-460.328125 -245"},
-{"category":"SplitData", "text":"Scatter by time", "isGroup":true, "num_of_copies":10, "scatter_axis":"time", "key":-11, "loc":"74.671875 -245.49999999999997"},
-{"category":"file", "text":"Dimensions", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"", "dirname":"", "key":-6, "loc":"-308.328125 -126"},
-{"category":"file", "text":"Image", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"", "dirname":"", "key":-5, "loc":"-254.328125 -245", "group":-11},
-{"category":"BashShellApp", "text":"Create kernel", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"python -m fits_example.create_kernel", "Arg02":"%i[-6]", "Arg03":"%o[-8]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-7, "loc":"-167.328125 -125"},
-{"category":"file", "text":"Kernel", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"", "dirname":"", "key":-8, "loc":"-28.328125 -125"},
-{"category":"BashShellApp", "text":"FFT and kernel mult", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"python -m fits_example.fft_and_kernel_multiply", "Arg02":"%i[-5]", "Arg03":"%i[-8]", "Arg04":"%o[-10]", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-9, "loc":"-30.328125 -246", "group":-11},
-{"category":"file", "text":"freq", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"", "dirname":"", "key":-10, "loc":"124.671875 -246", "group":-11},
-{"category":"BashShellApp", "text":"Inverse FFT", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"python -m fits_example.abs_ifft", "Arg02":"%i[-10]", "Arg03":"%o[-13]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-12, "loc":"281.671875 -246", "group":-11},
-{"category":"file", "text":"Image", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"", "dirname":"", "key":-13, "loc":"403.671875 -245", "group":-11},
-{"category":"BashShellApp", "text":"Write final", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"python -m fits_example.write_final", "Arg02":"%o[-17]", "Arg03":"%i[-15]", "Arg04":"%i[-6]", "Arg05":"%i[-13]", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-14, "loc":"403.671875 -142"},
-{"category":"file", "text":"Original header", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"", "dirname":"", "key":-15, "loc":"-459.328125 -10"},
-{"category":"file", "text":"input", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"/Users/Chen/Documents/L1448_13CO.fits.gz", "dirname":"", "key":-16, "loc":"-461.328125 -352"},
-{"category":"file", "text":"output", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"", "dirname":"", "key":-17, "loc":"403.671875 -50"}
- ],
-  "linkDataArray": [ 
-{"from":-7, "to":-8, "points":[-111.04472859459602,-125,-101.04472859459602,-125,-85.60756937542301,-125,-85.60756937542301,-125,-70.17041015625,-125,-60.17041015625,-125]},
-{"from":-6, "to":-7, "points":[-257.318359375,-126,-247.318359375,-126,-240.46494039020197,-126,-240.46494039020197,-125,-233.61152140540395,-125,-223.61152140540395,-125]},
-{"from":-4, "to":-5, "points":[-418.21342976647105,-244.99999999999997,-408.21342976647105,-244.99999999999997,-408.21342976647105,-245.00000000000003,-408.21342976647105,-245.00000000000003,-294.504150390625,-245.00000000000003,-284.504150390625,-245.00000000000003]},
-{"from":-4, "to":-6, "points":[-418.21342976647105,-244.99999999999997,-408.21342976647105,-244.99999999999997,-388.77566019573555,-244.99999999999997,-388.77566019573555,-126,-369.337890625,-126,-359.337890625,-126]},
-{"from":-8, "to":-9, "points":[-28.328125000000004,-152.36971028645834,-28.328125000000004,-162.36971028645834,-28.328125000000004,-189.49323018271468,-30.328125,-189.49323018271468,-30.328125,-216.616750078971,-30.328125,-226.616750078971]},
-{"from":-5, "to":-9, "points":[-224.152099609375,-245.00000000000003,-214.152099609375,-245.00000000000003,-166.42307027301447,-245.00000000000003,-166.42307027301447,-245.99999999999997,-118.69404093665396,-245.99999999999997,-108.69404093665396,-245.99999999999997]},
-{"from":-9, "to":-10, "points":[48.037790936653934,-245.99999999999997,58.037790936653934,-245.99999999999997,75.02048238238947,-245.99999999999997,75.02048238238947,-245.99999999999997,92.003173828125,-245.99999999999997,102.003173828125,-245.99999999999997]},
-{"from":-10, "to":-12, "points":[147.340576171875,-245.99999999999997,157.340576171875,-245.99999999999997,188.66433207073553,-245.99999999999997,188.66433207073553,-245.99999999999997,219.98808796959605,-245.99999999999997,229.98808796959605,-245.99999999999997]},
-{"from":-12, "to":-13, "points":[333.355662030404,-245.99999999999997,343.355662030404,-245.99999999999997,353.4257558198895,-245.99999999999997,353.4257558198895,-244.99999999999997,363.495849609375,-244.99999999999997,373.495849609375,-244.99999999999997]},
-{"from":-13, "to":-14, "points":[403.671875,-217.63028971354163,403.671875,-207.63028971354163,403.671875,-189.50676981728532,403.671875,-189.50676981728532,403.671875,-171.38324992102898,403.671875,-161.38324992102898]},
-{"from":-4, "to":-15, "points":[-460.32812500000006,-225.616750078971,-460.32812500000006,-215.616750078971,-460.32812500000006,-131.49323018271465,-459.328125,-131.49323018271465,-459.328125,-47.369710286458336,-459.328125,-37.369710286458336]},
-{"from":-15, "to":-14, "points":[-395.812255859375,-10,-385.812255859375,-10,-388,-10,-388,-10,239.671875,-10,239.671875,-142,349.20303090172496,-142,359.20303090172496,-142]},
-{"from":-14, "to":-17, "points":[403.671875,-122.61675007897105,403.671875,-112.61675007897105,403.671875,-99.9932301827147,403.671875,-99.9932301827147,403.671875,-87.36971028645834,403.671875,-77.36971028645834]},
-{"from":-16, "to":-4, "points":[-461.328125,-324.63028971354163,-461.328125,-314.63028971354163,-461.328125,-294.5067698172853,-460.32812500000006,-294.5067698172853,-460.32812500000006,-274.38324992102895,-460.32812500000006,-264.38324992102895]},
-{"from":-6, "to":-14, "points":[-258.281982421875,-126,-248.281982421875,-126,-248.281982421875,-126,-248.281982421875,-164,12,-164,12,-142,349.9552129085609,-142,359.9552129085609,-142]}
- ]}
+{
+    "modelData": {
+        "fileType": "graph",
+        "repoService": "Unknown",
+        "repo": "",
+        "filePath": "../../daliuge-logical-graphs/Tests/fits_example.json",
+        "sha": "",
+        "git_url": ""
+    },
+    "nodeDataArray": [
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -4,
+            "text": "Load File",
+            "description": "",
+            "x": 301,
+            "y": 207,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "a99f7ff4-a47d-4d2c-b808-2fa1ab8e71e5",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "2e0d6c69-e79a-44e3-ac55-cb6f78d6c436",
+                    "IdText": "<default>-<default>"
+                },
+                {
+                    "Id": "5ccce886-50fd-49ff-8278-848235b0ea20",
+                    "IdText": "<default>-<default>"
+                },
+                {
+                    "Id": "a1b633d4-acb2-4820-825b-150b8209f8b1",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Scatter",
+            "categoryType": "Group",
+            "isGroup": true,
+            "color": "#DDAD00",
+            "drawOrderHint": 0,
+            "key": -11,
+            "text": "Scatter by time",
+            "description": "",
+            "x": 835,
+            "y": 207,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -6,
+            "text": "Dimensions",
+            "description": "",
+            "x": 453,
+            "y": 326,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "dee27ec4-37b2-46ba-a1c0-bb0168d68b9c",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "3a9a21c1-190f-4c9f-8a6c-15a134264ad9",
+                    "IdText": "<default>-<default>"
+                },
+                {
+                    "Id": "93112ecf-e96d-4182-950a-00e3a1fec311",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -5,
+            "text": "Image",
+            "description": "",
+            "x": 507,
+            "y": 207,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "a967850a-668d-4231-a9c9-d52932825bbe",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "a5aab34a-f83f-4b92-bcbf-426407ce517e",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -7,
+            "text": "Create kernel",
+            "description": "",
+            "x": 594,
+            "y": 327,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "6e2ec9cf-8deb-4af9-acda-a7b3791e8b2b",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "58404089-740a-49e6-bc53-e79546818b72",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -8,
+            "text": "Kernel",
+            "description": "",
+            "x": 733,
+            "y": 327,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "b760d061-4a60-437b-881b-6066450cd635",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "e623c759-1b74-41fd-b070-5878270080d9",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -9,
+            "text": "FFT and kernel mult",
+            "description": "",
+            "x": 731,
+            "y": 206,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "5710cd52-9a56-4c08-950b-33c2194261f9",
+                    "IdText": "<default>-<default>"
+                },
+                {
+                    "Id": "f7c03178-d068-41ea-80b3-e319d2b19a44",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d6d4c30c-9032-4496-b8d8-ff55c98ae9e5",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -10,
+            "text": "freq",
+            "description": "",
+            "x": 885,
+            "y": 206,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "34e200a1-ec48-47db-b774-e9f079556cc5",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "764cd090-e6c6-4074-94e4-e922fdbe91e1",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -12,
+            "text": "Inverse FFT",
+            "description": "",
+            "x": 1042,
+            "y": 206,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "a0ccf189-3f68-4db8-a666-0a43c791373b",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "6ad34133-505c-439a-bb1a-fc8aba8f420b",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -13,
+            "text": "Image",
+            "description": "",
+            "x": 1164,
+            "y": 207,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "8d1c51e2-df63-41ae-95ab-86aa6a0cea04",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ee545ba9-19a2-411a-9a3b-0a8e8f911ddd",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -14,
+            "text": "Write final",
+            "description": "",
+            "x": 1164,
+            "y": 310,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "3d1198f3-e5ea-48e9-ac86-5995020a3605",
+                    "IdText": "<default>-<default>"
+                },
+                {
+                    "Id": "10a246d1-1ecf-4da3-b12f-ec5fac0c4188",
+                    "IdText": "<default>-<default>"
+                },
+                {
+                    "Id": "d8c93798-08ce-4061-964a-3ab5e0ee710b",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "2a078ae0-a852-4712-8b00-b108621dfd3d",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -15,
+            "text": "Original header",
+            "description": "",
+            "x": 302,
+            "y": 442,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d93b9aa7-ce75-408f-bc45-c05dce0e2313",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "231acebd-3550-43e5-8d78-3e888a60c7fb",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -16,
+            "text": "input",
+            "description": "",
+            "x": 300,
+            "y": 100,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "45718f4b-2c2b-4484-9ae4-49b8996bc06d",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -17,
+            "text": "output",
+            "description": "",
+            "x": 1164,
+            "y": 402,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "42295103-6c3a-4fc1-9295-4ed4e6c27504",
+                    "IdText": "<default>-<default>"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -7,
+            "fromPort": "58404089-740a-49e6-bc53-e79546818b72",
+            "to": -8,
+            "toPort": "b760d061-4a60-437b-881b-6066450cd635"
+        },
+        {
+            "from": -6,
+            "fromPort": "3a9a21c1-190f-4c9f-8a6c-15a134264ad9",
+            "to": -7,
+            "toPort": "6e2ec9cf-8deb-4af9-acda-a7b3791e8b2b"
+        },
+        {
+            "from": -4,
+            "fromPort": "2e0d6c69-e79a-44e3-ac55-cb6f78d6c436",
+            "to": -5,
+            "toPort": "a967850a-668d-4231-a9c9-d52932825bbe"
+        },
+        {
+            "from": -4,
+            "fromPort": "5ccce886-50fd-49ff-8278-848235b0ea20",
+            "to": -6,
+            "toPort": "dee27ec4-37b2-46ba-a1c0-bb0168d68b9c"
+        },
+        {
+            "from": -8,
+            "fromPort": "e623c759-1b74-41fd-b070-5878270080d9",
+            "to": -9,
+            "toPort": "5710cd52-9a56-4c08-950b-33c2194261f9"
+        },
+        {
+            "from": -5,
+            "fromPort": "a5aab34a-f83f-4b92-bcbf-426407ce517e",
+            "to": -9,
+            "toPort": "f7c03178-d068-41ea-80b3-e319d2b19a44"
+        },
+        {
+            "from": -9,
+            "fromPort": "d6d4c30c-9032-4496-b8d8-ff55c98ae9e5",
+            "to": -10,
+            "toPort": "34e200a1-ec48-47db-b774-e9f079556cc5"
+        },
+        {
+            "from": -10,
+            "fromPort": "764cd090-e6c6-4074-94e4-e922fdbe91e1",
+            "to": -12,
+            "toPort": "a0ccf189-3f68-4db8-a666-0a43c791373b"
+        },
+        {
+            "from": -12,
+            "fromPort": "6ad34133-505c-439a-bb1a-fc8aba8f420b",
+            "to": -13,
+            "toPort": "8d1c51e2-df63-41ae-95ab-86aa6a0cea04"
+        },
+        {
+            "from": -13,
+            "fromPort": "ee545ba9-19a2-411a-9a3b-0a8e8f911ddd",
+            "to": -14,
+            "toPort": "3d1198f3-e5ea-48e9-ac86-5995020a3605"
+        },
+        {
+            "from": -4,
+            "fromPort": "a1b633d4-acb2-4820-825b-150b8209f8b1",
+            "to": -15,
+            "toPort": "d93b9aa7-ce75-408f-bc45-c05dce0e2313"
+        },
+        {
+            "from": -15,
+            "fromPort": "231acebd-3550-43e5-8d78-3e888a60c7fb",
+            "to": -14,
+            "toPort": "10a246d1-1ecf-4da3-b12f-ec5fac0c4188"
+        },
+        {
+            "from": -14,
+            "fromPort": "2a078ae0-a852-4712-8b00-b108621dfd3d",
+            "to": -17,
+            "toPort": "42295103-6c3a-4fc1-9295-4ed4e6c27504"
+        },
+        {
+            "from": -16,
+            "fromPort": "45718f4b-2c2b-4484-9ae4-49b8996bc06d",
+            "to": -4,
+            "toPort": "a99f7ff4-a47d-4d2c-b808-2fa1ab8e71e5"
+        },
+        {
+            "from": -6,
+            "fromPort": "93112ecf-e96d-4182-950a-00e3a1fec311",
+            "to": -14,
+            "toPort": "d8c93798-08ce-4061-964a-3ab5e0ee710b"
+        }
+    ]
+}

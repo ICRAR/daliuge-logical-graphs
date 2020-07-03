@@ -1,21 +1,365 @@
-{ "class": "go.GraphLinksModel",
-  "linkFromPortIdProperty": "fromPort",
-  "linkToPortIdProperty": "toPort",
-  "nodeDataArray": [ 
-{"category":"file", "text":"FileDrop", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"/tmp/ddout", "dirname":"", "key":-7, "loc":"-387.4981938825463 -1160.6960220336914"},
-{"category":"BashShellApp", "text":"DD", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"dd", "Arg02":"if=/dev/urandom", "Arg03":"of=%o[-7]", "Arg04":"bs=1024  count=10240", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-8, "loc":"-471.49824745243825 -1268.6960220336914"},
-{"category":"Component", "text":"CRC Calc1", "execution_time":5, "num_cpus":1, "group_start":0, "appclass":"dfms.apps.crc.CRCApp", "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-10, "loc":"-298.3175272259074 -948.6960220336914"},
-{"category":"file", "text":"Result 1", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"/tmp/result001", "dirname":"", "key":-12, "loc":"-293.3175272259074 -676.6960226893425"},
-{"category":"Component", "text":"CRC Calc3", "execution_time":5, "num_cpus":1, "group_start":0, "appclass":"dfms.apps.crc.CRCStreamApp", "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-14, "loc":"-551.3175272259074 -808.6960220336914"},
-{"category":"file", "text":"Result 3", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"/tmp/result003", "dirname":"", "key":-15, "loc":"-778.3175272259074 -642.6960226893425"},
-{"category":"Component", "text":"FileReader", "execution_time":5, "num_cpus":1, "group_start":0, "appclass":"dlg.apps.simple.CopyApp", "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-9, "loc":"-512.328125 -951"},
-{"category":"Comment", "text":"If two ApplicationDrops are linked without a middle data drop, a stream will be set up during the physical graph translation. In this example, \"FileReader\" will stream data to \"CRC Calc3\" by chunks, and a CRC calculation is triggered whenever a new chunk is received by \"CRC Calc3\"", "key":-19, "loc":"-922.328125 -1109"}
- ],
-  "linkDataArray": [ 
-{"from":-8, "to":-7, "fromPort":"R", "toPort":"T", "points":[-449.64986386441706,-1268.6960220336914,-439.64986386441706,-1268.6960220336914,-387.4981938825463,-1268.6960220336914,-387.4981938825463,-1233.2274589538574,-387.4981938825463,-1197.7588958740234,-387.4981938825463,-1187.7588958740234]},
-{"from":-10, "to":-12, "fromPort":"B", "toPort":"T", "points":[-298.3175272259074,-932.2582977294923,-298.3175272259074,-922.2582977294923,-298.3175272259074,-818.0085971295834,-293.3175272259074,-818.0085971295834,-293.3175272259074,-713.7588965296745,-293.3175272259074,-703.7588965296745]},
-{"from":-7, "to":-9, "fromPort":"L", "toPort":"T", "points":[-425.72616019114,-1160.6960220336914,-435.72616019114,-1160.6960220336914,-512.328125,-1160.6960220336914,-512.328125,-1069.0668731689452,-512.328125,-977.4377243041993,-512.328125,-967.4377243041993]},
-{"from":-14, "to":-15, "fromPort":"B", "toPort":"T", "points":[-551.3175272259074,-792.2582977294923,-551.3175272259074,-782.2582977294923,-551.3175272259074,-731.0085971295834,-778.3175272259074,-731.0085971295834,-778.3175272259074,-679.7588965296745,-778.3175272259074,-669.7588965296745]},
-{"from":-7, "to":-10, "fromPort":"R", "toPort":"T", "points":[-349.2702275739525,-1160.6960220336914,-339.2702275739525,-1160.6960220336914,-298.3175272259074,-1160.6960220336914,-298.3175272259074,-1067.914884185791,-298.3175272259074,-975.1337463378907,-298.3175272259074,-965.1337463378907]},
-{"from":-9, "to":-14, "fromPort":"B", "toPort":"T", "points":[-512.328125,-934.5622756958008,-512.328125,-924.5622756958008,-512.328125,-879.8480110168457,-551.3175272259074,-879.8480110168457,-551.3175272259074,-835.1337463378907,-551.3175272259074,-825.1337463378907]}
- ]}
+{
+    "modelData": {
+        "fileType": "graph",
+        "repoService": "Unknown",
+        "repo": "",
+        "filePath": "../../daliuge-logical-graphs/Tests/test_stream.json",
+        "sha": "",
+        "git_url": ""
+    },
+    "nodeDataArray": [
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -7,
+            "text": "FileDrop",
+            "description": "",
+            "x": 835,
+            "y": 208,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "03525a03-bc56-4c2a-838c-dd1061e6310d",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "07c81b99-eeaf-4da7-b4a4-0a169a5f0353",
+                    "IdText": "L-T"
+                },
+                {
+                    "Id": "ac1eeddd-5c93-4a01-9941-f04ea20e1e91",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -8,
+            "text": "DD",
+            "description": "",
+            "x": 751,
+            "y": 100,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "c5671ef6-6177-431a-8113-55b4bcae473c",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -10,
+            "text": "CRC Calc1",
+            "description": "",
+            "x": 924,
+            "y": 420,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "29ae2f4c-cbdf-44f5-abd5-4137aea9e345",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "c2d5f1cc-c897-4a22-8048-65772ec37332",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -12,
+            "text": "Result 1",
+            "description": "",
+            "x": 929,
+            "y": 692,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "97a4b7bf-4118-44c6-9c94-3f3d20923379",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -14,
+            "text": "CRC Calc3",
+            "description": "",
+            "x": 671,
+            "y": 560,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "901c1593-67d7-49ec-b54a-159551f92dfb",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "1cf0f654-d69c-4f38-9d59-669db8cf6976",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -15,
+            "text": "Result 3",
+            "description": "",
+            "x": 444,
+            "y": 726,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "e81555be-4349-4a7c-844e-ee6f834e8a9a",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -9,
+            "text": "FileReader",
+            "description": "",
+            "x": 710,
+            "y": 417,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "42f6dafb-cbc9-45b8-b948-f330a8f91470",
+                    "IdText": "L-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "c976ea2f-a7e3-4033-9052-e147f1884b71",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Comment",
+            "categoryType": "Other",
+            "color": "#799938",
+            "drawOrderHint": 0,
+            "key": -19,
+            "text": "If two ApplicationDrops are linked without a middle data drop, a stream will be set up during the physical graph translation. In this example, \"FileReader\" will stream data to \"CRC Calc3\" by chunks, and a CRC calculation is triggered whenever a new chunk is received by \"CRC Calc3\"",
+            "description": "",
+            "x": 300,
+            "y": 259,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -8,
+            "fromPort": "c5671ef6-6177-431a-8113-55b4bcae473c",
+            "to": -7,
+            "toPort": "03525a03-bc56-4c2a-838c-dd1061e6310d"
+        },
+        {
+            "from": -10,
+            "fromPort": "c2d5f1cc-c897-4a22-8048-65772ec37332",
+            "to": -12,
+            "toPort": "97a4b7bf-4118-44c6-9c94-3f3d20923379"
+        },
+        {
+            "from": -7,
+            "fromPort": "07c81b99-eeaf-4da7-b4a4-0a169a5f0353",
+            "to": -9,
+            "toPort": "42f6dafb-cbc9-45b8-b948-f330a8f91470"
+        },
+        {
+            "from": -14,
+            "fromPort": "1cf0f654-d69c-4f38-9d59-669db8cf6976",
+            "to": -15,
+            "toPort": "e81555be-4349-4a7c-844e-ee6f834e8a9a"
+        },
+        {
+            "from": -7,
+            "fromPort": "ac1eeddd-5c93-4a01-9941-f04ea20e1e91",
+            "to": -10,
+            "toPort": "29ae2f4c-cbdf-44f5-abd5-4137aea9e345"
+        },
+        {
+            "from": -9,
+            "fromPort": "c976ea2f-a7e3-4033-9052-e147f1884b71",
+            "to": -14,
+            "toPort": "901c1593-67d7-49ec-b54a-159551f92dfb"
+        }
+    ]
+}
