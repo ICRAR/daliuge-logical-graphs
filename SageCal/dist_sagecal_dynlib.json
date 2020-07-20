@@ -2,6 +2,7 @@
     "modelData": {
         "fileType": "graph",
         "repoService": "Unknown",
+        "repoBranch": "",
         "repo": "",
         "filePath": "/Users/james/working/update-logical-graphs/../daliuge-logical-graphs/SageCal/dist_sagecal_dynlib.json",
         "sha": "",
@@ -39,7 +40,7 @@
             "inputPorts": [],
             "outputPorts": [
                 {
-                    "Id": "755567b3-1a7e-4491-b088-09f34f7e4f08",
+                    "Id": "487f5cdf-49fc-4f18-b3fc-d39e3203f0ea",
                     "IdText": "B-T"
                 }
             ],
@@ -52,7 +53,7 @@
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -80,13 +81,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "0169b4cd-e797-453b-94e1-a2b85cb84511",
+                    "Id": "1d02414f-702c-4b3a-b957-4515a21e9ae4",
                     "IdText": "R-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "845c173d-9975-4512-9305-a7888ce2b7ba",
+                    "Id": "a0e6bce9-6eb2-4a51-8ad9-9f397dbb8a80",
                     "IdText": "B-T"
                 }
             ],
@@ -94,7 +95,20 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "DynlibApp",
@@ -127,13 +141,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "8786a4a0-e124-45e8-8851-f1ba72bcfdbf",
+                    "Id": "0f71446d-3469-444b-8dd3-5677ed2e977a",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "08484553-4c44-4187-a7fa-9df7ec36c92e",
+                    "Id": "7f1a8dd5-9672-49cd-983a-c69fc647e635",
                     "IdText": "R-L"
                 }
             ],
@@ -141,7 +155,92 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 1000,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_slave.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=aux_reader",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Scatter",
@@ -155,10 +254,10 @@
             "key": -11,
             "text": "Split MSList by line",
             "description": "",
-            "x": 593,
-            "y": 451,
-            "width": 200,
-            "height": 200,
+            "x": 456,
+            "y": 4,
+            "width": 444,
+            "height": 809,
             "collapsed": false,
             "showPorts": false,
             "streaming": false,
@@ -179,15 +278,15 @@
             "outputAppFields": [],
             "fields": [
                 {
-                    "text": "Number of copies",
-                    "name": "num_of_copies",
-                    "value": "1",
+                    "text": "Scatter Axis",
+                    "name": "scatter_axis",
+                    "value": "time",
                     "description": ""
                 },
                 {
-                    "text": "Scatter Axis",
-                    "name": "scatter_axis",
-                    "value": "",
+                    "text": "Number of copies",
+                    "name": "num_of_copies",
+                    "value": 3,
                     "description": ""
                 }
             ]
@@ -223,17 +322,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "8e1825da-dd21-43c3-b63c-7d43c1197ebd",
+                    "Id": "4b383657-82c7-4700-aa0d-04a9b2e82797",
                     "IdText": "B-T"
                 },
                 {
-                    "Id": "17ec8dc9-d3e3-4b3a-92b1-e20820cf664f",
+                    "Id": "57c8c55f-7ad6-4641-8ac1-0c93114d72a1",
                     "IdText": "L-R"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "1c54623e-1718-43dc-9a6c-635ae2efbbe5",
+                    "Id": "0b1d046d-8083-40b2-a637-3df0f4f0fe5b",
                     "IdText": "L-R"
                 }
             ],
@@ -241,7 +340,92 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_slave.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=admm_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "End",
@@ -273,7 +457,7 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "9ab681f9-ef76-4034-a176-181c28e2b2ab",
+                    "Id": "3ee0c88e-0003-4603-98cf-c4c69ce917de",
                     "IdText": "R-L"
                 }
             ],
@@ -314,13 +498,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "6247d905-6d4d-4ecd-ac9c-5cd0e3373731",
+                    "Id": "9475db91-600e-4297-af13-23bf8f8c9427",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "ebaaa0d8-0205-4a07-8698-1f96511ba75a",
+                    "Id": "af171364-185e-4191-8dff-79b9cef60734",
                     "IdText": "R-L"
                 }
             ],
@@ -328,12 +512,91 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "Arg01=/astrodata/sagecal/data/MSlist.txt.32",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -361,17 +624,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "b42bc922-6387-473b-bdea-11d2228228f1",
+                    "Id": "07c3d3c1-64ec-4b8b-ac57-3f169a0204e1",
                     "IdText": "R-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "7ee645c1-d927-4219-b6b7-faf176ecc69d",
+                    "Id": "cca37296-6dd9-4240-973a-8faf7b1a333d",
                     "IdText": "B-T"
                 },
                 {
-                    "Id": "c93166b4-c811-4e01-8a0c-d9b72464572d",
+                    "Id": "7f1ed190-8669-4cae-8c41-d65a32ec01cc",
                     "IdText": "R-L"
                 }
             ],
@@ -379,12 +642,25 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -412,13 +688,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "e9c0e8f1-5839-4e98-b271-6000dd059190",
+                    "Id": "55e00efb-45ac-41dd-9bb3-0029cf41ed63",
                     "IdText": "L-R"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "d8eed7e0-3094-45b0-93cf-4d042448fcf3",
+                    "Id": "2b76cdb0-2e2d-496b-87a8-385fccdeb63b",
                     "IdText": "B-T"
                 }
             ],
@@ -426,7 +702,20 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "DynlibApp",
@@ -458,13 +747,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "a8825fda-ec5a-4aae-bf65-20130be4f03c",
+                    "Id": "4ee0a501-03c6-457c-8c5c-020bd7c43c92",
                     "IdText": "R-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "401df2a4-a22a-46cd-95d7-f325cbfb7946",
+                    "Id": "7bede395-0f1e-4063-8912-7afcae6398c1",
                     "IdText": "B-T"
                 }
             ],
@@ -472,12 +761,97 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_master.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=admm_master",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params_master.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -504,17 +878,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "45ac4d23-ded0-4cbc-b8a2-06f756afbe25",
+                    "Id": "fbbb4d16-97de-42be-b3c3-c20ab73ac43c",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "01a1c542-7caf-4b4d-9bdc-71c35a357e20",
+                    "Id": "11367c2d-5993-48c9-91d0-393846ccd400",
                     "IdText": "L-R"
                 },
                 {
-                    "Id": "af83f4b2-e183-44da-b983-33f250595972",
+                    "Id": "3583c9a0-f103-48cc-a8c2-613e2733b656",
                     "IdText": "B-T"
                 }
             ],
@@ -522,7 +896,20 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Loop",
@@ -536,10 +923,10 @@
             "key": -19,
             "text": "Timeslot",
             "description": "",
-            "x": 933,
-            "y": 595,
-            "width": 200,
-            "height": 200,
+            "x": 839,
+            "y": 333,
+            "width": 362,
+            "height": 558,
             "collapsed": false,
             "showPorts": false,
             "streaming": false,
@@ -558,12 +945,19 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 4,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -591,13 +985,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "cdf86c94-6acf-4c54-a522-cd0a03eb168f",
+                    "Id": "d6be06a3-89cd-44f2-8dff-52f4fc5390a9",
                     "IdText": "R-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "8fef4b9c-9797-4d51-b831-b553b0bed6e7",
+                    "Id": "9ac2ec6b-7868-461d-97a3-92cd560bd1d7",
                     "IdText": "R-L"
                 }
             ],
@@ -605,7 +999,20 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "DynlibApp",
@@ -638,17 +1045,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "041a114c-bb1d-417e-b80d-287528c10868",
+                    "Id": "f4580a51-9ef8-4119-940d-40af600e5e66",
                     "IdText": "R-L"
                 },
                 {
-                    "Id": "01c68feb-ebf9-4067-bc13-769f398a762c",
+                    "Id": "765d8151-e062-4759-87f2-e5a79bb2d206",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "d24178f5-aa1c-42da-aac4-d1ff34da16ca",
+                    "Id": "4ad2090f-3d02-4b2c-9ccb-d01743da20bb",
                     "IdText": "B-R"
                 }
             ],
@@ -656,7 +1063,92 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_master.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=fratio_master",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params_master.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Loop",
@@ -670,10 +1162,10 @@
             "key": -22,
             "text": "Timeslot",
             "description": "",
-            "x": 600,
-            "y": 597,
-            "width": 200,
-            "height": 200,
+            "x": 463,
+            "y": 333,
+            "width": 474,
+            "height": 539,
             "collapsed": false,
             "showPorts": false,
             "streaming": false,
@@ -693,7 +1185,14 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 4,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "DynlibApp",
@@ -726,13 +1225,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "f22f5029-6849-493a-9604-5b1480490f1b",
+                    "Id": "92b182fb-5d19-4efa-baef-ba080e4e15df",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "ae4beeaf-5c4f-4ab2-a6c8-07d973bd41eb",
+                    "Id": "466ae0b2-53a7-49d9-a146-006233020193",
                     "IdText": "R-L"
                 }
             ],
@@ -740,12 +1239,97 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_slave.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=fratio_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -773,17 +1357,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "e1fffabf-a4dc-4186-b5b2-5fef08415111",
+                    "Id": "6a81a1dc-87dc-40c6-ab9d-02834b1ba330",
                     "IdText": "R-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "09ea3918-2086-4221-b979-925291f2ed5d",
+                    "Id": "6b992c17-b4e6-47ad-bafb-aab384d9bce5",
                     "IdText": "B-T"
                 },
                 {
-                    "Id": "8fd04ca6-19b8-445f-aeb2-9be697538423",
+                    "Id": "c3c6e5ec-ce69-4261-9d24-a425b4260b1e",
                     "IdText": "R-L"
                 }
             ],
@@ -791,7 +1375,20 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Loop",
@@ -805,10 +1402,10 @@
             "key": -27,
             "text": "Admm",
             "description": "",
-            "x": 525,
-            "y": 656,
-            "width": 200,
-            "height": 200,
+            "x": 449,
+            "y": 487,
+            "width": 344,
+            "height": 323,
             "collapsed": false,
             "showPorts": false,
             "streaming": false,
@@ -828,7 +1425,14 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "DynlibApp",
@@ -861,13 +1465,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "1fdf96ad-c991-4e49-a3f4-80aca0f54c0b",
+                    "Id": "ff8e283d-0f59-4d6f-9260-3be16e537353",
                     "IdText": "L-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "9beb80e9-00d4-475b-a030-151832f696c7",
+                    "Id": "ab45d228-5ca4-4ced-a78e-6eab0ef8fd7a",
                     "IdText": "R-L"
                 }
             ],
@@ -875,12 +1479,97 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_slave.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=sagefit_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -908,17 +1597,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "d6a8b6b6-ebcf-48c0-acdb-bda37c4024dc",
+                    "Id": "0f25a27e-36ab-44dd-a55f-cfa972f0e3c8",
                     "IdText": "R-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "8967bacf-1db9-4da7-95bd-5bbbcdefcb2e",
+                    "Id": "3060a9ea-ca58-462d-baa4-8029b21eb172",
                     "IdText": "R-L"
                 },
                 {
-                    "Id": "434d3062-3621-40e6-81d7-46e66cf484d9",
+                    "Id": "512a147b-1c7c-465f-bb14-e70ae88e4818",
                     "IdText": "B-T"
                 }
             ],
@@ -926,12 +1615,25 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -959,13 +1661,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "36b8c7ba-4e50-4432-9084-99ff20f1c968",
+                    "Id": "3a74cd0a-2587-4e49-ad3a-8b7fd187e781",
                     "IdText": "B-R"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "6e994630-1d9a-44ee-99cb-2c8e8ed206e0",
+                    "Id": "9d55eb3a-4108-45f2-b955-ff3340ae4451",
                     "IdText": "B-T"
                 }
             ],
@@ -973,7 +1675,20 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Loop",
@@ -987,10 +1702,10 @@
             "key": -31,
             "text": "Admm",
             "description": "",
-            "x": 921,
-            "y": 623,
-            "width": 200,
-            "height": 200,
+            "x": 839,
+            "y": 503,
+            "width": 248,
+            "height": 232,
             "collapsed": false,
             "showPorts": false,
             "streaming": false,
@@ -1010,7 +1725,14 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "DynlibApp",
@@ -1043,17 +1765,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "fc5e6b2f-d422-4c69-a4cc-ec87101adab1",
+                    "Id": "47b3732a-8157-43cb-9db2-05433d459a7f",
                     "IdText": "R-L"
                 },
                 {
-                    "Id": "d12516de-9cfd-4357-8e99-b6015d28985e",
+                    "Id": "4da3603b-c2a9-4f6b-ac9d-7b690b6621fe",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "24cb931d-2256-4dfd-81a6-ba4b527cea27",
+                    "Id": "8029560d-cd01-401b-9b58-4ba5cc75cf62",
                     "IdText": "R-T"
                 }
             ],
@@ -1061,12 +1783,97 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_master.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=update_z_master",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params_master.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -1094,17 +1901,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "9f4140af-be94-4936-b046-44324400a7fe",
+                    "Id": "6c7fc504-d6ca-4a74-810a-bf53e0b9fac3",
                     "IdText": "R-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "104e17e9-feb3-4480-b45f-9ec88737267e",
+                    "Id": "2c5ffffd-c68c-48b8-8c01-e6d94dff345c",
                     "IdText": "L-R"
                 },
                 {
-                    "Id": "d4e8e003-a6e9-430b-8f07-57f8348a51c9",
+                    "Id": "9dded6fe-ad18-4af7-b054-d8e3e5a0b1b2",
                     "IdText": "B-T"
                 }
             ],
@@ -1112,7 +1919,20 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "DynlibApp",
@@ -1145,17 +1965,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "c3cbabd4-d8e8-4fad-925a-9c2730466a41",
+                    "Id": "88c447b1-4144-4eb3-b396-4be409d74bf3",
                     "IdText": "L-R"
                 },
                 {
-                    "Id": "0390c36a-87f5-4540-b9a7-35e45e0c4f55",
+                    "Id": "3d47af66-abc5-4719-93ac-80355da073b3",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "6ae3ee2c-546c-4eaa-9b4b-651d7ab16bb6",
+                    "Id": "29013e02-af5f-477d-84bc-7657922b5ca3",
                     "IdText": "L-L"
                 }
             ],
@@ -1163,7 +1983,92 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_slave.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=update_y_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "DynlibApp",
@@ -1196,17 +2101,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "8b9a5d81-578a-4cd6-9e7e-b89f5b966bc2",
+                    "Id": "f6f45610-b167-4842-82d4-8923707d68ce",
                     "IdText": "B-T"
                 },
                 {
-                    "Id": "1aee2f22-0da3-4d6b-b30a-1231adf72ab0",
+                    "Id": "9ffe486e-68ea-4e1e-a59a-83f611f30a16",
                     "IdText": "R-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "7e04d445-9bd3-4588-affa-bbf490444da1",
+                    "Id": "6ab2a60b-1d24-4853-b3c1-7c5a4eaba655",
                     "IdText": "R-L"
                 }
             ],
@@ -1214,7 +2119,92 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_master.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=write_z_master",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params_master.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "DynlibApp",
@@ -1247,13 +2237,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "c6f7fd57-9723-4bc1-8fe8-96c3e8bde12b",
+                    "Id": "de2db19c-744d-4bb1-8830-f5a99777120f",
                     "IdText": "R-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "b48122fa-634a-46cc-8c4b-259b33fb0e4c",
+                    "Id": "82a53f06-d62a-42b8-aca6-02088ec5b016",
                     "IdText": "B-T"
                 }
             ],
@@ -1261,12 +2251,97 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_slave.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=write_residual_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -1294,13 +2369,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "ade761be-236f-4149-aec1-1c2398870a07",
+                    "Id": "733de0c9-114f-43a6-a0cf-3560655135e5",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "ba503f42-f2d4-4625-ac69-0f20b018ee37",
+                    "Id": "dfd7a447-220e-4d91-afe7-5adfa417d9e1",
                     "IdText": "R-L"
                 }
             ],
@@ -1308,12 +2383,25 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -1341,13 +2429,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "00122b32-fe5a-474c-80dd-aa0c28e467c6",
+                    "Id": "46d5ea1e-453a-4fdc-a029-c5e125394f0c",
                     "IdText": "L-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "c485758e-229b-4841-954e-ce362f632dca",
+                    "Id": "486d7657-6078-479e-a6dc-0d9d77248418",
                     "IdText": "R-L"
                 }
             ],
@@ -1355,7 +2443,20 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "DynlibApp",
@@ -1388,13 +2489,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "954c6e95-1263-4446-b01c-3ab0bc73ce51",
+                    "Id": "482254a8-a54e-42d6-9016-67d5a93b38fc",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "0f28faed-3fb7-4d32-9aa1-27d36de02e86",
+                    "Id": "c4f93b71-0a54-4fab-8590-379f3eca9b3d",
                     "IdText": "L-R"
                 }
             ],
@@ -1402,12 +2503,97 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/astrodata/sagecal/build/bin/libsagecal_slave.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "func=coh_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "cmdfile=/astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -1435,13 +2621,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "e7935c9b-ad30-45f9-b817-0066c0d515bd",
+                    "Id": "841eb0c9-18d1-4416-9bb8-69e45e10ea4e",
                     "IdText": "L-R"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "f3bc93b4-e2e3-48dc-9547-c1014b3f846b",
+                    "Id": "bd1c9fd8-9cef-4068-a920-6f122ca89edf",
                     "IdText": "L-T"
                 }
             ],
@@ -1449,189 +2635,202 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
         }
     ],
     "linkDataArray": [
         {
             "from": -6,
-            "fromPort": "845c173d-9975-4512-9305-a7888ce2b7ba",
+            "fromPort": "a0e6bce9-6eb2-4a51-8ad9-9f397dbb8a80",
             "to": -4,
-            "toPort": "8786a4a0-e124-45e8-8851-f1ba72bcfdbf"
+            "toPort": "0f71446d-3469-444b-8dd3-5677ed2e977a"
         },
         {
             "from": -4,
-            "fromPort": "08484553-4c44-4187-a7fa-9df7ec36c92e",
+            "fromPort": "7f1a8dd5-9672-49cd-983a-c69fc647e635",
             "to": -13,
-            "toPort": "b42bc922-6387-473b-bdea-11d2228228f1"
+            "toPort": "07c3d3c1-64ec-4b8b-ac57-3f169a0204e1"
         },
         {
             "from": -1,
-            "fromPort": "755567b3-1a7e-4491-b088-09f34f7e4f08",
+            "fromPort": "487f5cdf-49fc-4f18-b3fc-d39e3203f0ea",
             "to": -3,
-            "toPort": "6247d905-6d4d-4ecd-ac9c-5cd0e3373731"
+            "toPort": "9475db91-600e-4297-af13-23bf8f8c9427"
         },
         {
             "from": -3,
-            "fromPort": "ebaaa0d8-0205-4a07-8698-1f96511ba75a",
+            "fromPort": "af171364-185e-4191-8dff-79b9cef60734",
             "to": -6,
-            "toPort": "0169b4cd-e797-453b-94e1-a2b85cb84511"
+            "toPort": "1d02414f-702c-4b3a-b957-4515a21e9ae4"
         },
         {
             "from": -13,
-            "fromPort": "7ee645c1-d927-4219-b6b7-faf176ecc69d",
+            "fromPort": "cca37296-6dd9-4240-973a-8faf7b1a333d",
             "to": -8,
-            "toPort": "8e1825da-dd21-43c3-b63c-7d43c1197ebd"
+            "toPort": "4b383657-82c7-4700-aa0d-04a9b2e82797"
         },
         {
             "from": -18,
-            "fromPort": "01a1c542-7caf-4b4d-9bdc-71c35a357e20",
+            "fromPort": "11367c2d-5993-48c9-91d0-393846ccd400",
             "to": -8,
-            "toPort": "17ec8dc9-d3e3-4b3a-92b1-e20820cf664f"
+            "toPort": "57c8c55f-7ad6-4641-8ac1-0c93114d72a1"
         },
         {
             "from": -20,
-            "fromPort": "8fef4b9c-9797-4d51-b831-b553b0bed6e7",
+            "fromPort": "9ac2ec6b-7868-461d-97a3-92cd560bd1d7",
             "to": -2,
-            "toPort": "9ab681f9-ef76-4034-a176-181c28e2b2ab"
+            "toPort": "3ee0c88e-0003-4603-98cf-c4c69ce917de"
         },
         {
             "from": -21,
-            "fromPort": "d24178f5-aa1c-42da-aac4-d1ff34da16ca",
+            "fromPort": "4ad2090f-3d02-4b2c-9ccb-d01743da20bb",
             "to": -30,
-            "toPort": "36b8c7ba-4e50-4432-9084-99ff20f1c968"
+            "toPort": "3a74cd0a-2587-4e49-ad3a-8b7fd187e781"
         },
         {
             "from": -14,
-            "fromPort": "d8eed7e0-3094-45b0-93cf-4d042448fcf3",
+            "fromPort": "2b76cdb0-2e2d-496b-87a8-385fccdeb63b",
             "to": -23,
-            "toPort": "f22f5029-6849-493a-9604-5b1480490f1b"
+            "toPort": "92b182fb-5d19-4efa-baef-ba080e4e15df"
         },
         {
             "from": -23,
-            "fromPort": "ae4beeaf-5c4f-4ab2-a6c8-07d973bd41eb",
+            "fromPort": "466ae0b2-53a7-49d9-a146-006233020193",
             "to": -26,
-            "toPort": "e1fffabf-a4dc-4186-b5b2-5fef08415111"
+            "toPort": "6a81a1dc-87dc-40c6-ab9d-02834b1ba330"
         },
         {
             "from": -28,
-            "fromPort": "9beb80e9-00d4-475b-a030-151832f696c7",
+            "fromPort": "ab45d228-5ca4-4ced-a78e-6eab0ef8fd7a",
             "to": -29,
-            "toPort": "d6a8b6b6-ebcf-48c0-acdb-bda37c4024dc"
+            "toPort": "0f25a27e-36ab-44dd-a55f-cfa972f0e3c8"
         },
         {
             "from": -33,
-            "fromPort": "104e17e9-feb3-4480-b45f-9ec88737267e",
+            "fromPort": "2c5ffffd-c68c-48b8-8c01-e6d94dff345c",
             "to": -34,
-            "toPort": "c3cbabd4-d8e8-4fad-925a-9c2730466a41"
+            "toPort": "88c447b1-4144-4eb3-b396-4be409d74bf3"
         },
         {
             "from": -33,
-            "fromPort": "d4e8e003-a6e9-430b-8f07-57f8348a51c9",
+            "fromPort": "9dded6fe-ad18-4af7-b054-d8e3e5a0b1b2",
             "to": -35,
-            "toPort": "8b9a5d81-578a-4cd6-9e7e-b89f5b966bc2"
+            "toPort": "f6f45610-b167-4842-82d4-8923707d68ce"
         },
         {
             "from": -35,
-            "fromPort": "7e04d445-9bd3-4588-affa-bbf490444da1",
+            "fromPort": "6ab2a60b-1d24-4853-b3c1-7c5a4eaba655",
             "to": -20,
-            "toPort": "cdf86c94-6acf-4c54-a522-cd0a03eb168f"
+            "toPort": "d6be06a3-89cd-44f2-8dff-52f4fc5390a9"
         },
         {
             "from": -36,
-            "fromPort": "b48122fa-634a-46cc-8c4b-259b33fb0e4c",
+            "fromPort": "82a53f06-d62a-42b8-aca6-02088ec5b016",
             "to": -37,
-            "toPort": "ade761be-236f-4149-aec1-1c2398870a07"
+            "toPort": "733de0c9-114f-43a6-a0cf-3560655135e5"
         },
         {
             "from": -38,
-            "fromPort": "c485758e-229b-4841-954e-ce362f632dca",
+            "fromPort": "486d7657-6078-479e-a6dc-0d9d77248418",
             "to": -36,
-            "toPort": "c6f7fd57-9723-4bc1-8fe8-96c3e8bde12b"
+            "toPort": "de2db19c-744d-4bb1-8830-f5a99777120f"
         },
         {
             "from": -37,
-            "fromPort": "ba503f42-f2d4-4625-ac69-0f20b018ee37",
+            "fromPort": "dfd7a447-220e-4d91-afe7-5adfa417d9e1",
             "to": -35,
-            "toPort": "1aee2f22-0da3-4d6b-b30a-1231adf72ab0"
+            "toPort": "9ffe486e-68ea-4e1e-a59a-83f611f30a16"
         },
         {
             "from": -26,
-            "fromPort": "09ea3918-2086-4221-b979-925291f2ed5d",
+            "fromPort": "6b992c17-b4e6-47ad-bafb-aab384d9bce5",
             "to": -43,
-            "toPort": "954c6e95-1263-4446-b01c-3ab0bc73ce51"
+            "toPort": "482254a8-a54e-42d6-9016-67d5a93b38fc"
         },
         {
             "from": -44,
-            "fromPort": "f3bc93b4-e2e3-48dc-9547-c1014b3f846b",
+            "fromPort": "bd1c9fd8-9cef-4068-a920-6f122ca89edf",
             "to": -28,
-            "toPort": "1fdf96ad-c991-4e49-a3f4-80aca0f54c0b"
+            "toPort": "ff8e283d-0f59-4d6f-9260-3be16e537353"
         },
         {
             "from": -13,
-            "fromPort": "c93166b4-c811-4e01-8a0c-d9b72464572d",
+            "fromPort": "7f1ed190-8669-4cae-8c41-d65a32ec01cc",
             "to": -16,
-            "toPort": "a8825fda-ec5a-4aae-bf65-20130be4f03c"
+            "toPort": "4ee0a501-03c6-457c-8c5c-020bd7c43c92"
         },
         {
             "from": -26,
-            "fromPort": "8fd04ca6-19b8-445f-aeb2-9be697538423",
+            "fromPort": "c3c6e5ec-ce69-4261-9d24-a425b4260b1e",
             "to": -21,
-            "toPort": "041a114c-bb1d-417e-b80d-287528c10868"
+            "toPort": "f4580a51-9ef8-4119-940d-40af600e5e66"
         },
         {
             "from": -18,
-            "fromPort": "af83f4b2-e183-44da-b983-33f250595972",
+            "fromPort": "3583c9a0-f103-48cc-a8c2-613e2733b656",
             "to": -21,
-            "toPort": "01c68feb-ebf9-4067-bc13-769f398a762c"
+            "toPort": "765d8151-e062-4759-87f2-e5a79bb2d206"
         },
         {
             "from": -29,
-            "fromPort": "8967bacf-1db9-4da7-95bd-5bbbcdefcb2e",
+            "fromPort": "3060a9ea-ca58-462d-baa4-8029b21eb172",
             "to": -32,
-            "toPort": "fc5e6b2f-d422-4c69-a4cc-ec87101adab1"
+            "toPort": "47b3732a-8157-43cb-9db2-05433d459a7f"
         },
         {
             "from": -30,
-            "fromPort": "6e994630-1d9a-44ee-99cb-2c8e8ed206e0",
+            "fromPort": "9d55eb3a-4108-45f2-b955-ff3340ae4451",
             "to": -32,
-            "toPort": "d12516de-9cfd-4357-8e99-b6015d28985e"
+            "toPort": "4da3603b-c2a9-4f6b-ac9d-7b690b6621fe"
         },
         {
             "from": -8,
-            "fromPort": "1c54623e-1718-43dc-9a6c-635ae2efbbe5",
+            "fromPort": "0b1d046d-8083-40b2-a637-3df0f4f0fe5b",
             "to": -14,
-            "toPort": "e9c0e8f1-5839-4e98-b271-6000dd059190"
+            "toPort": "55e00efb-45ac-41dd-9bb3-0029cf41ed63"
         },
         {
             "from": -43,
-            "fromPort": "0f28faed-3fb7-4d32-9aa1-27d36de02e86",
+            "fromPort": "c4f93b71-0a54-4fab-8590-379f3eca9b3d",
             "to": -44,
-            "toPort": "e7935c9b-ad30-45f9-b817-0066c0d515bd"
+            "toPort": "841eb0c9-18d1-4416-9bb8-69e45e10ea4e"
         },
         {
             "from": -32,
-            "fromPort": "24cb931d-2256-4dfd-81a6-ba4b527cea27",
+            "fromPort": "8029560d-cd01-401b-9b58-4ba5cc75cf62",
             "to": -33,
-            "toPort": "9f4140af-be94-4936-b046-44324400a7fe"
+            "toPort": "6c7fc504-d6ca-4a74-810a-bf53e0b9fac3"
         },
         {
             "from": -16,
-            "fromPort": "401df2a4-a22a-46cd-95d7-f325cbfb7946",
+            "fromPort": "7bede395-0f1e-4063-8912-7afcae6398c1",
             "to": -18,
-            "toPort": "45ac4d23-ded0-4cbc-b8a2-06f756afbe25"
+            "toPort": "fbbb4d16-97de-42be-b3c3-c20ab73ac43c"
         },
         {
             "from": -29,
-            "fromPort": "434d3062-3621-40e6-81d7-46e66cf484d9",
+            "fromPort": "512a147b-1c7c-465f-bb14-e70ae88e4818",
             "to": -34,
-            "toPort": "0390c36a-87f5-4540-b9a7-35e45e0c4f55"
+            "toPort": "3d47af66-abc5-4719-93ac-80355da073b3"
         },
         {
             "from": -34,
-            "fromPort": "6ae3ee2c-546c-4eaa-9b4b-651d7ab16bb6",
+            "fromPort": "29013e02-af5f-477d-84bc-7657922b5ca3",
             "to": -38,
-            "toPort": "00122b32-fe5a-474c-80dd-aa0c28e467c6"
+            "toPort": "46d5ea1e-453a-4fdc-a029-c5e125394f0c"
         }
     ]
 }

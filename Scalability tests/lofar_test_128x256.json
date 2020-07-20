@@ -2,6 +2,7 @@
     "modelData": {
         "fileType": "graph",
         "repoService": "Unknown",
+        "repoBranch": "",
         "repo": "",
         "filePath": "/Users/james/working/update-logical-graphs/../daliuge-logical-graphs/Scalability tests/lofar_test_128x256.json",
         "sha": "",
@@ -54,7 +55,7 @@
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -82,11 +83,11 @@
             "inputPorts": [],
             "outputPorts": [
                 {
-                    "Id": "e066e4d6-6e7e-4bf4-82ac-8eb541d065dd",
+                    "Id": "1dc41f4b-884a-4c2a-9c3d-7b9381bfc7fa",
                     "IdText": "B-L"
                 },
                 {
-                    "Id": "44f57ed8-d302-48a7-86bd-50ea5b488ce0",
+                    "Id": "a0d8f1bc-c70c-4a0b-819a-2267e8e31176",
                     "IdText": "B-L"
                 }
             ],
@@ -99,7 +100,7 @@
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -127,7 +128,7 @@
             "inputPorts": [],
             "outputPorts": [
                 {
-                    "Id": "96e61484-42eb-4153-990b-95d27fd710ee",
+                    "Id": "3c09d672-adb3-4f41-9cb1-097381e579fc",
                     "IdText": "L-R"
                 }
             ],
@@ -168,11 +169,11 @@
             "inputPorts": [],
             "outputPorts": [
                 {
-                    "Id": "eaff9970-c37d-471a-ad74-b798a72097c0",
+                    "Id": "c68b7599-9bb3-4bd1-9b0f-aaaef1314b3f",
                     "IdText": "B-T"
                 },
                 {
-                    "Id": "272001f5-69dd-4f63-9f87-3f5c6d0f3639",
+                    "Id": "49152281-d95e-4b27-9fa4-175f191a3662",
                     "IdText": "B-T"
                 }
             ],
@@ -183,13 +184,13 @@
             "fields": []
         },
         {
-            "category": "Unknown",
-            "categoryType": "Unknown",
+            "category": "Variables",
+            "categoryType": "Other",
             "isData": false,
             "isGroup": false,
             "canHaveInputs": false,
             "canHaveOutputs": false,
-            "color": "#FF66CC",
+            "color": "#C10000",
             "drawOrderHint": 0,
             "key": -54,
             "text": "Global Variables",
@@ -216,12 +217,37 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "num_sub_band",
+                    "name": "num_sub_band",
+                    "value": "80",
+                    "description": ""
+                },
+                {
+                    "text": "num_beam",
+                    "name": "num_beam",
+                    "value": "2",
+                    "description": ""
+                },
+                {
+                    "text": "num_time_slice",
+                    "name": "num_time_slice",
+                    "value": "9",
+                    "description": ""
+                },
+                {
+                    "text": "num_subb_per_img",
+                    "name": "num_subb_per_img",
+                    "value": "10",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -249,13 +275,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "41be6e27-c6dc-4fd8-b42f-cc31a07db041",
+                    "Id": "4841244c-2ddc-49e9-897b-2e80fecb0a6c",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "cbeaae7c-e6aa-470f-9efe-74d4b5b38809",
+                    "Id": "a3992a06-bc80-408d-bee5-66754907452e",
                     "IdText": "B-T"
                 }
             ],
@@ -263,12 +289,19 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 100,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -296,13 +329,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "4314c91a-3d8b-4167-a7c7-ef8c9e37cf21",
+                    "Id": "99033adf-4362-4777-8f3d-f9fd223a0df7",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "cacaac70-fb31-4057-9508-d2271947f1b2",
+                    "Id": "871ee4a0-4706-4955-8af0-41aacdcc0fa0",
                     "IdText": "B-T"
                 }
             ],
@@ -310,7 +343,14 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 25,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Scatter",
@@ -324,10 +364,10 @@
             "key": -38,
             "text": "Scatter by Channel",
             "description": "",
-            "x": 559,
-            "y": 577,
-            "width": 200,
-            "height": 200,
+            "x": 442,
+            "y": 225,
+            "width": 432,
+            "height": 680,
             "collapsed": false,
             "showPorts": false,
             "streaming": false,
@@ -349,15 +389,21 @@
             "outputAppFields": [],
             "fields": [
                 {
-                    "text": "Number of copies",
-                    "name": "num_of_copies",
-                    "value": "1",
+                    "text": "Number of Splits",
+                    "name": "num_of_splits",
+                    "value": "256",
                     "description": ""
                 },
                 {
                     "text": "Scatter Axis",
                     "name": "scatter_axis",
-                    "value": "",
+                    "value": "frequency",
+                    "description": ""
+                },
+                {
+                    "text": "Number of copies",
+                    "name": "num_of_copies",
+                    "value": "1",
                     "description": ""
                 }
             ]
@@ -365,7 +411,7 @@
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -393,13 +439,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "26463ac1-e7e1-4edf-997e-5f34cca6392b",
+                    "Id": "f534af82-4d72-44a6-8445-06f43f8cd343",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "f237b899-4dc0-4145-b9f2-656c37a494a2",
+                    "Id": "596396fd-5ea7-4c34-8610-808bab0af255",
                     "IdText": "B-T"
                 }
             ],
@@ -407,12 +453,19 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 100,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -440,13 +493,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "9dfacb88-8235-476b-ab22-ac953563f700",
+                    "Id": "05e5aacc-0d7a-4c53-821c-dea6cfa8f3c3",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "24ff18da-eb53-469a-95da-70881a029fca",
+                    "Id": "c13a9a54-aa12-4059-8c0a-6c4975836029",
                     "IdText": "B-T"
                 }
             ],
@@ -454,7 +507,14 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 100,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Component",
@@ -487,13 +547,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "aad442a1-0f0e-4147-83c7-485f0e87c232",
+                    "Id": "065471f8-254f-44c6-9644-ab6a40041c84",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "76572c8c-cdbc-4710-a843-e294cfd0b914",
+                    "Id": "24307df6-8e67-45b1-a5f9-3b7c0b0702e2",
                     "IdText": "B-T"
                 }
             ],
@@ -501,7 +561,74 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "MS_path=/home/lofar",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Component",
@@ -534,13 +661,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "55af82cd-f22c-48a7-89e9-340c424afe3a",
+                    "Id": "140fec34-09ba-4604-8934-d6ec6b24629e",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "6bd80d39-3001-40d6-bb66-6a1ebcdc1935",
+                    "Id": "69837944-7ac3-47c6-a8fd-8f5bf0164979",
                     "IdText": "B-T"
                 }
             ],
@@ -548,12 +675,79 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "MS_path=/home/lofar",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -581,13 +775,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "f48ce63e-475e-4367-9cda-3c3f65233111",
+                    "Id": "1106aa1a-cfcd-47d1-8ab2-0a563525b2af",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "97d6a1e1-474f-45cd-81c4-7af60609339b",
+                    "Id": "cfc4976a-331e-41ff-a884-f037e73713de",
                     "IdText": "B-T"
                 }
             ],
@@ -595,7 +789,14 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 100,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Component",
@@ -628,21 +829,21 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "792ddbfe-05d0-4e1c-8362-635c456028a3",
+                    "Id": "90b386df-4223-4f68-9a5d-0dc58a69403c",
                     "IdText": "B-T"
                 },
                 {
-                    "Id": "2ba734fe-79f9-4835-a453-782c2f6ce662",
+                    "Id": "4a1c6662-9a69-4707-bf96-3c69d3b9b9c3",
                     "IdText": "B-L"
                 },
                 {
-                    "Id": "14ae0f73-5484-4538-a38a-38afcccfec26",
+                    "Id": "10946bbc-1a57-4347-8e7a-01a03c2e3def",
                     "IdText": "L-R"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "055a0d16-4296-4cf4-a2c9-a8e9b6352683",
+                    "Id": "1f37f0d5-6fef-46d8-8467-5b43fbeef8df",
                     "IdText": "B-T"
                 }
             ],
@@ -650,7 +851,74 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Component",
@@ -683,21 +951,21 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "e6a43242-98ff-48bd-bf36-ee48cca01cc7",
+                    "Id": "19301b61-4056-401f-a5ba-0631cff0c9fc",
                     "IdText": "B-T"
                 },
                 {
-                    "Id": "8c5e1408-2c97-49f3-ae82-e2b4294a1287",
+                    "Id": "660b8515-9867-4c71-b78e-f378fd54b9e6",
                     "IdText": "B-L"
                 },
                 {
-                    "Id": "cb5f80c0-2c9d-4582-82dc-c3ac63130b61",
+                    "Id": "a0cc017a-0dcd-463f-bae1-42e70d9dea9f",
                     "IdText": "B-R"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "8d3a59b7-d053-4b0f-8b3c-450feea0577b",
+                    "Id": "049d5884-42ce-4321-add5-a0de12c39cac",
                     "IdText": "B-T"
                 }
             ],
@@ -705,12 +973,79 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -738,13 +1073,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "4c325dbb-4c93-483e-a1ea-4c1e51cb377a",
+                    "Id": "c5d6199c-8613-4042-8872-f7963fe4d0bc",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "d491d7f7-5547-4e5f-b42e-729a0cfe9923",
+                    "Id": "474e62ff-7228-42ba-ba1e-5395284cd836",
                     "IdText": "B-T"
                 }
             ],
@@ -752,12 +1087,19 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 25,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -785,13 +1127,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "be031119-4f3c-49a6-b21b-ae7e1bccf3d3",
+                    "Id": "29cd1b53-c8ff-42fa-86e0-a676115ab129",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "cae84aa7-e111-4156-ac6f-f24d3b2d4243",
+                    "Id": "459480b9-bb53-4735-be60-1189e6a9edcc",
                     "IdText": "R-L"
                 }
             ],
@@ -799,7 +1141,14 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Scatter",
@@ -813,10 +1162,10 @@
             "key": -12,
             "text": "Scatter by Timeslice",
             "description": "",
-            "x": 573,
-            "y": 564,
-            "width": 200,
-            "height": 200,
+            "x": 418,
+            "y": 129,
+            "width": 551,
+            "height": 810,
             "collapsed": false,
             "showPorts": false,
             "streaming": false,
@@ -837,15 +1186,21 @@
             "outputAppFields": [],
             "fields": [
                 {
-                    "text": "Number of copies",
-                    "name": "num_of_copies",
-                    "value": "1",
+                    "text": "Number of Splits",
+                    "name": "num_of_splits",
+                    "value": "128",
                     "description": ""
                 },
                 {
                     "text": "Scatter Axis",
                     "name": "scatter_axis",
-                    "value": "",
+                    "value": "time",
+                    "description": ""
+                },
+                {
+                    "text": "Number of copies",
+                    "name": "num_of_copies",
+                    "value": "1",
                     "description": ""
                 }
             ]
@@ -881,13 +1236,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "99cbd183-8b09-400d-9157-d47e0b91bfbd",
+                    "Id": "8ce4c3f4-c0f9-47d4-96a8-f8ab4a6483ac",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "30666722-79f8-4daa-9ce0-bb27c60c2f86",
+                    "Id": "cbc3fad6-72ff-47ed-9cf9-8516b71f4186",
                     "IdText": "B-T"
                 }
             ],
@@ -895,7 +1250,74 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Component",
@@ -928,17 +1350,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "f4409aca-5adb-4730-9d3d-14ebfca6948e",
+                    "Id": "fec612d0-fdba-4641-ad1b-2e18d3bfab50",
                     "IdText": "R-L"
                 },
                 {
-                    "Id": "dcc9ef5f-6ee3-48ac-988e-0c1083be9fba",
+                    "Id": "5d7a9441-9f71-4a6c-81a0-40dfa47cd686",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "8dfb5126-6c97-4891-959f-21448b057795",
+                    "Id": "29f1e829-6b3f-4aa0-a016-59a51203725f",
                     "IdText": "B-T"
                 }
             ],
@@ -946,7 +1368,74 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 20,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "GroupBy",
@@ -978,13 +1467,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "d018ebf0-7bee-4e1e-9ff7-d7ebb92f0b77",
+                    "Id": "c44c86a5-b53e-4402-ba70-05ab06971a5d",
                     "IdText": "R-B"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "c675dc5c-603f-49b7-9935-1c698ef19a3a",
+                    "Id": "a5d2063a-783d-420a-8c33-850387dbb6b0",
                     "IdText": "R-T"
                 }
             ],
@@ -992,12 +1481,25 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Number of Inputs",
+                    "name": "num_of_inputs",
+                    "value": "${num_channel} * ${num_beam}",
+                    "description": ""
+                },
+                {
+                    "text": "Gather Axis",
+                    "name": "gather_axis",
+                    "value": "frequency",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -1025,13 +1527,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "9cf7cd0e-8b7b-4610-9cca-baac2bdfdaad",
+                    "Id": "c375a08c-8a19-4d82-b878-b2eae716978b",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "7448d16a-2409-4bf0-904a-64f2585c86c5",
+                    "Id": "446b0de3-1b5e-4f03-b2db-b8681611f5c4",
                     "IdText": "R-B"
                 }
             ],
@@ -1039,7 +1541,14 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 25,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Comment",
@@ -1088,7 +1597,7 @@
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -1115,21 +1624,21 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "2b2d1eec-405e-46f5-b8e8-20348651a55b",
+                    "Id": "13a7f4c9-39a3-4e01-896c-49b74c3c1929",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "80023fa6-9557-4c07-8b0d-b7eac07f5d41",
+                    "Id": "2192d076-5b6e-435a-978c-ee70aa6933d6",
                     "IdText": "R-T"
                 },
                 {
-                    "Id": "fba919e8-4219-4d78-afb0-a3f57fc1a117",
+                    "Id": "afb0b28f-b3f3-4632-833b-4a2aae067d7f",
                     "IdText": "B-R"
                 },
                 {
-                    "Id": "4091ef55-a36f-4c7e-a649-3dacc32e98f5",
+                    "Id": "1e29808f-f6e1-46d0-bdbc-dcfd0ed43b85",
                     "IdText": "L-R"
                 }
             ],
@@ -1169,13 +1678,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "fcf7b0e9-1d98-4fbe-978b-cc3914fae5f7",
+                    "Id": "01821c89-d5c0-4be7-ae3e-655d663e022e",
                     "IdText": "R-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "4aaf3406-8231-43a4-9f5b-ec7c082322b2",
+                    "Id": "9a403cad-25a9-4fc4-9c62-dd4c9b50108a",
                     "IdText": "B-T"
                 }
             ],
@@ -1183,12 +1692,79 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -1215,7 +1791,7 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "9040184d-ba79-41a8-a1b1-a8236380dbfb",
+                    "Id": "40cbb6ce-13f1-4a67-88e1-e1e9e05c7225",
                     "IdText": "B-T"
                 }
             ],
@@ -1256,13 +1832,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "5394f1b4-f9f5-472a-8b96-c0cd0c0c936c",
+                    "Id": "15d6cda5-5517-41a4-b607-2d470594d239",
                     "IdText": "L-R"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "ca506a7d-4c5d-4aa0-81f1-ddfeff660589",
+                    "Id": "7fc00430-f579-451f-afa2-8c097763bb75",
                     "IdText": "B-T"
                 }
             ],
@@ -1270,7 +1846,74 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Gather",
@@ -1284,10 +1927,10 @@
             "key": -41,
             "text": "Gather ",
             "description": "",
-            "x": 1311,
-            "y": 643,
-            "width": 200,
-            "height": 200,
+            "x": 1220,
+            "y": 375,
+            "width": 315,
+            "height": 520,
             "collapsed": false,
             "showPorts": false,
             "streaming": false,
@@ -1302,7 +1945,7 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "91e5a3c3-c639-4b0c-ae6d-b1951c0489f1",
+                    "Id": "a3807ac2-03af-42c1-9fe8-204f7b687873",
                     "IdText": "R-T"
                 }
             ],
@@ -1313,15 +1956,15 @@
             "outputAppFields": [],
             "fields": [
                 {
-                    "text": "Number of inputs",
+                    "text": "Number of Inputs",
                     "name": "num_of_inputs",
-                    "value": "1",
+                    "value": "2",
                     "description": ""
                 },
                 {
                     "text": "Gather Axis",
                     "name": "gather_axis",
-                    "value": "",
+                    "value": "group id",
                     "description": ""
                 }
             ]
@@ -1357,7 +2000,7 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "8704fd4d-3319-493c-9013-377cc03e8d25",
+                    "Id": "e376d2d6-fe34-43ea-be3a-bf8a5f2b2683",
                     "IdText": "T-B"
                 }
             ],
@@ -1366,12 +2009,79 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -1399,17 +2109,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "ccc2d900-7a5e-4ac5-973d-fb72218b96e9",
+                    "Id": "db7887d2-43e4-45c7-9b34-993a0830b9e3",
                     "IdText": "L-R"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "705bf1f5-2982-478b-a996-f908428f3e6f",
+                    "Id": "59e971a2-9f98-4ca2-b8b3-7c6586c57b94",
                     "IdText": "T-B"
                 },
                 {
-                    "Id": "99d008e3-536d-4b54-94a1-1cdd55d56fdf",
+                    "Id": "560c7e6d-e39e-40bd-abf4-b60bb80fccfa",
                     "IdText": "B-T"
                 }
             ],
@@ -1417,7 +2127,14 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Component",
@@ -1450,13 +2167,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "fffab64d-3d1e-49d6-8aa9-f9b346caa38e",
+                    "Id": "ba59c618-9fde-4209-9489-acf5d3fc02e5",
                     "IdText": "B-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "6706df26-093e-4ce2-af33-80da207aa11d",
+                    "Id": "ba108746-4955-4cf9-bc9a-99f6538fb0b5",
                     "IdText": "T-B"
                 }
             ],
@@ -1464,16 +2181,83 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 20,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
-            "category": "Unknown",
-            "categoryType": "Unknown",
+            "category": "Branch",
+            "categoryType": "Control",
             "isData": false,
             "isGroup": false,
-            "canHaveInputs": false,
-            "canHaveOutputs": false,
-            "color": "#FF66CC",
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#00BDA1",
             "drawOrderHint": 0,
             "key": -6,
             "text": "DD Cal \nDone?",
@@ -1497,17 +2281,17 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "d1eeac79-4ec5-462f-a256-9f01a55e5073",
+                    "Id": "1f6d07e0-717e-4fed-815b-ca7c88234433",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "a9f6bc2a-502a-4c76-893d-b026eeef924f",
+                    "Id": "db6969c2-4173-4ab5-9fd6-ae57d07fb6a9",
                     "IdText": "B-L"
                 },
                 {
-                    "Id": "63373514-e72a-4937-9993-ed172bce251a",
+                    "Id": "a16d1b44-0662-4515-8eb8-6e92ce3cf2c9",
                     "IdText": "L-T"
                 }
             ],
@@ -1548,13 +2332,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "e9dca321-a312-4def-9a88-29576c5f554b",
+                    "Id": "67b855a7-3997-44f6-acbe-9becd4bfb048",
                     "IdText": "B-T"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "12f4724a-3e87-4785-aa13-ea264718125d",
+                    "Id": "0b7f8076-0ac4-4622-9b0a-6617ed74f585",
                     "IdText": "L-R"
                 }
             ],
@@ -1562,7 +2346,80 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 50,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Loop",
@@ -1576,10 +2433,10 @@
             "key": -15,
             "text": "Loop",
             "description": "",
-            "x": 1311,
-            "y": 679,
-            "width": 200,
-            "height": 200,
+            "x": 1210,
+            "y": 452,
+            "width": 378,
+            "height": 446,
             "collapsed": false,
             "showPorts": false,
             "streaming": false,
@@ -1599,7 +2456,14 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 5,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "End",
@@ -1631,7 +2495,7 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "34ff2728-a167-4160-afed-9917c134ad2a",
+                    "Id": "877cafcd-039e-44f2-b7ee-8d1d092e707e",
                     "IdText": "L-T"
                 }
             ],
@@ -1645,7 +2509,7 @@
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -1673,7 +2537,7 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "868d6bf9-5f27-428f-910c-5cfd431d2ad4",
+                    "Id": "d2ee1719-4316-468d-91c8-a31708f04586",
                     "IdText": "T-B"
                 }
             ],
@@ -1682,7 +2546,20 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Component",
@@ -1716,7 +2593,7 @@
             "inputPorts": [],
             "outputPorts": [
                 {
-                    "Id": "37e9a40a-077d-468f-8118-90dd07612ab2",
+                    "Id": "7fb8b20c-5588-4ab7-a57c-146582078324",
                     "IdText": "R-L"
                 }
             ],
@@ -1724,12 +2601,85 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "category": "Memory",
             "categoryType": "Data",
-            "isData": false,
+            "isData": true,
             "isGroup": false,
             "canHaveInputs": true,
             "canHaveOutputs": true,
@@ -1757,13 +2707,13 @@
             "exitApplicationType": "None",
             "inputPorts": [
                 {
-                    "Id": "364519f2-dcce-40ca-9d86-85d23de1b194",
+                    "Id": "84c73173-b9dc-4d86-9f67-be4a41f2e1e6",
                     "IdText": "R-L"
                 }
             ],
             "outputPorts": [
                 {
-                    "Id": "6ffde724-38d5-438c-a058-0f94225bdfb8",
+                    "Id": "02cd2f34-d6e6-45a0-a30e-813833b215db",
                     "IdText": "B-T"
                 }
             ],
@@ -1771,207 +2721,220 @@
             "outputLocalPorts": [],
             "inputAppFields": [],
             "outputAppFields": [],
-            "fields": []
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
         }
     ],
     "linkDataArray": [
         {
             "from": -39,
-            "fromPort": "30666722-79f8-4daa-9ce0-bb27c60c2f86",
+            "fromPort": "cbc3fad6-72ff-47ed-9cf9-8516b71f4186",
             "to": -53,
-            "toPort": "be031119-4f3c-49a6-b21b-ae7e1bccf3d3"
+            "toPort": "29cd1b53-c8ff-42fa-86e0-a676115ab129"
         },
         {
             "from": -53,
-            "fromPort": "cae84aa7-e111-4156-ac6f-f24d3b2d4243",
+            "fromPort": "459480b9-bb53-4735-be60-1189e6a9edcc",
             "to": -55,
-            "toPort": "f4409aca-5adb-4730-9d3d-14ebfca6948e"
+            "toPort": "fec612d0-fdba-4641-ad1b-2e18d3bfab50"
         },
         {
             "from": -63,
-            "fromPort": "cbeaae7c-e6aa-470f-9efe-74d4b5b38809",
+            "fromPort": "a3992a06-bc80-408d-bee5-66754907452e",
             "to": -45,
-            "toPort": "792ddbfe-05d0-4e1c-8362-635c456028a3"
+            "toPort": "90b386df-4223-4f68-9a5d-0dc58a69403c"
         },
         {
             "from": -22,
-            "fromPort": "e066e4d6-6e7e-4bf4-82ac-8eb541d065dd",
+            "fromPort": "1dc41f4b-884a-4c2a-9c3d-7b9381bfc7fa",
             "to": -45,
-            "toPort": "2ba734fe-79f9-4835-a453-782c2f6ce662"
+            "toPort": "4a1c6662-9a69-4707-bf96-3c69d3b9b9c3"
         },
         {
             "from": -45,
-            "fromPort": "055a0d16-4296-4cf4-a2c9-a8e9b6352683",
+            "fromPort": "1f37f0d5-6fef-46d8-8467-5b43fbeef8df",
             "to": -36,
-            "toPort": "4314c91a-3d8b-4167-a7c7-ef8c9e37cf21"
+            "toPort": "99033adf-4362-4777-8f3d-f9fd223a0df7"
         },
         {
             "from": -36,
-            "fromPort": "cacaac70-fb31-4057-9508-d2271947f1b2",
+            "fromPort": "871ee4a0-4706-4955-8af0-41aacdcc0fa0",
             "to": -39,
-            "toPort": "99cbd183-8b09-400d-9157-d47e0b91bfbd"
+            "toPort": "8ce4c3f4-c0f9-47d4-96a8-f8ab4a6483ac"
         },
         {
             "from": -3,
-            "fromPort": "f237b899-4dc0-4145-b9f2-656c37a494a2",
+            "fromPort": "596396fd-5ea7-4c34-8610-808bab0af255",
             "to": -2,
-            "toPort": "aad442a1-0f0e-4147-83c7-485f0e87c232"
+            "toPort": "065471f8-254f-44c6-9644-ab6a40041c84"
         },
         {
             "from": -2,
-            "fromPort": "76572c8c-cdbc-4710-a843-e294cfd0b914",
+            "fromPort": "24307df6-8e67-45b1-a5f9-3b7c0b0702e2",
             "to": -63,
-            "toPort": "41be6e27-c6dc-4fd8-b42f-cc31a07db041"
+            "toPort": "4841244c-2ddc-49e9-897b-2e80fecb0a6c"
         },
         {
             "from": -42,
-            "fromPort": "24ff18da-eb53-469a-95da-70881a029fca",
+            "fromPort": "c13a9a54-aa12-4059-8c0a-6c4975836029",
             "to": -43,
-            "toPort": "55af82cd-f22c-48a7-89e9-340c424afe3a"
+            "toPort": "140fec34-09ba-4604-8934-d6ec6b24629e"
         },
         {
             "from": -43,
-            "fromPort": "6bd80d39-3001-40d6-bb66-6a1ebcdc1935",
+            "fromPort": "69837944-7ac3-47c6-a8fd-8f5bf0164979",
             "to": -44,
-            "toPort": "f48ce63e-475e-4367-9cda-3c3f65233111"
+            "toPort": "1106aa1a-cfcd-47d1-8ab2-0a563525b2af"
         },
         {
             "from": -44,
-            "fromPort": "97d6a1e1-474f-45cd-81c4-7af60609339b",
+            "fromPort": "cfc4976a-331e-41ff-a884-f037e73713de",
             "to": -46,
-            "toPort": "e6a43242-98ff-48bd-bf36-ee48cca01cc7"
+            "toPort": "19301b61-4056-401f-a5ba-0631cff0c9fc"
         },
         {
             "from": -22,
-            "fromPort": "44f57ed8-d302-48a7-86bd-50ea5b488ce0",
+            "fromPort": "a0d8f1bc-c70c-4a0b-819a-2267e8e31176",
             "to": -46,
-            "toPort": "8c5e1408-2c97-49f3-ae82-e2b4294a1287"
+            "toPort": "660b8515-9867-4c71-b78e-f378fd54b9e6"
         },
         {
             "from": -46,
-            "fromPort": "8d3a59b7-d053-4b0f-8b3c-450feea0577b",
+            "fromPort": "049d5884-42ce-4321-add5-a0de12c39cac",
             "to": -47,
-            "toPort": "4c325dbb-4c93-483e-a1ea-4c1e51cb377a"
+            "toPort": "c5d6199c-8613-4042-8872-f7963fe4d0bc"
         },
         {
             "from": -47,
-            "fromPort": "d491d7f7-5547-4e5f-b42e-729a0cfe9923",
+            "fromPort": "474e62ff-7228-42ba-ba1e-5395284cd836",
             "to": -55,
-            "toPort": "dcc9ef5f-6ee3-48ac-988e-0c1083be9fba"
+            "toPort": "5d7a9441-9f71-4a6c-81a0-40dfa47cd686"
         },
         {
             "from": -55,
-            "fromPort": "8dfb5126-6c97-4891-959f-21448b057795",
+            "fromPort": "29f1e829-6b3f-4aa0-a016-59a51203725f",
             "to": -57,
-            "toPort": "9cf7cd0e-8b7b-4610-9cca-baac2bdfdaad"
+            "toPort": "c375a08c-8a19-4d82-b878-b2eae716978b"
         },
         {
             "from": -57,
-            "fromPort": "7448d16a-2409-4bf0-904a-64f2585c86c5",
+            "fromPort": "446b0de3-1b5e-4f03-b2db-b8681611f5c4",
             "to": -14,
-            "toPort": "d018ebf0-7bee-4e1e-9ff7-d7ebb92f0b77"
+            "toPort": "c44c86a5-b53e-4402-ba70-05ab06971a5d"
         },
         {
             "from": -52,
-            "fromPort": "4aaf3406-8231-43a4-9f5b-ec7c082322b2",
+            "fromPort": "9a403cad-25a9-4fc4-9c62-dd4c9b50108a",
             "to": -33,
-            "toPort": "9040184d-ba79-41a8-a1b1-a8236380dbfb"
+            "toPort": "40cbb6ce-13f1-4a67-88e1-e1e9e05c7225"
         },
         {
             "from": -5,
-            "fromPort": "96e61484-42eb-4153-990b-95d27fd710ee",
+            "fromPort": "3c09d672-adb3-4f41-9cb1-097381e579fc",
             "to": -51,
-            "toPort": "5394f1b4-f9f5-472a-8b96-c0cd0c0c936c"
+            "toPort": "15d6cda5-5517-41a4-b607-2d470594d239"
         },
         {
             "from": -51,
-            "fromPort": "ca506a7d-4c5d-4aa0-81f1-ddfeff660589",
+            "fromPort": "7fc00430-f579-451f-afa2-8c097763bb75",
             "to": -35,
-            "toPort": "2b2d1eec-405e-46f5-b8e8-20348651a55b"
+            "toPort": "13a7f4c9-39a3-4e01-896c-49b74c3c1929"
         },
         {
             "from": -35,
-            "fromPort": "80023fa6-9557-4c07-8b0d-b7eac07f5d41",
+            "fromPort": "2192d076-5b6e-435a-978c-ee70aa6933d6",
             "to": -52,
-            "toPort": "fcf7b0e9-1d98-4fbe-978b-cc3914fae5f7"
+            "toPort": "01821c89-d5c0-4be7-ae3e-655d663e022e"
         },
         {
             "from": -35,
-            "fromPort": "fba919e8-4219-4d78-afb0-a3f57fc1a117",
+            "fromPort": "afb0b28f-b3f3-4632-833b-4a2aae067d7f",
             "to": -46,
-            "toPort": "cb5f80c0-2c9d-4582-82dc-c3ac63130b61"
+            "toPort": "a0cc017a-0dcd-463f-bae1-42e70d9dea9f"
         },
         {
             "from": -35,
-            "fromPort": "4091ef55-a36f-4c7e-a649-3dacc32e98f5",
+            "fromPort": "1e29808f-f6e1-46d0-bdbc-dcfd0ed43b85",
             "to": -45,
-            "toPort": "14ae0f73-5484-4538-a38a-38afcccfec26"
+            "toPort": "10946bbc-1a57-4347-8e7a-01a03c2e3def"
         },
         {
             "from": -1,
-            "fromPort": "eaff9970-c37d-471a-ad74-b798a72097c0",
+            "fromPort": "c68b7599-9bb3-4bd1-9b0f-aaaef1314b3f",
             "to": -3,
-            "toPort": "26463ac1-e7e1-4edf-997e-5f34cca6392b"
+            "toPort": "f534af82-4d72-44a6-8445-06f43f8cd343"
         },
         {
             "from": -1,
-            "fromPort": "272001f5-69dd-4f63-9f87-3f5c6d0f3639",
+            "fromPort": "49152281-d95e-4b27-9fa4-175f191a3662",
             "to": -42,
-            "toPort": "9dfacb88-8235-476b-ab22-ac953563f700"
+            "toPort": "05e5aacc-0d7a-4c53-821c-dea6cfa8f3c3"
         },
         {
             "from": -14,
-            "fromPort": "c675dc5c-603f-49b7-9935-1c698ef19a3a",
+            "fromPort": "a5d2063a-783d-420a-8c33-850387dbb6b0",
             "to": -41,
-            "toPort": "91e5a3c3-c639-4b0c-ae6d-b1951c0489f1"
+            "toPort": "a3807ac2-03af-42c1-9fe8-204f7b687873"
         },
         {
             "from": -48,
-            "fromPort": "705bf1f5-2982-478b-a996-f908428f3e6f",
+            "fromPort": "59e971a2-9f98-4ca2-b8b3-7c6586c57b94",
             "to": -49,
-            "toPort": "8704fd4d-3319-493c-9013-377cc03e8d25"
+            "toPort": "e376d2d6-fe34-43ea-be3a-bf8a5f2b2683"
         },
         {
             "from": -48,
-            "fromPort": "99d008e3-536d-4b54-94a1-1cdd55d56fdf",
+            "fromPort": "560c7e6d-e39e-40bd-abf4-b60bb80fccfa",
             "to": -6,
-            "toPort": "d1eeac79-4ec5-462f-a256-9f01a55e5073"
+            "toPort": "1f6d07e0-717e-4fed-815b-ca7c88234433"
         },
         {
             "from": -6,
-            "fromPort": "a9f6bc2a-502a-4c76-893d-b026eeef924f",
+            "fromPort": "db6969c2-4173-4ab5-9fd6-ae57d07fb6a9",
             "to": -56,
-            "toPort": "fffab64d-3d1e-49d6-8aa9-f9b346caa38e"
+            "toPort": "ba59c618-9fde-4209-9489-acf5d3fc02e5"
         },
         {
             "from": -40,
-            "fromPort": "12f4724a-3e87-4785-aa13-ea264718125d",
+            "fromPort": "0b7f8076-0ac4-4622-9b0a-6617ed74f585",
             "to": -48,
-            "toPort": "ccc2d900-7a5e-4ac5-973d-fb72218b96e9"
+            "toPort": "db7887d2-43e4-45c7-9b34-993a0830b9e3"
         },
         {
             "from": -6,
-            "fromPort": "63373514-e72a-4937-9993-ed172bce251a",
+            "fromPort": "a16d1b44-0662-4515-8eb8-6e92ce3cf2c9",
             "to": -9,
-            "toPort": "34ff2728-a167-4160-afed-9917c134ad2a"
+            "toPort": "877cafcd-039e-44f2-b7ee-8d1d092e707e"
         },
         {
             "from": -56,
-            "fromPort": "6706df26-093e-4ce2-af33-80da207aa11d",
+            "fromPort": "ba108746-4955-4cf9-bc9a-99f6538fb0b5",
             "to": -50,
-            "toPort": "868d6bf9-5f27-428f-910c-5cfd431d2ad4"
+            "toPort": "d2ee1719-4316-468d-91c8-a31708f04586"
         },
         {
             "from": -37,
-            "fromPort": "37e9a40a-077d-468f-8118-90dd07612ab2",
+            "fromPort": "7fb8b20c-5588-4ab7-a57c-146582078324",
             "to": -58,
-            "toPort": "364519f2-dcce-40ca-9d86-85d23de1b194"
+            "toPort": "84c73173-b9dc-4d86-9f67-be4a41f2e1e6"
         },
         {
             "from": -58,
-            "fromPort": "6ffde724-38d5-438c-a058-0f94225bdfb8",
+            "fromPort": "02cd2f34-d6e6-45a0-a30e-813833b215db",
             "to": -40,
-            "toPort": "e9dca321-a312-4def-9a88-29576c5f554b"
+            "toPort": "67b855a7-3997-44f6-acbe-9becd4bfb048"
         }
     ]
 }
