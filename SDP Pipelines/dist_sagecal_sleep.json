@@ -1,61 +1,2490 @@
-{ "class": "go.GraphLinksModel",
-  "linkFromPortIdProperty": "fromPort",
-  "linkToPortIdProperty": "toPort",
-  "nodeDataArray": [ 
-{"category":"SplitData", "text":"Frequency Split Per Slave", "isGroup":true, "num_of_copies":7, "scatter_axis":"time", "key":-11, "loc":"-1219.396522837455 -1175.2502990722655"},
-{"category":"memory", "text":"iodata", "data_volume":5, "group_end":0, "key":-5, "loc":"-1312.3281249999998 -1390.9999999999995", "group":-11},
-{"category":"Loop", "text":"Timeslots iteration", "isGroup":true, "num_of_iter":2, "key":-14, "loc":"-1219.396522837455 -984.2502990722656", "group":-11},
-{"category":"memory", "text":"ADMMReady", "data_volume":5, "group_end":1, "key":-15, "loc":"-1301.3281250000005 -1059.9999999999995", "group":-14},
-{"category":"Loop", "text":"ADMM iteration", "isGroup":true, "num_of_iter":3, "key":-16, "loc":"-1154.328125 -1018.5", "group":-14},
-{"category":"memory", "text":"Y_n_J", "data_volume":5, "group_end":1, "key":-19, "loc":"-1158.3281249999998 -1044.0000000000007", "group":-16},
-{"category":"memory", "text":"Y n Residule", "data_volume":5, "group_end":1, "key":-28, "loc":"-1154.328125 -933", "group":-16},
-{"category":"memory", "text":"Slave\nReady", "data_volume":5, "group_end":0, "key":-12, "loc":"-1312.328125 -1239.9999999999993", "group":-11},
-{"category":"memory", "text":"Regularisation \nFactor Array", "data_volume":5, "group_end":0, "key":-9, "loc":"-836.3281250000005 -1234.9999999999998"},
-{"category":"Loop", "text":"Master TImeslot iter", "isGroup":true, "num_of_iter":2, "key":-21, "loc":"-794.1166973114016 -1005"},
-{"category":"Loop", "text":"Master ADMM iter", "isGroup":true, "num_of_iter":3, "key":-20, "loc":"-847.0790987014773 -1006.0000000000002", "group":-21},
-{"category":"memory", "text":"B_n_Z", "data_volume":5, "group_end":1, "key":-23, "loc":"-864.3281250000003 -976.0000000000002", "group":-20},
-{"category":"memory", "text":"ST", "data_volume":5, "group_end":0, "key":-26, "loc":"-751.328125 -1114", "group":-21},
-{"category":"End", "text":"End", "key":-2, "loc":"-756.328125 -809"},
-{"category":"Comment", "text":"Stepwise \nlocking for \ninter-loop \nedges", "key":-34, "loc":"-986.328125 -1093"},
-{"category":"Comment", "text":"Distributed SAGECAL", "key":-17, "loc":"-1527.328125 -1545.0000000000007"},
-{"category":"Comment", "text":"Data Distribution\n\nEach slave handles 1 MS file, thus #_of_ms_files ==  #_of_slaves, and iterates the MS file one chunk (of time intervals) at a time\n\nThe chunk size (aka tilesz) determines the total number of  Timeslots (NTime) iterations\n\nEach Slave reads in \ntilesz x Nbaseline x Nchan samples per \"time\" chunk, each sample has 4 complex numbers, i.e. 8 double numbers.\n", "key":-33, "loc":"-1508.328125 -1245"},
-{"category":"memory", "text":"MSFile", "data_volume":5, "group_end":0, "key":-35, "loc":"-1311.328125 -1533", "group":-11},
-{"category":"Component", "text":"Slave_reader", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-3, "loc":"-1310.328125 -1463", "group":-11},
-{"category":"Component", "text":"Slave\nADMM", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-36, "loc":"-1311.328125 -1321", "group":-11},
-{"category":"Component", "text":"Master\nADMM", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-37, "loc":"-836.328125 -1390"},
-{"category":"Component", "text":"PrepareADMM", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-38, "loc":"-1298.328125 -1145", "group":-14},
-{"category":"Component", "text":"Write \nResidual", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-39, "loc":"-1285.328125 -938", "group":-14},
-{"category":"memory", "text":"ResidualFile", "data_volume":5, "group_end":1, "key":-40, "loc":"-1272.328125 -847", "group":-14},
-{"category":"Component", "text":"Sagefit", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-41, "loc":"-1157.328125 -1104", "group":-16},
-{"category":"Component", "text":"Update Y", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-42, "loc":"-1156.328125 -1000", "group":-16},
-{"category":"Component", "text":"Start iter", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-43, "loc":"-836.328125 -1114", "group":-21},
-{"category":"Component", "text":"Update Z", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-44, "loc":"-861.328125 -1036", "group":-20},
-{"category":"Component", "text":"Write Z", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-45, "loc":"-858.328125 -896", "group":-21},
-{"category":"memory", "text":"SolutionFile", "data_volume":5, "group_end":1, "key":-30, "loc":"-742.328125 -901", "group":-21}
- ],
-  "linkDataArray": [ 
-{"from":-35, "to":-3, "fromPort":"B", "toPort":"T", "points":[-1311.328125,-1516.5622756958007,-1311.328125,-1506.5622756958007,-1311.328125,-1498,-1310.328125,-1498,-1310.328125,-1489.4377243041993,-1310.328125,-1479.4377243041993]},
-{"from":-41, "to":-19, "fromPort":"B", "toPort":"T", "points":[-1157.328125,-1087.5622756958007,-1157.328125,-1077.5622756958007,-1157.328125,-1074.0000000000005,-1158.3281249999998,-1074.0000000000005,-1158.3281249999998,-1070.4377243042,-1158.3281249999998,-1060.4377243042]},
-{"from":-42, "to":-28, "fromPort":"B", "toPort":"T", "points":[-1156.328125,-983.5622756958008,-1156.328125,-973.5622756958008,-1156.328125,-966.5,-1154.328125,-966.5,-1154.328125,-959.4377243041993,-1154.328125,-949.4377243041993]},
-{"from":-15, "to":-41, "fromPort":"R", "toPort":"L", "points":[-1234.828693389893,-1059.9999999999995,-1224.828693389893,-1059.9999999999995,-1211.7385692596438,-1059.9999999999995,-1211.7385692596438,-1104,-1198.6484451293945,-1104,-1188.6484451293945,-1104]},
-{"from":-28, "to":-39, "fromPort":"L", "toPort":"R", "points":[-1219.8164615631104,-933,-1229.8164615631104,-933,-1234.0613870620728,-933,-1234.0613870620728,-938.0000000000001,-1238.3063125610352,-938.0000000000001,-1248.3063125610352,-938.0000000000001]},
-{"from":-3, "to":-5, "fromPort":"B", "toPort":"T", "points":[-1310.328125,-1446.5622756958007,-1310.328125,-1436.5622756958007,-1310.328125,-1426.9999999999998,-1312.3281249999998,-1426.9999999999998,-1312.3281249999998,-1417.4377243041988,-1312.3281249999998,-1407.4377243041988]},
-{"from":-5, "to":-36, "fromPort":"B", "toPort":"T", "points":[-1312.3281249999998,-1374.5622756958003,-1312.3281249999998,-1364.5622756958003,-1312.3281249999998,-1359.9688621520995,-1311.328125,-1359.9688621520995,-1311.328125,-1355.3754486083985,-1311.328125,-1345.3754486083985]},
-{"from":-36, "to":-12, "fromPort":"B", "toPort":"T", "points":[-1311.328125,-1296.6245513916017,-1311.328125,-1286.6245513916017,-1311.328125,-1280.4999999999998,-1312.328125,-1280.4999999999998,-1312.328125,-1274.3754486083978,-1312.328125,-1264.3754486083978]},
-{"from":-12, "to":-38, "fromPort":"B", "toPort":"T", "points":[-1312.328125,-1215.624551391601,-1312.328125,-1205.624551391601,-1312.328125,-1188.5311378479,-1298.328125,-1188.5311378479,-1298.328125,-1171.4377243041993,-1298.328125,-1161.4377243041993]},
-{"from":-5, "to":-37, "fromPort":"R", "toPort":"L", "points":[-1274.8462181091306,-1390.9999999999995,-1264.8462181091306,-1390.9999999999995,-1264.8462181091306,-1390,-1264.8462181091306,-1390,-877.2296905517578,-1390,-867.2296905517578,-1390]},
-{"from":-37, "to":-9, "fromPort":"B", "toPort":"T", "points":[-836.328125,-1365.6245513916017,-836.328125,-1355.6245513916017,-836.328125,-1312.5,-836.3281250000005,-1312.5,-836.3281250000005,-1269.3754486083983,-836.3281250000005,-1259.3754486083983]},
-{"from":-23, "to":-45, "fromPort":"B", "toPort":"T", "points":[-864.3281250000003,-959.5622756958011,-864.3281250000003,-949.5622756958011,-864.3281250000003,-940,-858.328125,-940,-858.328125,-922.4377243041993,-858.328125,-912.4377243041993]},
-{"from":-26, "to":-44, "fromPort":"B", "toPort":"R", "points":[-751.328125,-1097.5622756958007,-751.328125,-1087.5622756958007,-751.328125,-1084,-751.328125,-1084,-751.328125,-1036,-812.6778182983398,-1036,-822.6778182983398,-1036]},
-{"from":-19, "to":-44, "fromPort":"R", "toPort":"L", "points":[-1120.8327903747556,-1044.0000000000007,-1110.8327903747556,-1044.0000000000007,-1100,-1044.0000000000007,-1100,-1044.0000000000007,-1052,-1044.0000000000007,-1052,-1028,-932,-1028,-932,-1036,-909.9784317016602,-1036,-899.9784317016602,-1036]},
-{"from":-23, "to":-42, "fromPort":"L", "toPort":"R", "points":[-902.8300724029544,-976.0000000000002,-912.8300724029544,-976.0000000000002,-924,-976.0000000000002,-924,-1000,-1107.2662200927734,-1000,-1117.2662200927734,-1000]},
-{"from":-9, "to":-43, "fromPort":"B", "toPort":"T", "points":[-836.3281250000005,-1210.6245513916015,-836.3281250000005,-1200.6245513916015,-836.328125,-1200.6245513916015,-836.328125,-1200.6245513916015,-836.328125,-1140.4377243041993,-836.328125,-1130.4377243041993]},
-{"from":-40, "to":-45, "fromPort":"R", "toPort":"B", "points":[-1207.8553562164307,-847,-1197.8553562164307,-847,-1188,-847,-1188,-847,-858.328125,-847,-858.328125,-869.5622756958008,-858.328125,-879.5622756958008]},
-{"from":-35, "to":-38, "fromPort":"R", "toPort":"R", "points":[-1271.3005752563477,-1533,-1261.3005752563477,-1533,-1231.3564224243164,-1533,-1231.3564224243164,-1339,-1231.3564224243164,-1145,-1241.3564224243164,-1145]},
-{"from":-38, "to":-15, "fromPort":"B", "toPort":"T", "points":[-1298.328125,-1128.5622756958007,-1298.328125,-1118.5622756958007,-1298.328125,-1102.4999999999998,-1301.3281250000005,-1102.4999999999998,-1301.3281250000005,-1086.4377243041988,-1301.3281250000005,-1076.4377243041988]},
-{"from":-39, "to":-40, "fromPort":"B", "toPort":"T", "points":[-1285.328125,-913.6245513916017,-1285.328125,-903.6245513916017,-1285.328125,-888.5311378479005,-1272.328125,-888.5311378479005,-1272.328125,-873.4377243041993,-1272.328125,-863.4377243041993]},
-{"from":-43, "to":-26, "fromPort":"R", "toPort":"L", "points":[-800.1295013427734,-1114,-790.1295013427734,-1114,-786.8328714370728,-1114,-786.8328714370728,-1114,-783.5362415313721,-1114,-773.5362415313721,-1114]},
-{"from":-44, "to":-23, "fromPort":"B", "toPort":"T", "points":[-861.328125,-1019.5622756958007,-861.328125,-1009.5622756958007,-861.328125,-1006.0000000000001,-864.3281250000003,-1006.0000000000001,-864.3281250000003,-1002.4377243041995,-864.3281250000003,-992.4377243041995]},
-{"from":-45, "to":-30, "fromPort":"R", "toPort":"L", "points":[-826.3421020507812,-896,-816.3421020507812,-896,-815.7975149154663,-896,-815.7975149154663,-901,-815.2529277801514,-901,-805.2529277801514,-901]},
-{"from":-30, "to":-2, "fromPort":"B", "toPort":"T", "points":[-742.328125,-884.5622756958008,-742.328125,-874.5622756958008,-742.328125,-868,-742.328125,-868,-742.328125,-860,-756.328125,-860,-756.328125,-839,-756.328125,-829]}
- ]}
+{
+    "modelData": {
+        "fileType": "graph",
+        "repoService": "Unknown",
+        "repoBranch": "",
+        "repo": "",
+        "filePath": "/Users/james/working/update-logical-graphs/../daliuge-logical-graphs/SDP Pipelines/dist_sagecal_sleep.json",
+        "sha": "",
+        "git_url": ""
+    },
+    "nodeDataArray": [
+        {
+            "category": "Scatter",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#DDAD00",
+            "drawOrderHint": 0,
+            "key": -11,
+            "text": "Frequency Split Per Slave",
+            "description": "",
+            "x": 491,
+            "y": 16,
+            "width": 341,
+            "height": 861,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Scatter Axis",
+                    "name": "scatter_axis",
+                    "value": "time",
+                    "description": ""
+                },
+                {
+                    "text": "Number of copies",
+                    "name": "num_of_copies",
+                    "value": 7,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -5,
+            "text": "iodata",
+            "description": "",
+            "x": 515,
+            "y": 255,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "c3778dc3-cb59-4491-9c5f-a32e4395b655",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d6d9e3c4-c242-467f-8288-c6b37b6cafff",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "f2b9e9d4-d117-45a8-8f67-4f0da582dd4d",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -14,
+            "text": "Timeslots iteration",
+            "description": "",
+            "x": 502,
+            "y": 404,
+            "width": 395,
+            "height": 458,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 2,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -15,
+            "text": "ADMMReady",
+            "description": "",
+            "x": 526,
+            "y": 586,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -14,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "21c8acb4-4019-4aff-885a-374589054345",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "1e0da744-4552-4404-b638-3df69cfd600a",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -16,
+            "text": "ADMM iteration",
+            "description": "",
+            "x": 645,
+            "y": 445,
+            "width": 250,
+            "height": 331,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -14,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 3,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -19,
+            "text": "Y_n_J",
+            "description": "",
+            "x": 669,
+            "y": 601,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -16,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "a58b22c3-e11f-4380-8f28-8d6ee8526bad",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "5e27e20e-f78b-41ff-9f7b-bc522db4330d",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -28,
+            "text": "Y n Residule",
+            "description": "",
+            "x": 673,
+            "y": 712,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -16,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "f6fbd605-2caa-41d8-9acf-6b6ee4b83417",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "adafda66-23c4-4ad4-83fe-0bbf77a17ece",
+                    "IdText": "L-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -12,
+            "text": "Slave\nReady",
+            "description": "",
+            "x": 515,
+            "y": 406,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "c46e2d9f-9a29-4956-a420-4cf6f4ca254b",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "2ee4b474-9852-4958-9912-17232b345f81",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -9,
+            "text": "Regularisation \nFactor Array",
+            "description": "",
+            "x": 991,
+            "y": 411,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "e22edf6d-8330-4ed1-9dae-22398aa181dc",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "bdbd5910-72c6-4020-9651-32c9ad486ade",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -21,
+            "text": "Master TImeslot iter",
+            "description": "",
+            "x": 945,
+            "y": 435,
+            "width": 270,
+            "height": 426,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 2,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -20,
+            "text": "Master ADMM iter",
+            "description": "",
+            "x": 939,
+            "y": 513,
+            "width": 251,
+            "height": 220,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -21,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 3,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -23,
+            "text": "B_n_Z",
+            "description": "",
+            "x": 963,
+            "y": 669,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -20,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "c50f36ab-5f86-4eea-ac5f-ff10c5412f9f",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "e4713251-1ff5-4de4-8181-d1b4dbe50d46",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "92c73778-a64c-4d55-834f-3cfdbf890a59",
+                    "IdText": "L-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -26,
+            "text": "ST",
+            "description": "",
+            "x": 1076,
+            "y": 531,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -21,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "e6922de6-15e6-45a4-a5e9-fcf85d06cd8a",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d81becb9-0046-4149-9fa9-24a9d74745fe",
+                    "IdText": "B-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "End",
+            "categoryType": "Control",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": false,
+            "color": "#CB4335",
+            "drawOrderHint": 0,
+            "key": -2,
+            "text": "End",
+            "description": "",
+            "x": 1071,
+            "y": 836,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "ef3af661-a773-47a9-9b9d-ad50f1ff72ea",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Comment",
+            "categoryType": "Other",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": false,
+            "canHaveOutputs": false,
+            "color": "#799938",
+            "drawOrderHint": 0,
+            "key": -34,
+            "text": "",
+            "description": "",
+            "x": 841,
+            "y": 552,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Comment",
+                    "name": "comment",
+                    "value": "Stepwise \nlocking for \ninter-loop \nedges",
+                    "description": "The text value of the comment"
+                }
+            ]
+        },
+        {
+            "category": "Comment",
+            "categoryType": "Other",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": false,
+            "canHaveOutputs": false,
+            "color": "#799938",
+            "drawOrderHint": 0,
+            "key": -17,
+            "text": "",
+            "description": "",
+            "x": 300,
+            "y": 100,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Comment",
+                    "name": "comment",
+                    "value": "Distributed SAGECAL",
+                    "description": "The text value of the comment"
+                }
+            ]
+        },
+        {
+            "category": "Comment",
+            "categoryType": "Other",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": false,
+            "canHaveOutputs": false,
+            "color": "#799938",
+            "drawOrderHint": 0,
+            "key": -33,
+            "text": "",
+            "description": "",
+            "x": 319,
+            "y": 400,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Comment",
+                    "name": "comment",
+                    "value": "Data Distribution\n\nEach slave handles 1 MS file, thus #_of_ms_files ==  #_of_slaves, and iterates the MS file one chunk (of time intervals) at a time\n\nThe chunk size (aka tilesz) determines the total number of  Timeslots (NTime) iterations\n\nEach Slave reads in \ntilesz x Nbaseline x Nchan samples per \"time\" chunk, each sample has 4 complex numbers, i.e. 8 double numbers.\n",
+                    "description": "The text value of the comment"
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -35,
+            "text": "MSFile",
+            "description": "",
+            "x": 516,
+            "y": 112,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "e5fc711b-a89d-4e8a-90f5-12a1b1509bdd",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "7e43f061-e522-4b43-9ad4-f6d08e1b38a8",
+                    "IdText": "R-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -3,
+            "text": "Slave_reader",
+            "description": "",
+            "x": 517,
+            "y": 182,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "c9772fbd-ac38-444a-bc71-be21c4a9bc91",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "bb4f5a15-d27e-429e-94dd-2f2b31a53671",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -36,
+            "text": "Slave\nADMM",
+            "description": "",
+            "x": 516,
+            "y": 324,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "2b3a705b-2f17-4b67-82ce-98fc1344d175",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "e1be53a2-a440-4e2f-9203-760ab288f926",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -37,
+            "text": "Master\nADMM",
+            "description": "",
+            "x": 991,
+            "y": 255,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "8e7a4aa1-42a2-459f-b469-8db3f0d91c45",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ebcf2baf-52a2-45c2-ae8c-eee0af1fa932",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -38,
+            "text": "PrepareADMM",
+            "description": "",
+            "x": 529,
+            "y": 500,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -14,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "3f805d39-3caa-4283-9363-7a9105c51c5e",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "8c9a6e25-f87e-481b-b494-d76a264d4cfa",
+                    "IdText": "R-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "fdd5e985-1066-44bb-b5a9-65cf09620b9e",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -39,
+            "text": "Write \nResidual",
+            "description": "",
+            "x": 542,
+            "y": 707,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -14,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "f453a391-57b6-4756-909d-a216c3b4710f",
+                    "IdText": "L-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "918b6e92-754a-4138-8b6e-1b5f757e2607",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -40,
+            "text": "ResidualFile",
+            "description": "",
+            "x": 555,
+            "y": 798,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -14,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d3e79fae-ee3b-4a8d-a50c-afb460508479",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "dd22b8f1-e68e-45f5-93ff-dcd83cc059ae",
+                    "IdText": "R-B"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -41,
+            "text": "Sagefit",
+            "description": "",
+            "x": 670,
+            "y": 541,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -16,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d64c5cfe-db12-4808-b1b0-5bc7b1b1a611",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "3d1dfe89-8de9-40d7-82af-49adbd4605fe",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -42,
+            "text": "Update Y",
+            "description": "",
+            "x": 671,
+            "y": 645,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -16,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "62578571-3dd6-4e91-a4cd-2c3785723597",
+                    "IdText": "L-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ee52c2f1-5533-4f3a-8075-06739f8c3c65",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -43,
+            "text": "Start iter",
+            "description": "",
+            "x": 991,
+            "y": 531,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -21,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "ca0fd672-7bf7-4e52-9ce7-a0145c116570",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "24613cc2-7a1e-429c-b296-49929c4c8e76",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -44,
+            "text": "Update Z",
+            "description": "",
+            "x": 966,
+            "y": 609,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -20,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "35b1df8f-a3a8-468b-a98a-fbc71f44f21f",
+                    "IdText": "B-R"
+                },
+                {
+                    "Id": "d1ee9111-ee03-41f6-a3ee-f71196e75498",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "10634791-e063-4e1f-9d88-973e4df254d2",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -45,
+            "text": "Write Z",
+            "description": "",
+            "x": 969,
+            "y": 749,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -21,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "4e417192-93d0-4472-a7ad-68e5f4d3f44a",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "7a42b9c3-4022-4507-99d9-8ab10bdc3969",
+                    "IdText": "R-B"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ba2bbf53-436c-4799-98d0-982b7411ca6e",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -30,
+            "text": "SolutionFile",
+            "description": "",
+            "x": 1085,
+            "y": 744,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -21,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "1f975dad-b7b9-4315-b418-4325d1c3d8a2",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "8dd382bc-8243-43d1-af84-9d23bc7a4b93",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -35,
+            "fromPort": "e5fc711b-a89d-4e8a-90f5-12a1b1509bdd",
+            "to": -3,
+            "toPort": "c9772fbd-ac38-444a-bc71-be21c4a9bc91"
+        },
+        {
+            "from": -41,
+            "fromPort": "3d1dfe89-8de9-40d7-82af-49adbd4605fe",
+            "to": -19,
+            "toPort": "a58b22c3-e11f-4380-8f28-8d6ee8526bad"
+        },
+        {
+            "from": -42,
+            "fromPort": "ee52c2f1-5533-4f3a-8075-06739f8c3c65",
+            "to": -28,
+            "toPort": "f6fbd605-2caa-41d8-9acf-6b6ee4b83417"
+        },
+        {
+            "from": -15,
+            "fromPort": "1e0da744-4552-4404-b638-3df69cfd600a",
+            "to": -41,
+            "toPort": "d64c5cfe-db12-4808-b1b0-5bc7b1b1a611"
+        },
+        {
+            "from": -28,
+            "fromPort": "adafda66-23c4-4ad4-83fe-0bbf77a17ece",
+            "to": -39,
+            "toPort": "f453a391-57b6-4756-909d-a216c3b4710f"
+        },
+        {
+            "from": -3,
+            "fromPort": "bb4f5a15-d27e-429e-94dd-2f2b31a53671",
+            "to": -5,
+            "toPort": "c3778dc3-cb59-4491-9c5f-a32e4395b655"
+        },
+        {
+            "from": -5,
+            "fromPort": "d6d9e3c4-c242-467f-8288-c6b37b6cafff",
+            "to": -36,
+            "toPort": "2b3a705b-2f17-4b67-82ce-98fc1344d175"
+        },
+        {
+            "from": -36,
+            "fromPort": "e1be53a2-a440-4e2f-9203-760ab288f926",
+            "to": -12,
+            "toPort": "c46e2d9f-9a29-4956-a420-4cf6f4ca254b"
+        },
+        {
+            "from": -12,
+            "fromPort": "2ee4b474-9852-4958-9912-17232b345f81",
+            "to": -38,
+            "toPort": "3f805d39-3caa-4283-9363-7a9105c51c5e"
+        },
+        {
+            "from": -5,
+            "fromPort": "f2b9e9d4-d117-45a8-8f67-4f0da582dd4d",
+            "to": -37,
+            "toPort": "8e7a4aa1-42a2-459f-b469-8db3f0d91c45"
+        },
+        {
+            "from": -37,
+            "fromPort": "ebcf2baf-52a2-45c2-ae8c-eee0af1fa932",
+            "to": -9,
+            "toPort": "e22edf6d-8330-4ed1-9dae-22398aa181dc"
+        },
+        {
+            "from": -23,
+            "fromPort": "e4713251-1ff5-4de4-8181-d1b4dbe50d46",
+            "to": -45,
+            "toPort": "4e417192-93d0-4472-a7ad-68e5f4d3f44a"
+        },
+        {
+            "from": -26,
+            "fromPort": "d81becb9-0046-4149-9fa9-24a9d74745fe",
+            "to": -44,
+            "toPort": "35b1df8f-a3a8-468b-a98a-fbc71f44f21f"
+        },
+        {
+            "from": -19,
+            "fromPort": "5e27e20e-f78b-41ff-9f7b-bc522db4330d",
+            "to": -44,
+            "toPort": "d1ee9111-ee03-41f6-a3ee-f71196e75498"
+        },
+        {
+            "from": -23,
+            "fromPort": "92c73778-a64c-4d55-834f-3cfdbf890a59",
+            "to": -42,
+            "toPort": "62578571-3dd6-4e91-a4cd-2c3785723597"
+        },
+        {
+            "from": -9,
+            "fromPort": "bdbd5910-72c6-4020-9651-32c9ad486ade",
+            "to": -43,
+            "toPort": "ca0fd672-7bf7-4e52-9ce7-a0145c116570"
+        },
+        {
+            "from": -40,
+            "fromPort": "dd22b8f1-e68e-45f5-93ff-dcd83cc059ae",
+            "to": -45,
+            "toPort": "7a42b9c3-4022-4507-99d9-8ab10bdc3969"
+        },
+        {
+            "from": -35,
+            "fromPort": "7e43f061-e522-4b43-9ad4-f6d08e1b38a8",
+            "to": -38,
+            "toPort": "8c9a6e25-f87e-481b-b494-d76a264d4cfa"
+        },
+        {
+            "from": -38,
+            "fromPort": "fdd5e985-1066-44bb-b5a9-65cf09620b9e",
+            "to": -15,
+            "toPort": "21c8acb4-4019-4aff-885a-374589054345"
+        },
+        {
+            "from": -39,
+            "fromPort": "918b6e92-754a-4138-8b6e-1b5f757e2607",
+            "to": -40,
+            "toPort": "d3e79fae-ee3b-4a8d-a50c-afb460508479"
+        },
+        {
+            "from": -43,
+            "fromPort": "24613cc2-7a1e-429c-b296-49929c4c8e76",
+            "to": -26,
+            "toPort": "e6922de6-15e6-45a4-a5e9-fcf85d06cd8a"
+        },
+        {
+            "from": -44,
+            "fromPort": "10634791-e063-4e1f-9d88-973e4df254d2",
+            "to": -23,
+            "toPort": "c50f36ab-5f86-4eea-ac5f-ff10c5412f9f"
+        },
+        {
+            "from": -45,
+            "fromPort": "ba2bbf53-436c-4799-98d0-982b7411ca6e",
+            "to": -30,
+            "toPort": "1f975dad-b7b9-4315-b418-4325d1c3d8a2"
+        },
+        {
+            "from": -30,
+            "fromPort": "8dd382bc-8243-43d1-af84-9d23bc7a4b93",
+            "to": -2,
+            "toPort": "ef3af661-a773-47a9-9b9d-ad50f1ff72ea"
+        }
+    ]
+}

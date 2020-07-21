@@ -1,16 +1,461 @@
-{ "class": "go.GraphLinksModel",
-  "linkFromPortIdProperty": "fromPort",
-  "linkToPortIdProperty": "toPort",
-  "nodeDataArray": [ 
-{"category":"DynlibApp", "text":"DynLib", "execution_time":5, "num_cpus":1, "group_start":0, "libpath":"/Users/Chen/projects/dfms/lib/python2.7/site-packages/dfms-0.2.0.dev0+9e19fbc-py2.7.egg/test/apps/libdynlib_example.so", "Arg01":"print_stats=1", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-5, "loc":"-309.49830102233017 -1043.696022033691"},
-{"category":"memory", "text":"Output \nMemory", "data_volume":5, "group_end":0, "key":-3, "loc":"-308.8618218635825 -914.6960220336908"},
-{"category":"file", "text":"FileDrop", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"/tmp/ddout", "dirname":"", "key":-7, "loc":"-309.4981938825463 -1181.6960220336914"},
-{"category":"BashShellApp", "text":"DD", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"dd", "Arg02":"if=/dev/urandom", "Arg03":"of=%o[-7]", "Arg04":"bs=1024  count=10240", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-4, "loc":"-471.49824745243825 -1268.6960220336914"},
-{"category":"file", "text":"OutputFile", "data_volume":5, "group_end":0, "check_filepath_exists":"0", "filepath":"/tmp/dynlib_out", "dirname":"", "key":-6, "loc":"-132.49824745243825 -904.6960226893425"}
- ],
-  "linkDataArray": [ 
-{"from":-5, "to":-3, "fromPort":"B", "toPort":"T", "points":[-309.4983010223301,-1012.3792877197266,-309.4983010223301,-1002.3792877197266,-309.4983010223301,-975.7253791809082,-308.8618218635826,-975.7253791809082,-308.8618218635826,-949.0714706420898,-308.8618218635826,-939.0714706420898]},
-{"from":-7, "to":-5, "fromPort":"B", "toPort":"T", "points":[-309.4981938825463,-1154.6331481933594,-309.4981938825463,-1144.6331481933594,-309.4981938825463,-1114.8229522705078,-309.4983010223301,-1114.8229522705078,-309.4983010223301,-1085.0127563476562,-309.4983010223301,-1075.0127563476562]},
-{"from":-4, "to":-7, "fromPort":"R", "toPort":"T", "points":[-449.64986386441706,-1268.6960220336914,-439.64986386441706,-1268.6960220336914,-309.4981938825463,-1268.6960220336914,-309.4981938825463,-1243.7274589538574,-309.4981938825463,-1218.7588958740234,-309.4981938825463,-1208.7588958740234]},
-{"from":-5, "to":-6, "fromPort":"R", "toPort":"T", "points":[-278.18156670836527,-1043.6960220336914,-268.18156670836527,-1043.6960220336914,-132.49824745243825,-1043.6960220336914,-132.49824745243825,-992.727459281683,-132.49824745243825,-941.7588965296745,-132.49824745243825,-931.7588965296745]}
- ]}
+{
+    "modelData": {
+        "fileType": "graph",
+        "repoService": "Unknown",
+        "repoBranch": "",
+        "repo": "",
+        "filePath": "/Users/james/working/update-logical-graphs/../daliuge-logical-graphs/Tests/dynlib_test.json",
+        "sha": "",
+        "git_url": ""
+    },
+    "nodeDataArray": [
+        {
+            "category": "DynlibApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3470AA",
+            "drawOrderHint": 0,
+            "key": -5,
+            "text": "DynLib",
+            "description": "",
+            "x": 462,
+            "y": 325,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "0a2fc2d0-6913-4b65-9a1b-0f115d6c33a0",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "dbb8bf57-08ff-48fc-825c-d8f6deae2748",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "9309ea06-1daf-4980-a049-0119acbaec82",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Library Path",
+                    "name": "libpath",
+                    "value": "/Users/Chen/projects/dfms/lib/python2.7/site-packages/dfms-0.2.0.dev0+9e19fbc-py2.7.egg/test/apps/libdynlib_example.so",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "print_stats=1",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Memory",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -3,
+            "text": "Output \nMemory",
+            "description": "",
+            "x": 463,
+            "y": 454,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "50255aa1-756d-413f-b67f-0a18e0ba6727",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -7,
+            "text": "FileDrop",
+            "description": "",
+            "x": 462,
+            "y": 187,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "6e00e881-b96e-4e3e-baf0-4b85a6539311",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "bb1b06ff-71f1-4c13-b89e-e4ed8750dfbd",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -4,
+            "text": "DD",
+            "description": "",
+            "x": 300,
+            "y": 100,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "4b62e684-8d37-4555-bba9-2da70b513e49",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "dd",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "if=/dev/urandom",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "of=%o[-7]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "bs=1024  count=10240",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -6,
+            "text": "OutputFile",
+            "description": "",
+            "x": 639,
+            "y": 464,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "8a666aff-9d1d-4bf4-bd4e-358ca0baf288",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -5,
+            "fromPort": "dbb8bf57-08ff-48fc-825c-d8f6deae2748",
+            "to": -3,
+            "toPort": "50255aa1-756d-413f-b67f-0a18e0ba6727"
+        },
+        {
+            "from": -7,
+            "fromPort": "bb1b06ff-71f1-4c13-b89e-e4ed8750dfbd",
+            "to": -5,
+            "toPort": "0a2fc2d0-6913-4b65-9a1b-0f115d6c33a0"
+        },
+        {
+            "from": -4,
+            "fromPort": "4b62e684-8d37-4555-bba9-2da70b513e49",
+            "to": -7,
+            "toPort": "6e00e881-b96e-4e3e-baf0-4b85a6539311"
+        },
+        {
+            "from": -5,
+            "fromPort": "9309ea06-1daf-4980-a049-0119acbaec82",
+            "to": -6,
+            "toPort": "8a666aff-9d1d-4bf4-bd4e-358ca0baf288"
+        }
+    ]
+}

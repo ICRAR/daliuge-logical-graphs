@@ -1,100 +1,4213 @@
-{ "class": "go.GraphLinksModel",
-  "linkFromPortIdProperty": "fromPort",
-  "linkToPortIdProperty": "toPort",
-  "nodeDataArray": [ 
-{"category":"Comment", "text":"Attila's ATCA Pipeline", "key":-18, "loc":"-1360.3281250000005 -1187.0000000000002"},
-{"category":"Start", "text":"Start", "key":-1, "loc":"-1521.3281249999998 -1156.000000000001"},
-{"category":"BashShellApp", "text":"Copy from ArchiveDay/Target", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"echo cp -r", "Arg02":" ", "Arg03":"%o[-4]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-13, "loc":"-1341.3281249999993 -1096.9999999999993"},
-{"category":"SplitData", "text":"Scatter by File", "isGroup":true, "num_of_copies":6, "scatter_axis":"time", "key":-14, "loc":"-775.040973920569 -1068.703357332576"},
-{"category":"file", "text":"Data", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"", "key":-4, "loc":"-694.9419816347822 -1116.5687909105093", "group":-14},
-{"category":"BashShellApp", "text":"atlod + flagging + uvsplit", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"python /tmp/afu.py", "Arg02":"%i[-4]", "Arg03":"%o[-43]", "Arg04":"%o[-74]", "Arg05":"%o[-75]", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-2, "loc":"-896.4419816347807 -1094.4469647386331", "group":-14},
-{"category":"file", "text":"Archive", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-6, "loc":"-1094.3281250000007 -396.99999999999955"},
-{"category":"BashShellApp", "text":"invert & clean", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"python /tmp/inv_cl.py", "Arg02":"%i[-72]", "Arg03":"%o[-6]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-20, "loc":"-711.2057886682811 -326.2174060353907"},
-{"category":"End", "text":"End", "key":-23, "loc":"-459.6710154150003 -281.64173284003897"},
-{"category":"file", "text":"Bpass \nData", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-43, "loc":"-942.6086831432383 -1034.0674642616414", "group":-14},
-{"category":"file", "text":"PhaseCal Data", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-74, "loc":"-805.6086831432383 -1031.0674642616414", "group":-14},
-{"category":"file", "text":"Target Data", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-75, "loc":"-611.6086831432383 -1032.0674642616414", "group":-14},
-{"category":"BashShellApp", "text":"uvcat + mfcal + gpcal", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"python /tmp/umg.py", "Arg02":"%i[-43]", "Arg03":"%o[-44]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-46, "loc":"-1460.2509877918883 -915.2963748817582"},
-{"category":"BashShellApp", "text":"uvcat + gpcopy + gpcal + gpboot", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"python /tmp/uggg.py", "Arg02":"%i[-74]", "Arg03":"%i[-53]", "Arg04":"%o[-57]", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-56, "loc":"-1207.2440256269854 -907.9659614921234"},
-{"category":"BashShellApp", "text":"uvcat + gpcopy + uvlin", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"python /tmp/ugu.py", "Arg02":"%i[-75]", "Arg03":"%i[-63]", "Arg04":"%o[-66]", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-65, "loc":"-865.6480479684911 -923.646923784376"},
-{"category":"Loop", "text":"DQA Loop", "isGroup":true, "num_of_iter":1, "key":-48, "loc":"-1632.5899346454817 -586.8012419687376"},
-{"category":"BashShellApp", "text":"invert", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"python /tmp/inv.py", "Arg02":"%i[-47]", "Arg03":"%o[-50]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-49, "loc":"-1643.332734208752 -702.808397830977", "group":-48},
-{"category":"file", "text":"Data", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-50, "loc":"-1559.474579911873 -681.6578118934766", "group":-48},
-{"category":"Branch", "text":"Converged?", "key":-51, "loc":"-1563.3327342087496 -571.8083978309758", "group":-48},
-{"category":"BashShellApp", "text":"Flagging & calibration", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"sleep 5", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-52, "loc":"-1668.4745799118748 -617.6578118934768", "group":-48},
-{"category":"file", "text":"To Archive", "data_volume":5, "group_end":1, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-53, "loc":"-1667.4745799118753 -478.65781189347706", "group":-48},
-{"category":"file", "text":"Reflagged Data", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-54, "loc":"-1722.4745799118768 -671.657811893476", "group":-48},
-{"category":"BashShellApp", "text":"Copy", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"echo cp -r ", "Arg02":"%i[-51]", "Arg03":"%o[-53]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-39, "loc":"-1757.845164152884 -523.838870651642", "group":-48},
-{"category":"file", "text":"Calibrated\nData", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-47, "loc":"-1587.4722526419148 -820.8342529625016"},
-{"category":"Loop", "text":"DQA Loop", "isGroup":true, "num_of_iter":1, "key":-58, "loc":"-1272.151777104189 -591.4338676810892"},
-{"category":"BashShellApp", "text":"invert", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"python /tmp/inv.py", "Arg02":"%i[-57]", "Arg03":"%o[-60]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-59, "loc":"-1317.3257720438464 -690.8970283866546", "group":-58},
-{"category":"file", "text":"Data", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-60, "loc":"-1240.467617746972 -681.7464424491538", "group":-58},
-{"category":"BashShellApp", "text":"Flagging & calibration", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"sleep 5", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-61, "loc":"-1312.4676177469735 -608.7464424491545", "group":-58},
-{"category":"Branch", "text":"Converged?", "key":-62, "loc":"-1207.325772043846 -565.8970283866539", "group":-58},
-{"category":"file", "text":"To Archive", "data_volume":5, "group_end":1, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-63, "loc":"-1253.467617746971 -497.74644244915555", "group":-58},
-{"category":"BashShellApp", "text":"Copy", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"echo cp -r", "Arg02":"%i[-62]", "Arg03":"%o[-63]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-40, "loc":"-1346.94131121837 -529.4420062368113", "group":-58},
-{"category":"file", "text":"Reflagged Data", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-42, "loc":"-1359.4917363271295 -663.0725515022411", "group":-58},
-{"category":"file", "text":"Calibrated\nData", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-57, "loc":"-1216.2037459208 -818.1748325858757"},
-{"category":"file", "text":"Calibrated\nData", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-66, "loc":"-865.3467682623059 -854.0170653859388"},
-{"category":"Loop", "text":"DQA Loop", "isGroup":true, "num_of_iter":1, "key":-67, "loc":"-760.7124481109246 -585.1556859971489"},
-{"category":"BashShellApp", "text":"invert", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"python /tmp/inv.py", "Arg02":"%i[-66]", "Arg03":"%o[-69]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-68, "loc":"-801.451220184101 -715.0910595134376", "group":-67},
-{"category":"file", "text":"Data", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-69, "loc":"-724.5930658872232 -705.9404735759377", "group":-67},
-{"category":"BashShellApp", "text":"Flagging & calibration", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"sleep 5", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-70, "loc":"-820.5930658872263 -607.9404735759372", "group":-67},
-{"category":"Branch", "text":"Converged?", "key":-71, "loc":"-691.4512201841013 -590.0910595134369", "group":-67},
-{"category":"file", "text":"To Archive", "data_volume":5, "group_end":1, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-72, "loc":"-766.2323529878529 -460.99604795449284", "group":-67},
-{"category":"BashShellApp", "text":"Copy", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"echo cp -r", "Arg02":"%i[71]", "Arg03":"%o[-72]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-41, "loc":"-843.323660719134 -513.230235351797", "group":-67},
-{"category":"file", "text":"Reflagged Data", "data_volume":5, "group_end":0, "check_filepath_exists":1, "filepath":"", "dirname":"", "key":-44, "loc":"-847.4745799118773 -663.6578118934772", "group":-67},
-{"category":"BashShellApp", "text":"Copy", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"echo cp -r", "Arg02":"%i[-53]", "Arg03":"%o[-6]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-73, "loc":"-1390.328125 -442"},
-{"category":"BashShellApp", "text":"Copy", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"echo cp -r", "Arg02":"%i[-72]", "Arg03":"%o[-6]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-76, "loc":"-1016.328125 -471"},
-{"category":"BashShellApp", "text":"Copy", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"echo cp -r", "Arg02":"%i[-63]", "Arg03":"%o[-6]", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-77, "loc":"-1200.328125 -442"},
-{"category":"Comment", "text":"Gather has specified grouping. Eg every 3 make a group.\nGroup on the other hand resorts in a corner turn.\nIn this graph we just combine outside the scatter box to bring all data together correctly", "key":-55, "loc":"-1683.328125 -1027"},
-{"category":"Comment", "text":"We have used the `to archive' step to provide the calibration tables to the next dependent task", "key":-64, "loc":"-1602.328125 -380"},
-{"category":"Comment", "text":"The DQA loops are not perfect. We can not loop back into invert. Also they have a fixed no of cycles before finishing. These cycles would not have anything to do, if it has converged", "key":-78, "loc":"-594.534875 -878.4135000000006"},
-{"category":"file", "text":"Example\n \nFileDrop", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"", "key":-7, "loc":"-1693.328125 -818"}
- ],
-  "linkDataArray": [ 
-{"from":-1, "to":-13, "fromPort":"B", "toPort":"T", "points":[-1521.3281249999998,-1136.000000000001,-1521.3281249999998,-1126.000000000001,-1448.5707817077632,-1126.000000000001,-1448.5707817077632,-1131.3754486083985,-1341.3281249999995,-1131.3754486083985,-1341.3281249999995,-1121.3754486083985]},
-{"from":-13, "to":-4, "fromPort":"R", "toPort":"L", "points":[-1272.9426956176753,-1097,-1262.9426956176753,-1097,-1260,-1097,-1260,-1116.5687909105093,-735.3014863344893,-1116.5687909105093,-725.3014863344893,-1116.5687909105093]},
-{"from":-4, "to":-2, "fromPort":"B", "toPort":"R", "points":[-694.9419816347822,-1100.13106660631,-694.9419816347822,-1090.13106660631,-766.0941918703771,-1090.13106660631,-766.0941918703771,-1094.4469647386331,-798.886897406265,-1094.4469647386331,-808.886897406265,-1094.4469647386331]},
-{"from":-20, "to":-6, "fromPort":"L", "toPort":"R", "points":[-766.8766362455601,-326.2174060353907,-776.8766362455601,-326.2174060353907,-912.907506812966,-326.2174060353907,-912.907506812966,-396.99999999999955,-1048.9383773803718,-396.99999999999955,-1058.9383773803718,-396.99999999999955]},
-{"from":-2, "to":-43, "fromPort":"B", "toPort":"T", "points":[-896.4419816347806,-1078.0092404344339,-896.4419816347806,-1068.0092404344339,-919.5253323890095,-1068.0092404344339,-919.5253323890095,-1068.44291287004,-942.6086831432383,-1068.44291287004,-942.6086831432383,-1058.44291287004]},
-{"from":-20, "to":-23, "fromPort":"R", "toPort":"L", "points":[-658.2963648401561,-326.2174060353907,-648.2963648401561,-326.2174060353907,-572.0521537709701,-326.2174060353907,-572.0521537709701,-281.64173284003897,-495.80794270178416,-281.64173284003897,-485.80794270178416,-281.64173284003897]},
-{"from":-2, "to":-74, "fromPort":"B", "toPort":"T", "points":[-896.4419816347806,-1078.0092404344339,-896.4419816347806,-1068.0092404344339,-896.4419816347806,-1068,-805.6086831432383,-1068,-805.6086831432383,-1057.5051885658406,-805.6086831432383,-1047.5051885658406]},
-{"from":-2, "to":-75, "fromPort":"B", "toPort":"T", "points":[-896.4419816347806,-1078.0092404344339,-896.4419816347806,-1068.0092404344339,-896.4419816347806,-1068,-611.6086831432383,-1068,-611.6086831432383,-1058.5051885658406,-611.6086831432383,-1048.5051885658406]},
-{"from":-43, "to":-46, "fromPort":"B", "toPort":"T", "points":[-942.6086831432383,-1009.6920156532431,-942.6086831432383,-999.6920156532431,-942.6086831432383,-970.7130574196005,-1460.2509877918883,-970.7130574196005,-1460.2509877918883,-941.7340991859579,-1460.2509877918883,-931.7340991859579]},
-{"from":-49, "to":-50, "fromPort":"R", "toPort":"T", "points":[-1616.9086237961526,-702.8083978309767,-1606.9086237961526,-702.8083978309767,-1602.3713542038668,-702.8083978309767,-1602.3713542038668,-708.0955361976754,-1559.4745799118737,-708.0955361976754,-1559.4745799118737,-698.0955361976754]},
-{"from":-50, "to":-51, "fromPort":"B", "toPort":"T", "points":[-1559.4745799118732,-665.2200875892771,-1559.4745799118732,-655.2200875892771,-1559.4745799118732,-628.7019670143256,-1563.3327342087496,-628.7019670143256,-1563.3327342087496,-602.1838464393742,-1563.3327342087496,-592.1838464393742]},
-{"from":-51, "to":-52, "fromPort":"L", "toPort":"B", "visible":true, "points":[-1647.7038432175386,-571.8083978309758,-1657.7038432175386,-571.8083978309758,-1668.4745799118746,-571.8083978309758,-1668.4745799118746,-581.5142427101266,-1668.4745799118746,-591.2200875892776,-1668.4745799118746,-601.2200875892776], "text":"No"},
-{"from":-52, "to":-54, "fromPort":"T", "toPort":"B", "points":[-1668.4745799118737,-634.095536197676,-1668.4745799118737,-644.095536197676,-1668.4745799118737,-644.6578118934767,-1722.4745799118757,-644.6578118934767,-1722.4745799118757,-645.2200875892773,-1722.4745799118757,-655.2200875892773]},
-{"from":-51, "to":-39, "fromPort":"B", "toPort":"T", "visible":true, "points":[-1563.3327342087496,-551.4329492225773,-1563.3327342087496,-541.4329492225773,-1689.9686755907292,-541.4329492225773,-1689.9686755907292,-550.2765949558413,-1757.8451641528845,-550.2765949558413,-1757.8451641528845,-540.2765949558413]},
-{"from":-39, "to":-53, "fromPort":"R", "toPort":"T", "points":[-1732.2335079639208,-523.8388706516408,-1722.2335079639208,-523.8388706516408,-1667.4745799118773,-523.8388706516408,-1667.4745799118773,-514.4672034246587,-1667.4745799118773,-505.09553619767644,-1667.4745799118773,-495.09553619767644]},
-{"from":-46, "to":-47, "fromPort":"B", "toPort":"T", "points":[-1460.2509877918883,-898.8586505775595,-1460.2509877918883,-888.8586505775595,-1460.2509877918883,-872.0341760742298,-1587.4722526419148,-872.0341760742298,-1587.4722526419148,-855.2097015709,-1587.4722526419148,-845.2097015709]},
-{"from":-74, "to":-56, "fromPort":"B", "toPort":"T", "points":[-805.6086831432383,-1014.6297399574422,-805.6086831432383,-1004.6297399574422,-805.6086831432383,-996,-805.6086831432383,-996,-805.6086831432383,-988,-1207.2440256269854,-988,-1207.2440256269854,-942.3414101005218,-1207.2440256269854,-932.3414101005218]},
-{"from":-75, "to":-65, "fromPort":"B", "toPort":"T", "points":[-611.6086831432383,-1015.6297399574421,-611.6086831432383,-1005.6297399574421,-611.6086831432383,-996,-865.6480479684911,-996,-865.6480479684911,-950.0846480885752,-865.6480479684911,-940.0846480885752]},
-{"from":-59, "to":-60, "fromPort":"R", "toPort":"T", "points":[-1290.9016616312479,-690.8970283866552,-1280.9016616312479,-690.8970283866552,-1280.9016616312479,-690.8970283866552,-1280.9016616312479,-708,-1240.46761774697,-708,-1240.46761774697,-708.1841667533549,-1240.46761774697,-698.1841667533549]},
-{"from":-60, "to":-62, "fromPort":"B", "toPort":"T", "points":[-1240.467617746972,-665.3087181449547,-1240.467617746972,-655.3087181449547,-1240.467617746972,-652,-1207.3257720438455,-652,-1207.3257720438455,-596.2724769950523,-1207.3257720438455,-586.2724769950523]},
-{"from":-62, "to":-61, "fromPort":"L", "toPort":"B", "visible":true, "points":[-1291.6968810526346,-565.8970283866539,-1301.6968810526346,-565.8970283866539,-1312.4676177469735,-565.8970283866539,-1312.4676177469735,-574.1028732658046,-1312.4676177469735,-582.3087181449554,-1312.4676177469735,-592.3087181449554], "text":"No"},
-{"from":-62, "to":-40, "fromPort":"B", "toPort":"T", "visible":true, "points":[-1207.3257720438455,-545.5215797782555,-1207.3257720438455,-535.5215797782555,-1306.5132680410197,-535.5215797782555,-1306.5132680410197,-555.8797305410105,-1346.94131121837,-555.8797305410105,-1346.94131121837,-545.8797305410105]},
-{"from":-40, "to":-63, "fromPort":"R", "toPort":"T", "points":[-1321.3296550294078,-529.4420062368114,-1311.3296550294078,-529.4420062368114,-1253.467617746972,-529.4420062368114,-1253.467617746972,-526.8130864950831,-1253.467617746972,-524.1841667533549,-1253.467617746972,-514.1841667533549]},
-{"from":-61, "to":-42, "fromPort":"T", "toPort":"B", "points":[-1312.467617746973,-625.1841667533547,-1312.467617746973,-635.1841667533547,-1312.467617746973,-635.9094969756982,-1359.49173632713,-635.9094969756982,-1359.49173632713,-636.6348271980416,-1359.49173632713,-646.6348271980416]},
-{"from":-68, "to":-69, "fromPort":"R", "toPort":"T", "points":[-775.0271097715046,-715.0910595134384,-765.0271097715046,-715.0910595134384,-763.9898401792186,-715.0910595134384,-763.9898401792186,-732.378197880137,-724.5930658872257,-732.378197880137,-724.5930658872257,-722.378197880137]},
-{"from":-69, "to":-71, "fromPort":"B", "toPort":"T", "points":[-724.5930658872232,-689.5027492717386,-724.5930658872232,-679.5027492717386,-724.5930658872232,-649.984628696787,-691.4512201841015,-649.984628696787,-691.4512201841015,-620.4665081218353,-691.4512201841015,-610.4665081218353]},
-{"from":-71, "to":-70, "fromPort":"L", "toPort":"B", "visible":true, "points":[-775.8223291928904,-590.0910595134369,-785.8223291928904,-590.0910595134369,-910.3447850465369,-590.0910595134369,-910.3447850465369,-578.7413255225838,-820.5930658872267,-578.7413255225838,-820.5930658872267,-588.7413255225838], "text":"No"},
-{"from":-71, "to":-41, "fromPort":"B", "toPort":"T", "visible":true, "points":[-691.4512201841013,-569.7156109050385,-691.4512201841013,-559.7156109050385,-691.4512201841013,-551.0724971550943,-843.3236607191342,-551.0724971550943,-843.3236607191342,-542.4293834051501,-843.3236607191342,-532.4293834051501]},
-{"from":-41, "to":-72, "fromPort":"R", "toPort":"T", "points":[-814.9505807810154,-513.230235351797,-804.9505807810154,-513.230235351797,-766.2323529878529,-513.230235351797,-766.2323529878529,-505.6445785733109,-766.2323529878529,-498.05892179482487,-766.2323529878529,-488.05892179482487]},
-{"from":-70, "to":-44, "fromPort":"T", "toPort":"B", "points":[-820.5930658872267,-627.1396216292902,-820.5930658872267,-637.1396216292902,-834.033822899552,-637.1396216292902,-834.033822899552,-626.5949380531451,-847.4745799118773,-626.5949380531451,-847.4745799118773,-636.5949380531451]},
-{"from":-65, "to":-66, "fromPort":"B", "toPort":"T", "points":[-865.6480479684911,-907.2091994801768,-865.6480479684911,-897.2091994801768,-865.6480479684911,-892.800856737257,-865.3467682623059,-892.800856737257,-865.3467682623059,-888.3925139943373,-865.3467682623059,-878.3925139943373]},
-{"from":-47, "to":-49, "fromPort":"B", "toPort":"T", "points":[-1587.4722526419148,-796.4588043541032,-1587.4722526419148,-786.4588043541032,-1587.4722526419148,-786.4588043541032,-1643.3327342087516,-786.4588043541032,-1643.3327342087516,-729.2461221351762,-1643.3327342087516,-719.2461221351762]},
-{"from":-57, "to":-59, "fromPort":"B", "toPort":"T", "points":[-1216.2037459208002,-793.799383977477,-1216.2037459208002,-783.799383977477,-1216.2037459208002,-780,-1317.3257720438464,-780,-1317.3257720438464,-717.3347526908539,-1317.3257720438464,-707.3347526908539]},
-{"from":-66, "to":-68, "fromPort":"B", "toPort":"T", "points":[-865.3467682623059,-829.6416167775404,-865.3467682623059,-819.6416167775404,-865.3467682623059,-780.5852002975887,-801.451220184101,-780.5852002975887,-801.451220184101,-741.5287838176368,-801.451220184101,-731.5287838176368]},
-{"from":-56, "to":-57, "fromPort":"B", "toPort":"T", "points":[-1207.2440256269854,-883.590512883725,-1207.2440256269854,-873.590512883725,-1207.2440256269854,-863.0703970389993,-1216.2037459208002,-863.0703970389993,-1216.2037459208002,-852.5502811942738,-1216.2037459208002,-842.5502811942738]},
-{"from":-53, "to":-56, "fromPort":"R", "toPort":"L", "points":[-1610.2986975723982,-478.65781189347695,-1600.2986975723982,-478.65781189347695,-1604,-478.65781189347695,-1604,-478.65781189347695,-1460,-478.65781189347695,-1460,-756,-1372,-756,-1372,-907.9659614921234,-1301.130538383333,-907.9659614921234,-1291.130538383333,-907.9659614921234]},
-{"from":-63, "to":-65, "fromPort":"R", "toPort":"L", "points":[-1196.2917354074946,-497.7464424491557,-1186.2917354074946,-497.7464424491557,-1180,-497.7464424491557,-1180,-497.7464424491557,-1082.328125,-497.7464424491557,-1082.328125,-923.646923784376,-957.0864558664404,-923.646923784376,-947.0864558664404,-923.646923784376]},
-{"from":-73, "to":-6, "fromPort":"R", "toPort":"L", "points":[-1364.7164688110352,-442,-1354.7164688110352,-442,-1249.7722969055176,-442,-1249.7722969055176,-396.99999999999983,-1144.8281250000002,-396.99999999999983,-1134.8281250000002,-396.99999999999983]},
-{"from":-72, "to":-76, "fromPort":"L", "toPort":"R", "points":[-823.4082353273292,-460.99604795449255,-833.4082353273292,-460.99604795449255,-844,-460.99604795449255,-844,-460.99604795449255,-940,-460.99604795449255,-940,-471,-980.7164688110352,-471,-990.7164688110352,-471]},
-{"from":-76, "to":-6, "fromPort":"L", "toPort":"T", "points":[-1041.9397811889648,-471,-1051.9397811889648,-471,-1094.3281250000002,-471,-1094.3281250000002,-447.2188621520995,-1094.3281250000002,-423.43772430419904,-1094.3281250000002,-413.43772430419904]},
-{"from":-63, "to":-77, "fromPort":"B", "toPort":"T", "points":[-1253.467617746972,-481.3087181449565,-1253.467617746972,-471.3087181449565,-1253.467617746972,-469.8732212245779,-1200.328125,-469.8732212245779,-1200.328125,-468.43772430419926,-1200.328125,-458.43772430419926]},
-{"from":-77, "to":-6, "fromPort":"B", "toPort":"L", "points":[-1200.328125,-425.56227569580085,-1200.328125,-415.56227569580085,-1200.328125,-396.99999999999983,-1172.578125,-396.99999999999983,-1144.8281250000002,-396.99999999999983,-1134.8281250000002,-396.99999999999983]},
-{"from":-53, "to":-73, "fromPort":"R", "toPort":"L", "points":[-1610.2986975723982,-478.65781189347695,-1600.2986975723982,-478.65781189347695,-1596,-478.65781189347695,-1596,-478.65781189347695,-1460,-478.65781189347695,-1460,-442,-1425.9397811889648,-442,-1415.9397811889648,-442]},
-{"from":-72, "to":-20, "fromPort":"B", "toPort":"T", "points":[-766.2323529878529,-444.55832365029363,-766.2323529878529,-434.55832365029363,-766.2323529878529,-428,-711.2057886682811,-428,-711.2057886682811,-352.6551303395899,-711.2057886682811,-342.6551303395899]}
- ]}
+{
+    "modelData": {
+        "fileType": "graph",
+        "repoService": "Unknown",
+        "repoBranch": "",
+        "repo": "",
+        "filePath": "/Users/james/working/update-logical-graphs/../daliuge-logical-graphs/ATCA Pipelines/richard.json",
+        "sha": "",
+        "git_url": ""
+    },
+    "nodeDataArray": [
+        {
+            "category": "Comment",
+            "categoryType": "Other",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": false,
+            "canHaveOutputs": false,
+            "color": "#799938",
+            "drawOrderHint": 0,
+            "key": -18,
+            "text": "",
+            "description": "",
+            "x": 697,
+            "y": 100,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Comment",
+                    "name": "comment",
+                    "value": "Attila's ATCA Pipeline",
+                    "description": "The text value of the comment"
+                }
+            ]
+        },
+        {
+            "category": "Start",
+            "categoryType": "Control",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": false,
+            "canHaveOutputs": true,
+            "color": "#229954",
+            "drawOrderHint": 0,
+            "key": -1,
+            "text": "Start",
+            "description": "",
+            "x": 536,
+            "y": 131,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "6b49fbe9-174f-4e8d-ab78-f49db1dd4c95",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -13,
+            "text": "Copy from ArchiveDay/Target",
+            "description": "",
+            "x": 716,
+            "y": 191,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "b442e915-692e-4268-8dc7-e0b0bb97326e",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "9b126c32-553f-4401-b092-805fb077d9c6",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "echo cp -r",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": " ",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-4]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Scatter",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#DDAD00",
+            "drawOrderHint": 0,
+            "key": -14,
+            "text": "Scatter by File",
+            "description": "",
+            "x": 1091,
+            "y": 75,
+            "width": 427,
+            "height": 254,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Scatter Axis",
+                    "name": "scatter_axis",
+                    "value": "time",
+                    "description": ""
+                },
+                {
+                    "text": "Number of copies",
+                    "name": "num_of_copies",
+                    "value": 6,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -4,
+            "text": "Data",
+            "description": "",
+            "x": 1363,
+            "y": 171,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -14,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "a6f98367-a1ed-47ee-a1d6-c87881d8944d",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "e586b59a-4967-4365-9659-e227f2553781",
+                    "IdText": "B-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -2,
+            "text": "atlod + flagging + uvsplit",
+            "description": "",
+            "x": 1161,
+            "y": 193,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -14,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "ee15cf7b-5e06-4907-b2f7-d53c642dd206",
+                    "IdText": "B-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "3b947ecf-10b9-41b8-9489-f40e1f51e9b7",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "e2e9fff2-faab-4194-95c4-8405096e5545",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "358ff5d8-854b-41f6-8cff-e0071b6b0389",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "python /tmp/afu.py",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-4]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-43]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "%o[-74]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "%o[-75]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -6,
+            "text": "Archive",
+            "description": "",
+            "x": 963,
+            "y": 891,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "a4c34059-63b7-499f-90d5-0944f1c64821",
+                    "IdText": "L-R"
+                },
+                {
+                    "Id": "482995d0-4b5d-4f6a-b012-94dc4d6a0730",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "b0b76a59-3785-412a-9bae-1796ee8df80b",
+                    "IdText": "L-T"
+                },
+                {
+                    "Id": "69e90503-e6a2-4315-9a73-71e7cbda2635",
+                    "IdText": "B-L"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -20,
+            "text": "invert & clean",
+            "description": "",
+            "x": 1346,
+            "y": 961,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "c2907a30-fe98-4657-91a4-24f81e8cfe34",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "8068f835-e00b-4ee6-885a-3b10d76b0ac0",
+                    "IdText": "L-R"
+                },
+                {
+                    "Id": "b2c3ae69-b6d4-401a-9761-cda7daa33e79",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "python /tmp/inv_cl.py",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-72]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-6]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "End",
+            "categoryType": "Control",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": false,
+            "color": "#CB4335",
+            "drawOrderHint": 0,
+            "key": -23,
+            "text": "End",
+            "description": "",
+            "x": 1598,
+            "y": 1006,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "3df485cd-b2a5-4aec-817c-d05bce24f827",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -43,
+            "text": "Bpass \nData",
+            "description": "",
+            "x": 1115,
+            "y": 253,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -14,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "2497e7f1-42fd-4c4b-9510-1e0143ee6f2b",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "78f6b7fb-9c13-44a3-9a19-941a05d0f161",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -74,
+            "text": "PhaseCal Data",
+            "description": "",
+            "x": 1252,
+            "y": 256,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -14,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "c08cfb87-2552-406d-a29c-a9aee72d65d0",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "831e2775-350d-4851-95c7-5b9728d55311",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -75,
+            "text": "Target Data",
+            "description": "",
+            "x": 1446,
+            "y": 255,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -14,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "ca6929a0-a5f9-4a36-ac8d-5ff9d2573f3e",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "25c240e9-dcbb-42bf-b0af-b86edb730c45",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -46,
+            "text": "uvcat + mfcal + gpcal",
+            "description": "",
+            "x": 597,
+            "y": 372,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "0ece823f-8d80-4862-85f6-c141cf11643d",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "73ac8e93-e67b-47f0-bf39-937933c4dfca",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "python /tmp/umg.py",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-43]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-44]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -56,
+            "text": "uvcat + gpcopy + gpcal + gpboot",
+            "description": "",
+            "x": 850,
+            "y": 380,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "f0042cc7-84cd-4965-bebf-63acb44f0852",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "596b5850-ab68-401d-9c6c-69c01693f295",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "7fe4c0b2-bd3f-46dd-a641-d5ffbfc0fa3e",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "python /tmp/uggg.py",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-74]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%i[-53]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "%o[-57]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -65,
+            "text": "uvcat + gpcopy + uvlin",
+            "description": "",
+            "x": 1192,
+            "y": 364,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "44177905-509c-44dd-a011-ab5437cb241e",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "e65eee2e-bec1-4713-bfc3-b7495ab77202",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "4c82b24f-8076-4544-a2b5-f76fe68dbda1",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "python /tmp/ugu.py",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-75]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%i[-63]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "%o[-66]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -48,
+            "text": "DQA Loop",
+            "description": "",
+            "x": 276,
+            "y": 489,
+            "width": 442,
+            "height": 384,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -49,
+            "text": "invert",
+            "description": "",
+            "x": 414,
+            "y": 585,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -48,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "2285333f-d4fd-46f2-9ccb-94ecb4ec68b4",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "5a83bdd2-bb69-4ba1-83e1-80383bd3ad6f",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "python /tmp/inv.py",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-47]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-50]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -50,
+            "text": "Data",
+            "description": "",
+            "x": 498,
+            "y": 606,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -48,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "79650690-fc71-480c-baa6-de4a72de940f",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "b4998e81-59aa-44f7-8de6-a5c3bf4d625a",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Branch",
+            "categoryType": "Control",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#00BDA1",
+            "drawOrderHint": 0,
+            "key": -51,
+            "text": "Converged?",
+            "description": "",
+            "x": 494,
+            "y": 716,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -48,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "a5277885-eba2-40b3-84d9-803d51de2a8c",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "6b2a5f13-994d-4b79-a13f-0677375e1a51",
+                    "IdText": "L-B"
+                },
+                {
+                    "Id": "d7f4afe6-f52f-4f4e-ae54-ef75651a2db6",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -52,
+            "text": "Flagging & calibration",
+            "description": "",
+            "x": 389,
+            "y": 670,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -48,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "bbf58d1e-0e1d-49fc-90a5-e73bcf5cf56c",
+                    "IdText": "L-B"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "44d2393f-c590-429b-842c-fd86d981474f",
+                    "IdText": "T-B"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "sleep 5",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -53,
+            "text": "To Archive",
+            "description": "",
+            "x": 390,
+            "y": 809,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -48,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "665f8a80-46a9-47c2-aebf-ff5933f4c5b9",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "3a83441b-afa6-4fa7-afa2-4d7a1fe99090",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "e90edc8f-0538-4a16-93ce-e22cc5b0ff55",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -54,
+            "text": "Reflagged Data",
+            "description": "",
+            "x": 335,
+            "y": 616,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -48,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "5c6a6ef5-fb0d-47e7-9657-f68c7e698f68",
+                    "IdText": "T-B"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -39,
+            "text": "Copy",
+            "description": "",
+            "x": 300,
+            "y": 764,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -48,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "70ffeced-fbbf-4703-ac4b-76399177632b",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "1edd0e61-2763-4b03-acb3-c1184faf99d7",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "echo cp -r ",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-51]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-53]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -47,
+            "text": "Calibrated\nData",
+            "description": "",
+            "x": 470,
+            "y": 467,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "8bd05923-2129-4e34-8aae-678a60affb01",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "1dbb35c2-5b6a-4918-acc6-3e1ac4e05830",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -58,
+            "text": "DQA Loop",
+            "description": "",
+            "x": 674,
+            "y": 501,
+            "width": 400,
+            "height": 353,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -59,
+            "text": "invert",
+            "description": "",
+            "x": 740,
+            "y": 597,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -58,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "4a1e6e16-36bd-4755-9f8d-daeb0135d188",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "9d452c8f-6015-41f3-a9a2-54b4b3202b30",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "python /tmp/inv.py",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-57]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-60]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -60,
+            "text": "Data",
+            "description": "",
+            "x": 817,
+            "y": 606,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -58,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "c4d3785a-9d21-4382-8498-5487a9a6d0b1",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "8a3d4c8a-7c10-4eb4-9bc5-3454389ec631",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -61,
+            "text": "Flagging & calibration",
+            "description": "",
+            "x": 745,
+            "y": 679,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -58,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "44efbc1a-ecae-40dc-863b-ad85279403dc",
+                    "IdText": "L-B"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "448c474b-f400-42eb-adc4-eb88579d956c",
+                    "IdText": "T-B"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "sleep 5",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Branch",
+            "categoryType": "Control",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#00BDA1",
+            "drawOrderHint": 0,
+            "key": -62,
+            "text": "Converged?",
+            "description": "",
+            "x": 850,
+            "y": 722,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -58,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "4fecccf8-794d-442a-85fa-234413ecee9e",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "de4dccdd-9f91-4bed-bd97-c19e19ffa8bf",
+                    "IdText": "L-B"
+                },
+                {
+                    "Id": "52085c27-c005-4ad4-a924-cced16885bb9",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -63,
+            "text": "To Archive",
+            "description": "",
+            "x": 804,
+            "y": 790,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -58,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "fac60be9-5bfa-46e5-9657-d64162e53073",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "c9e0e6d9-d227-4fee-90c8-c8d30006836a",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "7367a0cc-b144-4d60-8b9c-a2119b054bc0",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -40,
+            "text": "Copy",
+            "description": "",
+            "x": 711,
+            "y": 758,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -58,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "b41116fb-c34d-4f02-99cd-d7c2bb9beb34",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "4f5dbb0a-2082-45a9-be88-94955ab555ab",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "echo cp -r",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-62]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-63]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -42,
+            "text": "Reflagged Data",
+            "description": "",
+            "x": 698,
+            "y": 624,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -58,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "7252dfaf-d5fd-4fa2-8f25-7df1596c0685",
+                    "IdText": "T-B"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -57,
+            "text": "Calibrated\nData",
+            "description": "",
+            "x": 841,
+            "y": 469,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "5443aaa2-85c2-4d30-8980-c04665840084",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "c1e18cb6-39a0-4a08-ba6e-3fc5ffdedb55",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -66,
+            "text": "Calibrated\nData",
+            "description": "",
+            "x": 1192,
+            "y": 433,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "60817849-be36-458d-8177-8398f8eee48f",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "1e1afdaa-53e8-48fd-9dbe-d1f561113a26",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -67,
+            "text": "DQA Loop",
+            "description": "",
+            "x": 1186,
+            "y": 476,
+            "width": 404,
+            "height": 415,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -68,
+            "text": "invert",
+            "description": "",
+            "x": 1256,
+            "y": 572,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -67,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "4edd09a8-1465-41d8-9b42-aeb820e23eb8",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "abdab3cc-3269-4025-9fb6-cc2d110646f8",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "python /tmp/inv.py",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-66]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-69]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -69,
+            "text": "Data",
+            "description": "",
+            "x": 1333,
+            "y": 582,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -67,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "091c10c6-7ae4-4001-9a65-24436faf147c",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "cc2f00b7-efe0-4b9d-97e7-174b935c3edc",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -70,
+            "text": "Flagging & calibration",
+            "description": "",
+            "x": 1237,
+            "y": 680,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -67,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "569f6589-fa21-423d-97e0-49af9d325fb8",
+                    "IdText": "L-B"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "fc19ca7e-3d0d-4761-a57a-a5e19facad70",
+                    "IdText": "T-B"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "sleep 5",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Branch",
+            "categoryType": "Control",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#00BDA1",
+            "drawOrderHint": 0,
+            "key": -71,
+            "text": "Converged?",
+            "description": "",
+            "x": 1366,
+            "y": 697,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -67,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "e811d3b3-f310-4cbc-92ee-4ba5f8994b59",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "61f2eccc-3159-48d8-98eb-8d25d7476599",
+                    "IdText": "L-B"
+                },
+                {
+                    "Id": "e4fd94c7-6216-41f0-bb77-3b13f26d9b5f",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -72,
+            "text": "To Archive",
+            "description": "",
+            "x": 1291,
+            "y": 827,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -67,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d295c98d-b54a-413c-a375-810e7f6f1d05",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "deec700b-7879-4190-84be-7ed5991f4e52",
+                    "IdText": "L-R"
+                },
+                {
+                    "Id": "057fb0b8-cf7f-4fd1-9b16-96d47908b92c",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -41,
+            "text": "Copy",
+            "description": "",
+            "x": 1214,
+            "y": 774,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -67,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "8df3d0f5-0ab1-4bbc-90ec-cf5b7ea7dfbd",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d837ac47-388f-415b-abb6-d27bb53dbeee",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "echo cp -r",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[71]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-72]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -44,
+            "text": "Reflagged Data",
+            "description": "",
+            "x": 1210,
+            "y": 624,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -67,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "498a9569-0fb5-4674-a3b5-e6910b491e0d",
+                    "IdText": "T-B"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -73,
+            "text": "Copy",
+            "description": "",
+            "x": 667,
+            "y": 845,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "02dd04dc-964f-4a57-9abf-2a270c6677b4",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d9df9cdd-4be8-497b-9e30-bb76098b752c",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "echo cp -r",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-53]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-6]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -76,
+            "text": "Copy",
+            "description": "",
+            "x": 1041,
+            "y": 816,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "659fbb20-52b6-4ae6-87ce-f31323fd20a3",
+                    "IdText": "L-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "8740706d-0fd9-48c7-8a27-a5568a55fa5b",
+                    "IdText": "L-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "echo cp -r",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-72]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-6]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -77,
+            "text": "Copy",
+            "description": "",
+            "x": 857,
+            "y": 845,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "634dd905-7b7f-4ba8-b82e-917d1b30e614",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "eeb18da5-4c0c-42df-911d-ca689f14124b",
+                    "IdText": "B-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "echo cp -r",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "%i[-63]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%o[-6]",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Comment",
+            "categoryType": "Other",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": false,
+            "canHaveOutputs": false,
+            "color": "#799938",
+            "drawOrderHint": 0,
+            "key": -55,
+            "text": "",
+            "description": "",
+            "x": 374,
+            "y": 260,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Comment",
+                    "name": "comment",
+                    "value": "Gather has specified grouping. Eg every 3 make a group.\nGroup on the other hand resorts in a corner turn.\nIn this graph we just combine outside the scatter box to bring all data together correctly",
+                    "description": "The text value of the comment"
+                }
+            ]
+        },
+        {
+            "category": "Comment",
+            "categoryType": "Other",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": false,
+            "canHaveOutputs": false,
+            "color": "#799938",
+            "drawOrderHint": 0,
+            "key": -64,
+            "text": "",
+            "description": "",
+            "x": 455,
+            "y": 907,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Comment",
+                    "name": "comment",
+                    "value": "We have used the `to archive' step to provide the calibration tables to the next dependent task",
+                    "description": "The text value of the comment"
+                }
+            ]
+        },
+        {
+            "category": "Comment",
+            "categoryType": "Other",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": false,
+            "canHaveOutputs": false,
+            "color": "#799938",
+            "drawOrderHint": 0,
+            "key": -78,
+            "text": "",
+            "description": "",
+            "x": 1463,
+            "y": 409,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Comment",
+                    "name": "comment",
+                    "value": "The DQA loops are not perfect. We can not loop back into invert. Also they have a fixed no of cycles before finishing. These cycles would not have anything to do, if it has converged",
+                    "description": "The text value of the comment"
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -7,
+            "text": "Example\n \nFileDrop",
+            "description": "",
+            "x": 364,
+            "y": 469,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -1,
+            "fromPort": "6b49fbe9-174f-4e8d-ab78-f49db1dd4c95",
+            "to": -13,
+            "toPort": "b442e915-692e-4268-8dc7-e0b0bb97326e"
+        },
+        {
+            "from": -13,
+            "fromPort": "9b126c32-553f-4401-b092-805fb077d9c6",
+            "to": -4,
+            "toPort": "a6f98367-a1ed-47ee-a1d6-c87881d8944d"
+        },
+        {
+            "from": -4,
+            "fromPort": "e586b59a-4967-4365-9659-e227f2553781",
+            "to": -2,
+            "toPort": "ee15cf7b-5e06-4907-b2f7-d53c642dd206"
+        },
+        {
+            "from": -20,
+            "fromPort": "8068f835-e00b-4ee6-885a-3b10d76b0ac0",
+            "to": -6,
+            "toPort": "a4c34059-63b7-499f-90d5-0944f1c64821"
+        },
+        {
+            "from": -2,
+            "fromPort": "3b947ecf-10b9-41b8-9489-f40e1f51e9b7",
+            "to": -43,
+            "toPort": "2497e7f1-42fd-4c4b-9510-1e0143ee6f2b"
+        },
+        {
+            "from": -20,
+            "fromPort": "b2c3ae69-b6d4-401a-9761-cda7daa33e79",
+            "to": -23,
+            "toPort": "3df485cd-b2a5-4aec-817c-d05bce24f827"
+        },
+        {
+            "from": -2,
+            "fromPort": "e2e9fff2-faab-4194-95c4-8405096e5545",
+            "to": -74,
+            "toPort": "c08cfb87-2552-406d-a29c-a9aee72d65d0"
+        },
+        {
+            "from": -2,
+            "fromPort": "358ff5d8-854b-41f6-8cff-e0071b6b0389",
+            "to": -75,
+            "toPort": "ca6929a0-a5f9-4a36-ac8d-5ff9d2573f3e"
+        },
+        {
+            "from": -43,
+            "fromPort": "78f6b7fb-9c13-44a3-9a19-941a05d0f161",
+            "to": -46,
+            "toPort": "0ece823f-8d80-4862-85f6-c141cf11643d"
+        },
+        {
+            "from": -49,
+            "fromPort": "5a83bdd2-bb69-4ba1-83e1-80383bd3ad6f",
+            "to": -50,
+            "toPort": "79650690-fc71-480c-baa6-de4a72de940f"
+        },
+        {
+            "from": -50,
+            "fromPort": "b4998e81-59aa-44f7-8de6-a5c3bf4d625a",
+            "to": -51,
+            "toPort": "a5277885-eba2-40b3-84d9-803d51de2a8c"
+        },
+        {
+            "from": -51,
+            "fromPort": "6b2a5f13-994d-4b79-a13f-0677375e1a51",
+            "to": -52,
+            "toPort": "bbf58d1e-0e1d-49fc-90a5-e73bcf5cf56c"
+        },
+        {
+            "from": -52,
+            "fromPort": "44d2393f-c590-429b-842c-fd86d981474f",
+            "to": -54,
+            "toPort": "5c6a6ef5-fb0d-47e7-9657-f68c7e698f68"
+        },
+        {
+            "from": -51,
+            "fromPort": "d7f4afe6-f52f-4f4e-ae54-ef75651a2db6",
+            "to": -39,
+            "toPort": "70ffeced-fbbf-4703-ac4b-76399177632b"
+        },
+        {
+            "from": -39,
+            "fromPort": "1edd0e61-2763-4b03-acb3-c1184faf99d7",
+            "to": -53,
+            "toPort": "665f8a80-46a9-47c2-aebf-ff5933f4c5b9"
+        },
+        {
+            "from": -46,
+            "fromPort": "73ac8e93-e67b-47f0-bf39-937933c4dfca",
+            "to": -47,
+            "toPort": "8bd05923-2129-4e34-8aae-678a60affb01"
+        },
+        {
+            "from": -74,
+            "fromPort": "831e2775-350d-4851-95c7-5b9728d55311",
+            "to": -56,
+            "toPort": "f0042cc7-84cd-4965-bebf-63acb44f0852"
+        },
+        {
+            "from": -75,
+            "fromPort": "25c240e9-dcbb-42bf-b0af-b86edb730c45",
+            "to": -65,
+            "toPort": "44177905-509c-44dd-a011-ab5437cb241e"
+        },
+        {
+            "from": -59,
+            "fromPort": "9d452c8f-6015-41f3-a9a2-54b4b3202b30",
+            "to": -60,
+            "toPort": "c4d3785a-9d21-4382-8498-5487a9a6d0b1"
+        },
+        {
+            "from": -60,
+            "fromPort": "8a3d4c8a-7c10-4eb4-9bc5-3454389ec631",
+            "to": -62,
+            "toPort": "4fecccf8-794d-442a-85fa-234413ecee9e"
+        },
+        {
+            "from": -62,
+            "fromPort": "de4dccdd-9f91-4bed-bd97-c19e19ffa8bf",
+            "to": -61,
+            "toPort": "44efbc1a-ecae-40dc-863b-ad85279403dc"
+        },
+        {
+            "from": -62,
+            "fromPort": "52085c27-c005-4ad4-a924-cced16885bb9",
+            "to": -40,
+            "toPort": "b41116fb-c34d-4f02-99cd-d7c2bb9beb34"
+        },
+        {
+            "from": -40,
+            "fromPort": "4f5dbb0a-2082-45a9-be88-94955ab555ab",
+            "to": -63,
+            "toPort": "fac60be9-5bfa-46e5-9657-d64162e53073"
+        },
+        {
+            "from": -61,
+            "fromPort": "448c474b-f400-42eb-adc4-eb88579d956c",
+            "to": -42,
+            "toPort": "7252dfaf-d5fd-4fa2-8f25-7df1596c0685"
+        },
+        {
+            "from": -68,
+            "fromPort": "abdab3cc-3269-4025-9fb6-cc2d110646f8",
+            "to": -69,
+            "toPort": "091c10c6-7ae4-4001-9a65-24436faf147c"
+        },
+        {
+            "from": -69,
+            "fromPort": "cc2f00b7-efe0-4b9d-97e7-174b935c3edc",
+            "to": -71,
+            "toPort": "e811d3b3-f310-4cbc-92ee-4ba5f8994b59"
+        },
+        {
+            "from": -71,
+            "fromPort": "61f2eccc-3159-48d8-98eb-8d25d7476599",
+            "to": -70,
+            "toPort": "569f6589-fa21-423d-97e0-49af9d325fb8"
+        },
+        {
+            "from": -71,
+            "fromPort": "e4fd94c7-6216-41f0-bb77-3b13f26d9b5f",
+            "to": -41,
+            "toPort": "8df3d0f5-0ab1-4bbc-90ec-cf5b7ea7dfbd"
+        },
+        {
+            "from": -41,
+            "fromPort": "d837ac47-388f-415b-abb6-d27bb53dbeee",
+            "to": -72,
+            "toPort": "d295c98d-b54a-413c-a375-810e7f6f1d05"
+        },
+        {
+            "from": -70,
+            "fromPort": "fc19ca7e-3d0d-4761-a57a-a5e19facad70",
+            "to": -44,
+            "toPort": "498a9569-0fb5-4674-a3b5-e6910b491e0d"
+        },
+        {
+            "from": -65,
+            "fromPort": "4c82b24f-8076-4544-a2b5-f76fe68dbda1",
+            "to": -66,
+            "toPort": "60817849-be36-458d-8177-8398f8eee48f"
+        },
+        {
+            "from": -47,
+            "fromPort": "1dbb35c2-5b6a-4918-acc6-3e1ac4e05830",
+            "to": -49,
+            "toPort": "2285333f-d4fd-46f2-9ccb-94ecb4ec68b4"
+        },
+        {
+            "from": -57,
+            "fromPort": "c1e18cb6-39a0-4a08-ba6e-3fc5ffdedb55",
+            "to": -59,
+            "toPort": "4a1e6e16-36bd-4755-9f8d-daeb0135d188"
+        },
+        {
+            "from": -66,
+            "fromPort": "1e1afdaa-53e8-48fd-9dbe-d1f561113a26",
+            "to": -68,
+            "toPort": "4edd09a8-1465-41d8-9b42-aeb820e23eb8"
+        },
+        {
+            "from": -56,
+            "fromPort": "7fe4c0b2-bd3f-46dd-a641-d5ffbfc0fa3e",
+            "to": -57,
+            "toPort": "5443aaa2-85c2-4d30-8980-c04665840084"
+        },
+        {
+            "from": -53,
+            "fromPort": "3a83441b-afa6-4fa7-afa2-4d7a1fe99090",
+            "to": -56,
+            "toPort": "596b5850-ab68-401d-9c6c-69c01693f295"
+        },
+        {
+            "from": -63,
+            "fromPort": "c9e0e6d9-d227-4fee-90c8-c8d30006836a",
+            "to": -65,
+            "toPort": "e65eee2e-bec1-4713-bfc3-b7495ab77202"
+        },
+        {
+            "from": -73,
+            "fromPort": "d9df9cdd-4be8-497b-9e30-bb76098b752c",
+            "to": -6,
+            "toPort": "482995d0-4b5d-4f6a-b012-94dc4d6a0730"
+        },
+        {
+            "from": -72,
+            "fromPort": "deec700b-7879-4190-84be-7ed5991f4e52",
+            "to": -76,
+            "toPort": "659fbb20-52b6-4ae6-87ce-f31323fd20a3"
+        },
+        {
+            "from": -76,
+            "fromPort": "8740706d-0fd9-48c7-8a27-a5568a55fa5b",
+            "to": -6,
+            "toPort": "b0b76a59-3785-412a-9bae-1796ee8df80b"
+        },
+        {
+            "from": -63,
+            "fromPort": "7367a0cc-b144-4d60-8b9c-a2119b054bc0",
+            "to": -77,
+            "toPort": "634dd905-7b7f-4ba8-b82e-917d1b30e614"
+        },
+        {
+            "from": -77,
+            "fromPort": "eeb18da5-4c0c-42df-911d-ca689f14124b",
+            "to": -6,
+            "toPort": "69e90503-e6a2-4315-9a73-71e7cbda2635"
+        },
+        {
+            "from": -53,
+            "fromPort": "e90edc8f-0538-4a16-93ce-e22cc5b0ff55",
+            "to": -73,
+            "toPort": "02dd04dc-964f-4a57-9abf-2a270c6677b4"
+        },
+        {
+            "from": -72,
+            "fromPort": "057fb0b8-cf7f-4fd1-9b16-96d47908b92c",
+            "to": -20,
+            "toPort": "c2907a30-fe98-4657-91a4-24f81e8cfe34"
+        }
+    ]
+}

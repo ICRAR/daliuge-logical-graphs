@@ -1,80 +1,3362 @@
-{ "class": "go.GraphLinksModel",
-  "linkFromPortIdProperty": "fromPort",
-  "linkToPortIdProperty": "toPort",
-  "nodeDataArray": [ 
-{"category":"Start", "text":"Start", "key":-1, "loc":"-1650.3281249999989 -1537.9999999999998"},
-{"category":"file", "text":"MSFile", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-6, "loc":"-1430.0144271868646 -1541.2874739290048", "group":-11},
-{"category":"BashShellApp", "text":"Slave_reader", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"/astrodata/sagecal/build/bin/aux_reader", "Arg02":"-X", "Arg03":"%i0", "Arg04":"-Y", "Arg05":"%o0", "Arg06":"-P /astrodata/sagecal/data/params.txt", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-4, "loc":"-1455.014427186868 -1460.2874739290062", "group":-11},
-{"category":"SplitData", "text":"Split MSList by line", "isGroup":true, "num_of_copies":8, "scatter_axis":"time", "key":-11, "loc":"-1362.986816257205 -1231.1437369645023"},
-{"category":"BashShellApp", "text":"SlaveADMM ", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"/astrodata/sagecal/build/bin/admm_slave", "Arg02":"-X %i0 -Z %i1", "Arg03":"-Y %o0", "Arg04":"-P /astrodata/sagecal/data/params.txt", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-8, "loc":"-1456.0144271868664 -1398.2874739290053", "group":-11},
-{"category":"End", "text":"End", "key":-2, "loc":"-715.3281249999983 -927.0000000000014"},
-{"category":"Component", "appclass":"dlg.deploy.cnlab.loadMSlist.LoadMSlistApp", "text":"Load MSList", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"Arg01=/astrodata/sagecal/data/MSlist.txt.8", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-3, "loc":"-1649.9999999999998 -1468.0000000000005"},
-{"category":"file", "text":"iodata", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-13, "loc":"-1298.686302186864 -1503.2874739290044", "group":-11},
-{"category":"file", "text":"IOData & arho", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-14, "loc":"-1297.686302186866 -1366.2874739290078", "group":-11},
-{"category":"Component", "appclass":"dlg.deploy.cnlab.iodataCollect.IODataCollectApp", "text":"IOData Collect", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-12, "loc":"-1100.9999999999995 -1579.000000000002"},
-{"category":"file", "text":"Master IOData", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-15, "loc":"-925.9999999999984 -1534.000000000001"},
-{"category":"BashShellApp", "text":"MasterADMM ", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"/astrodata/sagecal/build/bin/admm_master", "Arg02":"-X %i0", "Arg03":"-Y %o0", "Arg04":"-P /astrodata/sagecal/data/params_master.txt", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-16, "loc":"-1117.0000000000016 -1489.000000000003"},
-{"category":"file", "text":"Regularisation Factor Array", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-18, "loc":"-911.0000000000009 -1430.9999999999973"},
-{"category":"Loop", "text":"Timeslot", "isGroup":true, "num_of_iter":13, "key":-19, "loc":"-960.378931997398 -1095.0780904158196"},
-{"category":"file", "text":"Solution", "data_volume":5, "group_end":1, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-20, "loc":"-847.6307118745772 -926.422847498307", "group":-19},
-{"category":"BashShellApp", "text":"fratio_master", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"/astrodata/sagecal/build/bin/fratio_master", "Arg02":"-X %i0", "Arg03":"-Y %o0", "Arg04":"-P /astrodata/sagecal/data/params_master.txt", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-21, "loc":"-860.6307118745742 -1263.4228474983086", "group":-19},
-{"category":"Loop", "text":"Timeslot", "isGroup":true, "num_of_iter":13, "key":-22, "loc":"-1362.986816257205 -1099.6847006749142", "group":-11},
-{"category":"BashShellApp", "text":"Fratio Slave", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"/astrodata/sagecal/build/bin/fratio_slave", "Arg02":"-X %i0 -Z%i1", "Arg03":"-Y %o0", "Arg04":"-P /astrodata/sagecal/data/params.txt", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-23, "loc":"-1446.5425850680585 -1263.5860678098636", "group":-22},
-{"category":"file", "text":"iodata", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-26, "loc":"-1270.5425850680565 -1258.5860678098654", "group":-22},
-{"category":"Loop", "text":"Admm", "isGroup":true, "num_of_iter":1, "key":-27, "loc":"-1439.5929610164114 -1043.045043741332", "group":-22},
-{"category":"BashShellApp", "text":"sagefit", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"/astrodata/sagecal/build/bin/sagefit_slave", "Arg02":"-X %i0 -Z %i1", "Arg03":"-Y %o0", "Arg04":"-P /astrodata/sagecal/data/params.txt", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-28, "loc":"-1395.728957838115 -1130.9486636508584", "group":-27},
-{"category":"file", "text":"Y_n_J", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-29, "loc":"-1486.235056263564 -1086.9486636508586", "group":-27},
-{"category":"file", "text":"ST", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-30, "loc":"-1012.5000000000001 -1222.7333333333324", "group":-19},
-{"category":"Loop", "text":"Admm", "isGroup":true, "num_of_iter":1, "key":-31, "loc":"-963.5140450807535 -1083.5707119159035", "group":-19},
-{"category":"BashShellApp", "text":"Update Z", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"/astrodata/sagecal/build/bin/update_z_master", "Arg02":"-X %i0", "Arg03":"-Y %o0", "Arg04":"-P /astrodata/sagecal/data/params_master.txt", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-32, "loc":"-873.7614237491541 -1137.500000000001", "group":-31},
-{"category":"file", "text":"B_n_Z", "data_volume":5, "group_end":1, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-33, "loc":"-1063.7614237491532 -1037.5000000000002", "group":-31},
-{"category":"BashShellApp", "text":"Update Y", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"/astrodata/sagecal/build/bin/update_y_slave", "Arg02":"-X %i0 -Z %i1", "Arg03":"-Y %o0", "Arg04":"-P /astrodata/sagecal/data/params.txt", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-34, "loc":"-1438.1532729589485 -1029.6911187445694", "group":-27},
-{"category":"BashShellApp", "text":"Write Z", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"/astrodata/sagecal/build/bin/write_z_master", "Arg02":"-X %i0", "Arg03":"-Y %o0", "Arg04":"-P /astrodata/sagecal/data/params_master.txt", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-35, "loc":"-995.0000000000007 -927", "group":-19},
-{"category":"BashShellApp", "text":"Wirte Residual", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"/astrodata/sagecal/build/bin/write_residual_slave", "Arg02":"-X %i0", "Arg03":"-Y %o0", "Arg04":"-P /astrodata/sagecal/data/params.txt", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-36, "loc":"-1282.0000000000007 -998", "group":-22},
-{"category":"file", "text":"ResiduleFile", "data_volume":5, "group_end":1, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-37, "loc":"-1282.0000000000002 -927", "group":-22},
-{"category":"file", "text":"Y n Residule", "data_volume":5, "group_end":1, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-38, "loc":"-1439.0000000000002 -962.9999999999998", "group":-27},
-{"category":"Component", "appclass":"dlg.deploy.cnlab.fratioCollect.FratioCollectApp", "text":"FratioCollect", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-39, "loc":"-1087.9999999999993 -1264", "group":-19},
-{"category":"file", "text":"ST", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-40, "loc":"-962.5 -1263.7333333333324", "group":-19},
-{"category":"Component", "appclass":"dlg.deploy.cnlab.updateZCollect.UpdateZCollectApp", "text":"YZCollect", "execution_time":5, "num_cpus":1, "group_start":1, "Arg01":"/astrodata/sagecal/data/MSlist.txt", "Arg02":"", "Arg03":"", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-41, "loc":"-1030.9999999999993 -1139", "group":-31},
-{"category":"file", "text":"Y_n_Z", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-42, "loc":"-958.2350562635636 -1079.9486636508586", "group":-31},
-{"category":"BashShellApp", "text":"Cal Coherencies", "execution_time":5, "num_cpus":1, "group_start":0, "Arg01":"/astrodata/sagecal/build/bin/coh_slave", "Arg02":"-X %i0 -Y %o0", "Arg03":"-P /astrodata/sagecal/data/params.txt", "Arg04":"", "Arg05":"", "Arg06":"", "Arg07":"", "Arg08":"", "Arg09":"", "Arg10":"", "key":-43, "loc":"-1269 -1171", "group":-22},
-{"category":"file", "text":"iodata", "data_volume":5, "group_end":0, "check_filepath_exists":"1", "filepath":"", "dirname":"/astrodata/sagecal/tmp", "key":-44, "loc":"-1349.5425850680576 -1221.5860678098657", "group":-22}
- ],
-  "linkDataArray": [ 
-{"from":-6, "to":-4, "fromPort":"B", "toPort":"T", "points":[-1430.014427186865,-1514.4541405956718,-1430.014427186865,-1504.4541405956718,-1430.014427186865,-1496.9015191369162,-1455.0144271868676,-1496.9015191369162,-1455.0144271868676,-1489.3488976781605,-1455.0144271868676,-1479.3488976781605]},
-{"from":-4, "to":-13, "fromPort":"R", "toPort":"L", "points":[-1400.753003437714,-1460.2874739290062,-1390.753003437714,-1460.2874739290062,-1364.7196528122893,-1460.2874739290062,-1364.7196528122893,-1503.2874739290046,-1338.6863021868646,-1503.2874739290046,-1328.6863021868646,-1503.2874739290046]},
-{"from":-8, "to":-14, "fromPort":"B", "toPort":"L", "points":[-1456.0144271868662,-1379.2260501798512,-1456.0144271868662,-1369.2260501798512,-1456.0144271868662,-1366.2874739290078,-1410.6003646868662,-1366.2874739290078,-1365.186302186866,-1366.2874739290078,-1355.186302186866,-1366.2874739290078]},
-{"from":-1, "to":-3, "fromPort":"B", "toPort":"T", "points":[-1650.3281249999993,-1517.9999999999998,-1650.3281249999993,-1507.9999999999998,-1650.3281249999993,-1501.1499999999999,-1649.9999999999993,-1501.1499999999999,-1649.9999999999993,-1494.3,-1649.9999999999993,-1484.3]},
-{"from":-3, "to":-6, "fromPort":"R", "toPort":"L", "points":[-1601.4999999999993,-1468,-1591.4999999999993,-1468,-1588,-1468,-1588,-1541.2874739290048,-1472.0144271868646,-1541.2874739290048,-1462.0144271868646,-1541.2874739290048]},
-{"from":-13, "to":-8, "fromPort":"B", "toPort":"T", "points":[-1298.6863021868646,-1476.454140595671,-1298.6863021868646,-1466.454140595671,-1298.6863021868646,-1468,-1298.6863021868646,-1468,-1298.6863021868646,-1428,-1456.0144271868664,-1428,-1456.0144271868664,-1427.3488976781593,-1456.0144271868664,-1417.3488976781593]},
-{"from":-13, "to":-12, "fromPort":"R", "toPort":"L", "points":[-1268.6863021868646,-1503.2874739290046,-1258.6863021868646,-1503.2874739290046,-1252,-1503.2874739290046,-1252,-1503.2874739290046,-1196,-1503.2874739290046,-1196,-1579.000000000002,-1166.4999999999995,-1579.000000000002,-1156.4999999999995,-1579.000000000002]},
-{"from":-12, "to":-15, "fromPort":"R", "toPort":"T", "points":[-1045.4999999999995,-1579.000000000002,-1035.4999999999995,-1579.000000000002,-925.9999999999991,-1579.000000000002,-925.9999999999991,-1574.9166666666679,-925.9999999999991,-1570.833333333334,-925.9999999999991,-1560.833333333334]},
-{"from":-15, "to":-16, "fromPort":"L", "toPort":"T", "points":[-983.4999999999991,-1534.0000000000007,-993.4999999999991,-1534.0000000000007,-1117.0000000000016,-1534.0000000000007,-1117.0000000000016,-1526.0307118745789,-1117.0000000000016,-1518.061423749157,-1117.0000000000016,-1508.061423749157]},
-{"from":-18, "to":-8, "fromPort":"L", "toPort":"R", "points":[-995.0000000000009,-1430.9999999999977,-1005.0000000000009,-1430.9999999999977,-1199.6265017188566,-1430.9999999999977,-1199.6265017188566,-1398.2874739290053,-1394.2530034377123,-1398.2874739290053,-1404.2530034377123,-1398.2874739290053]},
-{"from":-16, "to":-18, "fromPort":"R", "toPort":"T", "points":[-1061.2385762508475,-1489.000000000003,-1051.2385762508475,-1489.000000000003,-911.0000000000009,-1489.000000000003,-911.0000000000009,-1484.916666666667,-911.0000000000009,-1480.833333333331,-911.0000000000009,-1470.833333333331]},
-{"from":-20, "to":-2, "fromPort":"R", "toPort":"L", "points":[-809.6307118745773,-926.4228474983072,-799.6307118745773,-926.4228474983072,-799.6307118745773,-927.0000000000014,-799.6307118745773,-927.0000000000014,-751.7540509259243,-927.0000000000014,-741.7540509259243,-927.0000000000014]},
-{"from":-21, "to":-30, "fromPort":"R", "toPort":"R", "points":[-807.3692881254204,-1263.422847498308,-797.3692881254204,-1263.422847498308,-797.3692881254204,-1222.7333333333333,-890.9346440627105,-1222.7333333333333,-984.5000000000005,-1222.7333333333333,-994.5000000000005,-1222.7333333333333]},
-{"from":-14, "to":-23, "fromPort":"B", "toPort":"T", "points":[-1297.686302186866,-1339.4541405956743,-1297.686302186866,-1329.4541405956743,-1297.686302186866,-1311.050816077346,-1446.5425850680585,-1311.050816077346,-1446.5425850680585,-1292.6474915590177,-1446.5425850680585,-1282.6474915590177]},
-{"from":-23, "to":-26, "fromPort":"R", "toPort":"T", "points":[-1396.7811613189044,-1263.5860678098636,-1386.7811613189044,-1263.5860678098636,-1347.661873193481,-1263.5860678098636,-1347.661873193481,-1295.419401143199,-1270.5425850680576,-1295.419401143199,-1270.5425850680576,-1285.419401143199]},
-{"from":-28, "to":-29, "fromPort":"L", "toPort":"T", "points":[-1427.9903815872703,-1130.9486636508577,-1437.9903815872703,-1130.9486636508577,-1486.235056263564,-1130.9486636508577,-1486.235056263564,-1127.365330317525,-1486.235056263564,-1123.7819969841921,-1486.235056263564,-1113.7819969841921]},
-{"from":-32, "to":-33, "fromPort":"B", "toPort":"R", "points":[-873.7614237491542,-1118.4385762508462,-873.7614237491542,-1108.4385762508462,-873.7614237491542,-1037.5,-948.2614237491537,-1037.5,-1022.7614237491532,-1037.5,-1032.7614237491532,-1037.5]},
-{"from":-33, "to":-34, "fromPort":"L", "toPort":"R", "points":[-1094.7614237491532,-1037.5000000000002,-1104.7614237491532,-1037.5000000000002,-1116,-1037.5000000000002,-1116,-1037.5000000000002,-1156,-1037.5000000000002,-1156,-1029.691118744569,-1386.3918492097937,-1029.691118744569,-1396.3918492097937,-1029.691118744569]},
-{"from":-33, "to":-35, "fromPort":"B", "toPort":"T", "points":[-1063.7614237491532,-1010.6666666666666,-1063.7614237491532,-1000.6666666666666,-1063.7614237491532,-996,-995.0000000000003,-996,-995.0000000000003,-956.0614237491538,-995.0000000000003,-946.0614237491538]},
-{"from":-35, "to":-20, "fromPort":"R", "toPort":"L", "points":[-960.3709996517254,-926.9999999999999,-950.3709996517254,-926.9999999999999,-923.0008557631513,-926.9999999999999,-923.0008557631513,-926.4228474983072,-895.6307118745773,-926.4228474983072,-885.6307118745773,-926.4228474983072]},
-{"from":-36, "to":-37, "fromPort":"B", "toPort":"T", "points":[-1282,-978.9385762508462,-1282,-968.9385762508462,-1282,-966.3859547920898,-1282,-966.3859547920898,-1282,-963.8333333333335,-1282,-953.8333333333335]},
-{"from":-34, "to":-38, "fromPort":"B", "toPort":"T", "points":[-1438.1532729589478,-1010.6296949954151,-1438.1532729589478,-1000.6296949954151,-1438.1532729589478,-1000.2315141643742,-1439,-1000.2315141643742,-1439,-999.8333333333333,-1439,-989.8333333333333]},
-{"from":-29, "to":-41, "fromPort":"R", "toPort":"L", "points":[-1456.2350562635636,-1086.9486636508586,-1446.2350562635636,-1086.9486636508586,-1436,-1086.9486636508586,-1436,-1086.9486636508586,-1204,-1086.9486636508586,-1204,-1139,-1080.9999999999993,-1139,-1070.9999999999993,-1139]},
-{"from":-30, "to":-41, "fromPort":"B", "toPort":"T", "points":[-1012.5000000000005,-1195.8999999999999,-1012.5000000000005,-1185.8999999999999,-1012.5000000000005,-1175.6,-1030.9999999999993,-1175.6,-1030.9999999999993,-1165.3,-1030.9999999999993,-1155.3]},
-{"from":-26, "to":-39, "fromPort":"R", "toPort":"L", "points":[-1240.5425850680576,-1258.5860678098657,-1230.5425850680576,-1258.5860678098657,-1230.5425850680576,-1264,-1230.5425850680576,-1264,-1146.9999999999993,-1264,-1136.9999999999993,-1264]},
-{"from":-18, "to":-39, "fromPort":"B", "toPort":"T", "points":[-911.0000000000009,-1391.1666666666642,-911.0000000000009,-1381.1666666666642,-911.0000000000009,-1335.7333333333322,-1087.9999999999993,-1335.7333333333322,-1087.9999999999993,-1290.3,-1087.9999999999993,-1280.3]},
-{"from":-39, "to":-40, "fromPort":"R", "toPort":"L", "points":[-1038.9999999999993,-1264,-1028.9999999999993,-1264,-1009.7499999999997,-1264,-1009.7499999999997,-1263.7333333333324,-990.5,-1263.7333333333324,-980.5,-1263.7333333333324]},
-{"from":-40, "to":-21, "fromPort":"R", "toPort":"L", "points":[-944.5,-1263.7333333333324,-934.5,-1263.7333333333324,-929.1960678118642,-1263.7333333333324,-929.1960678118642,-1263.422847498308,-923.8921356237283,-1263.422847498308,-913.8921356237283,-1263.422847498308]},
-{"from":-41, "to":-42, "fromPort":"B", "toPort":"L", "points":[-1030.9999999999993,-1122.7,-1030.9999999999993,-1112.7,-1030.9999999999993,-1079.9486636508586,-1014.8675281317815,-1079.9486636508586,-998.7350562635636,-1079.9486636508586,-988.7350562635636,-1079.9486636508586]},
-{"from":-42, "to":-32, "fromPort":"T", "toPort":"L", "points":[-958.2350562635636,-1106.781996984192,-958.2350562635636,-1116.781996984192,-958.2350562635636,-1137.5,-941.6289518809359,-1137.5,-925.0228474983082,-1137.5,-915.0228474983082,-1137.5]},
-{"from":-38, "to":-36, "fromPort":"R", "toPort":"L", "points":[-1386.5,-962.9999999999999,-1376.5,-962.9999999999999,-1372,-962.9999999999999,-1372,-962.9999999999999,-1348,-962.9999999999999,-1348,-998,-1350.2614237491546,-998,-1340.2614237491546,-998]},
-{"from":-37, "to":-35, "fromPort":"R", "toPort":"L", "points":[-1230.5,-927.0000000000001,-1220.5,-927.0000000000001,-1220.5,-926.9999999999999,-1220.5,-926.9999999999999,-1039.6290003482754,-926.9999999999999,-1029.6290003482754,-926.9999999999999]},
-{"from":-29, "to":-34, "fromPort":"B", "toPort":"T", "points":[-1486.2350562635636,-1060.1153303175251,-1486.2350562635636,-1050.1153303175251,-1462.1941646112557,-1050.1153303175251,-1462.1941646112557,-1058.752542493723,-1438.1532729589478,-1058.752542493723,-1438.1532729589478,-1048.752542493723]},
-{"from":-26, "to":-43, "fromPort":"B", "toPort":"T", "points":[-1270.5425850680576,-1231.7527344765322,-1270.5425850680576,-1221.7527344765322,-1270.5425850680576,-1210.9070791128431,-1269,-1210.9070791128431,-1269,-1200.061423749154,-1269,-1190.061423749154]},
-{"from":-43, "to":-44, "fromPort":"L", "toPort":"B", "points":[-1333.761423749154,-1171,-1343.761423749154,-1171,-1349.5425850680576,-1171,-1349.5425850680576,-1177.876367238266,-1349.5425850680576,-1184.7527344765322,-1349.5425850680576,-1194.7527344765322]},
-{"from":-44, "to":-28, "fromPort":"L", "toPort":"T", "points":[-1379.5425850680576,-1221.5860678098657,-1389.5425850680576,-1221.5860678098657,-1388,-1221.5860678098657,-1388,-1221.5860678098657,-1395.7289578381155,-1221.5860678098657,-1395.7289578381155,-1160.0100874000123,-1395.7289578381155,-1150.0100874000123]}
- ]}
+{
+    "modelData": {
+        "fileType": "graph",
+        "repoService": "Unknown",
+        "repoBranch": "",
+        "repo": "",
+        "filePath": "/Users/james/working/update-logical-graphs/../daliuge-logical-graphs/SageCal/dist_sagecal.json",
+        "sha": "",
+        "git_url": ""
+    },
+    "nodeDataArray": [
+        {
+            "category": "Start",
+            "categoryType": "Control",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": false,
+            "canHaveOutputs": true,
+            "color": "#229954",
+            "drawOrderHint": 0,
+            "key": -1,
+            "text": "Start",
+            "description": "",
+            "x": 300,
+            "y": 142,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [
+                {
+                    "Id": "f350de26-1941-4db8-8507-b13ef4457a40",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -6,
+            "text": "MSFile",
+            "description": "",
+            "x": 520,
+            "y": 138,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "8efefa34-6f8d-4ba3-893b-39f3718336d4",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d980542c-9e84-4397-b1b8-5d8bdc49d23e",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -4,
+            "text": "Slave_reader",
+            "description": "",
+            "x": 495,
+            "y": 219,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "06277103-0f4e-4160-904c-befb15ac3f16",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d0775718-387d-4a60-b6cd-ed3fac649633",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/aux_reader",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "%i0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "-Y",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "%o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "-P /astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Scatter",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#DDAD00",
+            "drawOrderHint": 0,
+            "key": -11,
+            "text": "Split MSList by line",
+            "description": "",
+            "x": 470,
+            "y": 42,
+            "width": 342,
+            "height": 754,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Scatter Axis",
+                    "name": "scatter_axis",
+                    "value": "time",
+                    "description": ""
+                },
+                {
+                    "text": "Number of copies",
+                    "name": "num_of_copies",
+                    "value": 8,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -8,
+            "text": "SlaveADMM ",
+            "description": "",
+            "x": 494,
+            "y": 281,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "9cb3486d-ab84-4755-99b5-23242926e2e2",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "fe06bc8e-182c-4ede-b5ee-418f2febb9f5",
+                    "IdText": "L-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d7b18035-acc0-47e3-a6a7-ca75502e5611",
+                    "IdText": "B-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/admm_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X %i0 -Z %i1",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "-Y %o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "-P /astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "End",
+            "categoryType": "Control",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": false,
+            "color": "#CB4335",
+            "drawOrderHint": 0,
+            "key": -2,
+            "text": "End",
+            "description": "",
+            "x": 1235,
+            "y": 752,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d4877979-c018-44f9-81a5-39273e053a58",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": []
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -3,
+            "text": "Load MSList",
+            "description": "",
+            "x": 301,
+            "y": 211,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "46c4ac33-18f6-465e-9c3e-f4e4ec264b20",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "20fe3ce3-fd60-4272-982c-ab4e57f7ac8e",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "Arg01=/astrodata/sagecal/data/MSlist.txt.8",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -13,
+            "text": "iodata",
+            "description": "",
+            "x": 652,
+            "y": 176,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "cbeae467-7e36-44fd-aaf3-e2bc112c2c65",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "6c7c3ea7-dcbd-4ee7-a041-4b3118c6decb",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "3b8bd915-7d08-4818-a23f-3dcb321bd81c",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -14,
+            "text": "IOData & arho",
+            "description": "",
+            "x": 653,
+            "y": 313,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "1158c677-9a16-4903-87f2-0f3924e8a5d4",
+                    "IdText": "B-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "e9aab088-25ce-4bf1-9f46-f1ab114fc9b3",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -12,
+            "text": "IOData Collect",
+            "description": "",
+            "x": 850,
+            "y": 100,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "7e8d1225-20a6-496a-8952-5c6ae58a894c",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "2a5fcc77-6063-4e88-945e-91269de16f5f",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -15,
+            "text": "Master IOData",
+            "description": "",
+            "x": 1025,
+            "y": 145,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "2917557b-ff84-4c33-a6d6-beb0a81901af",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "8a55d813-8465-4975-91c2-300d8a015784",
+                    "IdText": "L-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -16,
+            "text": "MasterADMM ",
+            "description": "",
+            "x": 833,
+            "y": 190,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "eec340ee-a988-486a-9ee9-8827a928a2a8",
+                    "IdText": "L-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "dd691d27-b6f7-4ca2-98f1-334c8eaef635",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/admm_master",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X %i0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "-Y %o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "-P /astrodata/sagecal/data/params_master.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -18,
+            "text": "Regularisation Factor Array",
+            "description": "",
+            "x": 1039,
+            "y": 249,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "cae335a2-ef6c-4d3e-ad5f-f83cc75e983c",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "2c136489-da3a-4031-a431-7b6857751748",
+                    "IdText": "L-R"
+                },
+                {
+                    "Id": "512cca1e-9fc9-4f66-8cac-f9c316b7554e",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -19,
+            "text": "Timeslot",
+            "description": "",
+            "x": 839,
+            "y": 319,
+            "width": 475,
+            "height": 545,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 13,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -20,
+            "text": "Solution",
+            "description": "",
+            "x": 1103,
+            "y": 753,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "75023e51-0027-4509-aed3-206f9d15f51e",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "a3ee9cb2-3d8b-49e7-a237-059bab5f84c5",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -21,
+            "text": "fratio_master",
+            "description": "",
+            "x": 1090,
+            "y": 416,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "df8c6bf3-d0b0-4479-9cd3-e6088552ea21",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "3030da40-c1df-45ce-b576-25aca2f055d1",
+                    "IdText": "R-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/fratio_master",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X %i0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "-Y %o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "-P /astrodata/sagecal/data/params_master.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -22,
+            "text": "Timeslot",
+            "description": "",
+            "x": 480,
+            "y": 320,
+            "width": 425,
+            "height": 532,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -11,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 13,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -23,
+            "text": "Fratio Slave",
+            "description": "",
+            "x": 504,
+            "y": 416,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d28d69c9-5b83-4615-95cb-d81fc6aaefab",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "bb9c3537-c649-4d8b-a90b-5def6bc6724b",
+                    "IdText": "R-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/fratio_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X %i0 -Z%i1",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "-Y %o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "-P /astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -26,
+            "text": "iodata",
+            "description": "",
+            "x": 680,
+            "y": 421,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "e1e8c0ea-b8f4-4696-bf3c-0496883cea77",
+                    "IdText": "R-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "4c11b91a-1279-43e0-b730-a9009ee28f0d",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "22de1ce3-3b4b-40d0-8521-483c4c7f8e1b",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -27,
+            "text": "Admm",
+            "description": "",
+            "x": 440,
+            "y": 453,
+            "width": 339,
+            "height": 328,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -28,
+            "text": "sagefit",
+            "description": "",
+            "x": 555,
+            "y": 549,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -27,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "118c2213-33b2-4ee6-b5a0-a3a691b9c836",
+                    "IdText": "L-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "4988b782-74a2-40f0-b749-5c2f58164d09",
+                    "IdText": "L-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/sagefit_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X %i0 -Z %i1",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "-Y %o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "-P /astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -29,
+            "text": "Y_n_J",
+            "description": "",
+            "x": 464,
+            "y": 593,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -27,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "8259f80a-8dea-483c-bd48-a92d59dd14ee",
+                    "IdText": "L-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "267be2f5-d17f-44c0-bf39-30408307e698",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "9a4c5acb-9ee2-42e3-80fa-62f36d891ece",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -30,
+            "text": "ST",
+            "description": "",
+            "x": 938,
+            "y": 457,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "de2ddf13-0234-4121-9016-1d38902c0684",
+                    "IdText": "R-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ecd72330-7aaf-4508-9b43-2de7de3cdba6",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Loop",
+            "categoryType": "Group",
+            "isData": false,
+            "isGroup": true,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#512E5F",
+            "drawOrderHint": 0,
+            "key": -31,
+            "text": "Admm",
+            "description": "",
+            "x": 863,
+            "y": 444,
+            "width": 438,
+            "height": 262,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [],
+            "outputPorts": [],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Number of Iterations",
+                    "name": "num_of_iter",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -32,
+            "text": "Update Z",
+            "description": "",
+            "x": 1077,
+            "y": 542,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -31,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "67cea3f8-e884-45de-aa18-54b11edcf83b",
+                    "IdText": "T-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "6fbd127b-f703-486f-8318-c6561f7faddd",
+                    "IdText": "B-R"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/update_z_master",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X %i0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "-Y %o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "-P /astrodata/sagecal/data/params_master.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -33,
+            "text": "B_n_Z",
+            "description": "",
+            "x": 887,
+            "y": 642,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -31,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "fd7b3ac9-1d10-4ec5-91c8-bfcc5bacce5a",
+                    "IdText": "B-R"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ebea856c-297f-4bb9-90cb-bb3b9611f485",
+                    "IdText": "L-R"
+                },
+                {
+                    "Id": "b6e30f53-1227-458a-8340-1f94f60f73be",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -34,
+            "text": "Update Y",
+            "description": "",
+            "x": 512,
+            "y": 650,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -27,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d09f520d-5496-4c99-aadd-3b7e6f308ea6",
+                    "IdText": "L-R"
+                },
+                {
+                    "Id": "77f7d2d9-e58f-44fb-8ae9-2376d49d49a3",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "74effed5-417d-4861-be4e-38b83812e6a8",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/update_y_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X %i0 -Z %i1",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "-Y %o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "-P /astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -35,
+            "text": "Write Z",
+            "description": "",
+            "x": 955,
+            "y": 752,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "2abd1511-dce9-4cbe-8d90-b59c9218814f",
+                    "IdText": "B-T"
+                },
+                {
+                    "Id": "584c1d0a-90e3-42e4-bf29-a470572ea986",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "af1c2a46-8770-4b36-ba57-9d1a556fc1a4",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/write_z_master",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X %i0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "-Y %o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "-P /astrodata/sagecal/data/params_master.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -36,
+            "text": "Wirte Residual",
+            "description": "",
+            "x": 668,
+            "y": 681,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "2d1447bd-0cc5-43ab-92ac-e9e65ec0bb02",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "39c95d6e-3735-4f1d-8118-7cee9def9fbe",
+                    "IdText": "B-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/write_residual_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X %i0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "-Y %o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "-P /astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -37,
+            "text": "ResiduleFile",
+            "description": "",
+            "x": 668,
+            "y": 752,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "e9949cef-28d4-408e-9f76-f9fd10209cc8",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "7268ff34-8a2f-44a5-a52d-7fc4717dbc35",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -38,
+            "text": "Y n Residule",
+            "description": "",
+            "x": 511,
+            "y": 717,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -27,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "f706c02c-e81e-4d1f-a59a-a9c55ca08642",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ae7ae8aa-d1b5-449e-8065-4fb96096f9ae",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 1,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -39,
+            "text": "FratioCollect",
+            "description": "",
+            "x": 863,
+            "y": 415,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "db5736d7-89d0-4269-b2f9-3c04424e2d8c",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "46ac88f5-43ca-47d8-bd05-d2c87d6604f5",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "12cf2fb0-548d-4788-bede-bb35e50476f5",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -40,
+            "text": "ST",
+            "description": "",
+            "x": 988,
+            "y": 416,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -19,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "aabfff32-5698-40ce-8809-460ee0727529",
+                    "IdText": "R-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "81cbc1e0-b40d-4ad5-a1fb-2392b55560c7",
+                    "IdText": "R-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "Component",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#3498DB",
+            "drawOrderHint": 0,
+            "key": -41,
+            "text": "YZCollect",
+            "description": "",
+            "x": 920,
+            "y": 540,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -31,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "77423dd2-ef14-4b30-8458-1269bf32439b",
+                    "IdText": "R-L"
+                },
+                {
+                    "Id": "de4b029c-578c-4776-89a3-648ce3a0d5ff",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "d5f19808-a84f-45a2-b84d-16a057d0010a",
+                    "IdText": "B-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/data/MSlist.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -42,
+            "text": "Y_n_Z",
+            "description": "",
+            "x": 992,
+            "y": 600,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -31,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "6c12a231-af33-4f74-90a3-a8599fa456c0",
+                    "IdText": "B-L"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "a97e9fae-a71d-43c6-8583-78efc6d7001e",
+                    "IdText": "T-L"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "BashShellApp",
+            "categoryType": "Application",
+            "isData": false,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#1C2833",
+            "drawOrderHint": 0,
+            "key": -43,
+            "text": "Cal Coherencies",
+            "description": "",
+            "x": 681,
+            "y": 508,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "298222fc-8c71-4935-880b-789419cd70e0",
+                    "IdText": "B-T"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "ffa9f07c-c013-4b96-9d5a-7eb49e798861",
+                    "IdText": "L-B"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Execution Time",
+                    "name": "execution_time",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group Start",
+                    "name": "group_start",
+                    "value": 0,
+                    "description": ""
+                },
+                {
+                    "text": "Number of CPUs",
+                    "name": "num_cpus",
+                    "value": 1,
+                    "description": ""
+                },
+                {
+                    "text": "Arg 01",
+                    "name": "Arg01",
+                    "value": "/astrodata/sagecal/build/bin/coh_slave",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 02",
+                    "name": "Arg02",
+                    "value": "-X %i0 -Y %o0",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 03",
+                    "name": "Arg03",
+                    "value": "-P /astrodata/sagecal/data/params.txt",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 04",
+                    "name": "Arg04",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 05",
+                    "name": "Arg05",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 06",
+                    "name": "Arg06",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 07",
+                    "name": "Arg07",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 08",
+                    "name": "Arg08",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 09",
+                    "name": "Arg09",
+                    "value": "",
+                    "description": ""
+                },
+                {
+                    "text": "Arg 10",
+                    "name": "Arg10",
+                    "value": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "category": "File",
+            "categoryType": "Data",
+            "isData": true,
+            "isGroup": false,
+            "canHaveInputs": true,
+            "canHaveOutputs": true,
+            "color": "#394BB2",
+            "drawOrderHint": 0,
+            "key": -44,
+            "text": "iodata",
+            "description": "",
+            "x": 601,
+            "y": 458,
+            "width": 200,
+            "height": 200,
+            "collapsed": false,
+            "showPorts": false,
+            "streaming": false,
+            "subject": null,
+            "selected": false,
+            "expanded": false,
+            "group": -22,
+            "inputApplicationName": "",
+            "outputApplicationName": "",
+            "exitApplicationName": "",
+            "inputApplicationType": "None",
+            "outputApplicationType": "None",
+            "exitApplicationType": "None",
+            "inputPorts": [
+                {
+                    "Id": "d5a6e49b-d434-4f0f-8252-568f36769b77",
+                    "IdText": "L-B"
+                }
+            ],
+            "outputPorts": [
+                {
+                    "Id": "882ad93f-31e8-474c-9be5-ea5c1fcc2ac7",
+                    "IdText": "L-T"
+                }
+            ],
+            "inputLocalPorts": [],
+            "outputLocalPorts": [],
+            "inputAppFields": [],
+            "outputAppFields": [],
+            "fields": [
+                {
+                    "text": "Data Volume",
+                    "name": "data_volume",
+                    "value": 5,
+                    "description": ""
+                },
+                {
+                    "text": "Group End",
+                    "name": "group_end",
+                    "value": 0,
+                    "description": ""
+                }
+            ]
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": -6,
+            "fromPort": "d980542c-9e84-4397-b1b8-5d8bdc49d23e",
+            "to": -4,
+            "toPort": "06277103-0f4e-4160-904c-befb15ac3f16"
+        },
+        {
+            "from": -4,
+            "fromPort": "d0775718-387d-4a60-b6cd-ed3fac649633",
+            "to": -13,
+            "toPort": "cbeae467-7e36-44fd-aaf3-e2bc112c2c65"
+        },
+        {
+            "from": -8,
+            "fromPort": "d7b18035-acc0-47e3-a6a7-ca75502e5611",
+            "to": -14,
+            "toPort": "1158c677-9a16-4903-87f2-0f3924e8a5d4"
+        },
+        {
+            "from": -1,
+            "fromPort": "f350de26-1941-4db8-8507-b13ef4457a40",
+            "to": -3,
+            "toPort": "46c4ac33-18f6-465e-9c3e-f4e4ec264b20"
+        },
+        {
+            "from": -3,
+            "fromPort": "20fe3ce3-fd60-4272-982c-ab4e57f7ac8e",
+            "to": -6,
+            "toPort": "8efefa34-6f8d-4ba3-893b-39f3718336d4"
+        },
+        {
+            "from": -13,
+            "fromPort": "6c7c3ea7-dcbd-4ee7-a041-4b3118c6decb",
+            "to": -8,
+            "toPort": "9cb3486d-ab84-4755-99b5-23242926e2e2"
+        },
+        {
+            "from": -13,
+            "fromPort": "3b8bd915-7d08-4818-a23f-3dcb321bd81c",
+            "to": -12,
+            "toPort": "7e8d1225-20a6-496a-8952-5c6ae58a894c"
+        },
+        {
+            "from": -12,
+            "fromPort": "2a5fcc77-6063-4e88-945e-91269de16f5f",
+            "to": -15,
+            "toPort": "2917557b-ff84-4c33-a6d6-beb0a81901af"
+        },
+        {
+            "from": -15,
+            "fromPort": "8a55d813-8465-4975-91c2-300d8a015784",
+            "to": -16,
+            "toPort": "eec340ee-a988-486a-9ee9-8827a928a2a8"
+        },
+        {
+            "from": -18,
+            "fromPort": "2c136489-da3a-4031-a431-7b6857751748",
+            "to": -8,
+            "toPort": "fe06bc8e-182c-4ede-b5ee-418f2febb9f5"
+        },
+        {
+            "from": -16,
+            "fromPort": "dd691d27-b6f7-4ca2-98f1-334c8eaef635",
+            "to": -18,
+            "toPort": "cae335a2-ef6c-4d3e-ad5f-f83cc75e983c"
+        },
+        {
+            "from": -20,
+            "fromPort": "a3ee9cb2-3d8b-49e7-a237-059bab5f84c5",
+            "to": -2,
+            "toPort": "d4877979-c018-44f9-81a5-39273e053a58"
+        },
+        {
+            "from": -21,
+            "fromPort": "3030da40-c1df-45ce-b576-25aca2f055d1",
+            "to": -30,
+            "toPort": "de2ddf13-0234-4121-9016-1d38902c0684"
+        },
+        {
+            "from": -14,
+            "fromPort": "e9aab088-25ce-4bf1-9f46-f1ab114fc9b3",
+            "to": -23,
+            "toPort": "d28d69c9-5b83-4615-95cb-d81fc6aaefab"
+        },
+        {
+            "from": -23,
+            "fromPort": "bb9c3537-c649-4d8b-a90b-5def6bc6724b",
+            "to": -26,
+            "toPort": "e1e8c0ea-b8f4-4696-bf3c-0496883cea77"
+        },
+        {
+            "from": -28,
+            "fromPort": "4988b782-74a2-40f0-b749-5c2f58164d09",
+            "to": -29,
+            "toPort": "8259f80a-8dea-483c-bd48-a92d59dd14ee"
+        },
+        {
+            "from": -32,
+            "fromPort": "6fbd127b-f703-486f-8318-c6561f7faddd",
+            "to": -33,
+            "toPort": "fd7b3ac9-1d10-4ec5-91c8-bfcc5bacce5a"
+        },
+        {
+            "from": -33,
+            "fromPort": "ebea856c-297f-4bb9-90cb-bb3b9611f485",
+            "to": -34,
+            "toPort": "d09f520d-5496-4c99-aadd-3b7e6f308ea6"
+        },
+        {
+            "from": -33,
+            "fromPort": "b6e30f53-1227-458a-8340-1f94f60f73be",
+            "to": -35,
+            "toPort": "2abd1511-dce9-4cbe-8d90-b59c9218814f"
+        },
+        {
+            "from": -35,
+            "fromPort": "af1c2a46-8770-4b36-ba57-9d1a556fc1a4",
+            "to": -20,
+            "toPort": "75023e51-0027-4509-aed3-206f9d15f51e"
+        },
+        {
+            "from": -36,
+            "fromPort": "39c95d6e-3735-4f1d-8118-7cee9def9fbe",
+            "to": -37,
+            "toPort": "e9949cef-28d4-408e-9f76-f9fd10209cc8"
+        },
+        {
+            "from": -34,
+            "fromPort": "74effed5-417d-4861-be4e-38b83812e6a8",
+            "to": -38,
+            "toPort": "f706c02c-e81e-4d1f-a59a-a9c55ca08642"
+        },
+        {
+            "from": -29,
+            "fromPort": "267be2f5-d17f-44c0-bf39-30408307e698",
+            "to": -41,
+            "toPort": "77423dd2-ef14-4b30-8458-1269bf32439b"
+        },
+        {
+            "from": -30,
+            "fromPort": "ecd72330-7aaf-4508-9b43-2de7de3cdba6",
+            "to": -41,
+            "toPort": "de4b029c-578c-4776-89a3-648ce3a0d5ff"
+        },
+        {
+            "from": -26,
+            "fromPort": "4c11b91a-1279-43e0-b730-a9009ee28f0d",
+            "to": -39,
+            "toPort": "db5736d7-89d0-4269-b2f9-3c04424e2d8c"
+        },
+        {
+            "from": -18,
+            "fromPort": "512cca1e-9fc9-4f66-8cac-f9c316b7554e",
+            "to": -39,
+            "toPort": "46ac88f5-43ca-47d8-bd05-d2c87d6604f5"
+        },
+        {
+            "from": -39,
+            "fromPort": "12cf2fb0-548d-4788-bede-bb35e50476f5",
+            "to": -40,
+            "toPort": "aabfff32-5698-40ce-8809-460ee0727529"
+        },
+        {
+            "from": -40,
+            "fromPort": "81cbc1e0-b40d-4ad5-a1fb-2392b55560c7",
+            "to": -21,
+            "toPort": "df8c6bf3-d0b0-4479-9cd3-e6088552ea21"
+        },
+        {
+            "from": -41,
+            "fromPort": "d5f19808-a84f-45a2-b84d-16a057d0010a",
+            "to": -42,
+            "toPort": "6c12a231-af33-4f74-90a3-a8599fa456c0"
+        },
+        {
+            "from": -42,
+            "fromPort": "a97e9fae-a71d-43c6-8583-78efc6d7001e",
+            "to": -32,
+            "toPort": "67cea3f8-e884-45de-aa18-54b11edcf83b"
+        },
+        {
+            "from": -38,
+            "fromPort": "ae7ae8aa-d1b5-449e-8065-4fb96096f9ae",
+            "to": -36,
+            "toPort": "2d1447bd-0cc5-43ab-92ac-e9e65ec0bb02"
+        },
+        {
+            "from": -37,
+            "fromPort": "7268ff34-8a2f-44a5-a52d-7fc4717dbc35",
+            "to": -35,
+            "toPort": "584c1d0a-90e3-42e4-bf29-a470572ea986"
+        },
+        {
+            "from": -29,
+            "fromPort": "9a4c5acb-9ee2-42e3-80fa-62f36d891ece",
+            "to": -34,
+            "toPort": "77f7d2d9-e58f-44fb-8ae9-2376d49d49a3"
+        },
+        {
+            "from": -26,
+            "fromPort": "22de1ce3-3b4b-40d0-8521-483c4c7f8e1b",
+            "to": -43,
+            "toPort": "298222fc-8c71-4935-880b-789419cd70e0"
+        },
+        {
+            "from": -43,
+            "fromPort": "ffa9f07c-c013-4b96-9d5a-7eb49e798861",
+            "to": -44,
+            "toPort": "d5a6e49b-d434-4f0f-8252-568f36769b77"
+        },
+        {
+            "from": -44,
+            "fromPort": "882ad93f-31e8-474c-9be5-ea5c1fcc2ac7",
+            "to": -28,
+            "toPort": "118c2213-33b2-4ee6-b5a0-a3a691b9c836"
+        }
+    ]
+}
